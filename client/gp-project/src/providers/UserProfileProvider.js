@@ -8,7 +8,7 @@ export const UserProvider = (props) => {
   const [users, setUser] = useState([]);
 
 
-  const baseUrl = 'https://localhost:44396';
+  const baseUrl = 'https://localhost:44362';
 
   const getUser = (id) => {
     return fetch(`${baseUrl}/api/UserProfile/GetByIdWithCourses?id=${id}`)

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card,  CardImg } from "react-bootstrap";
+import Card from 'react-bootstrap/Card'
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider"
 import { useContext } from "react";

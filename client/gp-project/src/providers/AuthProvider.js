@@ -13,7 +13,7 @@ export const UserAuthProvider = (props) => {
     return currentUser;
   };
 
-  const baseUrl = 'https://localhost:44396';
+  const baseUrl = 'https://localhost:44362';
   const navigate = useNavigate();
   
   const login = (userObject) => {
