@@ -3,7 +3,7 @@
 
 .course-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
@@ -11,7 +11,7 @@
     background-color: white;
     width: 30vw;
     margin-bottom: 20px;
-    height: 8vh;
+    height: 11vh;
     border-radius: 3.5em;
 }
 
@@ -22,3 +22,12 @@
     align-items: center;
 }
 
+.button-link {
+    background-color: lightblue;
+    font-size:small;
+    padding: 6px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+}

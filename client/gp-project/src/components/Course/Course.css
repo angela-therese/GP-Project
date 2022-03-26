@@ -1,0 +1,27 @@
+table {
+    border: 1px lightblue solid;
+    width: 45%;
+    border-radius: 2em;
+    padding: 1em;
+    /* border-collapse: separate; */
+    border-spacing: 0 10px;
+   
+}
+
+th {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: white; 
+  }
+
+.button-link {
+    background-color: lightblue;
+    font-size:small;
+    padding: 3px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+}

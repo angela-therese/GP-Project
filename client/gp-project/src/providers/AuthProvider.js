@@ -25,12 +25,12 @@ export const UserAuthProvider = (props) => {
         localStorage.setItem("growpathUser", JSON.stringify(userObjFromDB));
         setIsLoggedIn(true);
         navigate(`/user/${userObjFromDB.id}`);
-        debugger
+        
         
       })
   };
 
-  debugger
+
   
   const logout = () => {
     localStorage.clear();

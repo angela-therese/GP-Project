@@ -26,7 +26,9 @@ namespace GrowPath.Repositories
                 SELECT c.Id AS CourseId, c.Name AS CourseName, c.DateCreated, c.UserProfileId, c.ArchiveStatus, s.Id AS StudentId, s.FirstName, s.LastName, s.Email AS StudentEmail,  s.ClassId 
                      FROM Course c 
                      LEFT JOIN Student s on c.Id = s.ClassId
-                     WHERE c.Id = @Id";
+                     WHERE c.Id = @Id
+                        ORDER BY s.LastName ASC
+                                                ";
 
                     DbUtils.AddParameter(cmd, "@Id", id);
 

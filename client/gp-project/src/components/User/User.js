@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider"
 import { useContext } from "react";
 import NavBar from '../Nav/Nav'
@@ -10,6 +10,8 @@ import './User.css'
 const User = ({ user }) => {
   
     const { logout } = useContext(AuthContext);
+    
+    
     
     return (
       <>
@@ -25,10 +27,11 @@ const User = ({ user }) => {
             // 
             <>
             <article className="course-card">
-            {/* <Link to={`/post/${p.id}`}> */}
             <p>{c.name}</p>
-          {/* </Link> */}
+            <Link className="button-link"to={`/course/${c.id}`}>Details</Link>
+            
             </article>
+            
           </>
           )
         })}
