@@ -17,7 +17,7 @@ export const UserAuthProvider = (props) => {
   const navigate = useNavigate();
   
   const login = (userObject) => {
-    debugger;
+   
     fetch(`${baseUrl}/api/userprofile/getbyemail?email=${userObject.email}`
     )
       .then((r) => r.json())

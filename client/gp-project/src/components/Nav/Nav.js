@@ -19,10 +19,12 @@ export const NavBar = () => {
 
     return (
         <>
-            <Nav defaultActiveKey="/home" className="nav-menu">
+            <div className="container">
+            <Nav defaultActiveKey="/home" 
+            className="nav-menu">
                 <Button className="btnLogout" onClick={handleLogout}>Logout</Button>
             </Nav>
-
+            </div>
             {/* </section> */}
 
         </>

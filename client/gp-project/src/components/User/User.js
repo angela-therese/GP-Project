@@ -6,26 +6,27 @@ import NavBar from '../Nav/Nav'
 import './User.css'
 
 
+
 const User = ({ user }) => {
   
     const { logout } = useContext(AuthContext);
     
     return (
       <>
-      <NavBar />
-      <div className="landing-container">
-      <h1>Welcome to GrowPath, {user.firstName}!</h1>
+      <div className="container-fluid">
+        <NavBar />
         <br></br>
+       
         <section className="card-container" >
-        
-        <h2>Choose a class.</h2>
+        <h1>Welcome to GrowPath, {user.firstName}!</h1> 
+        <h3>Choose a class.</h3>
         {user.courses?.map((c) => {
           return (
             // 
             <>
             <article className="course-card">
             {/* <Link to={`/post/${p.id}`}> */}
-            <strong>{c.name}</strong>
+            <p>{c.name}</p>
           {/* </Link> */}
             </article>
           </>

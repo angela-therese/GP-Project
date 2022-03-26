@@ -15,5 +15,5 @@ const ApplicationViews = () => {
       </Routes>
         )
     }
-debugger
+
     export default ApplicationViews

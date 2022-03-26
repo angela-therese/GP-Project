@@ -11,6 +11,8 @@ namespace GrowPath.Models
         public string Name { get; set; }
         public DateTime DateCreated { get; set; }
         public int UserProfileId { get; set; }
+        public int ArchiveStatus { get; set; }
+        public List<Student> Students {get; set;}
 
     }
 }

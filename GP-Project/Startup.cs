@@ -34,6 +34,7 @@ namespace GrowPath
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GP_Project", Version = "v1" });
             });
             services.AddTransient<IUserProfileRepository, UserProfileRepository>();
+            services.AddTransient<ICourseRepository, CourseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

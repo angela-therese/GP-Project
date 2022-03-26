@@ -1,5 +1,6 @@
+
 .nav-menu{
-    width: 100vw;
+    
     height: 15vh;
     background-color: white;
     display: flex;
@@ -8,7 +9,14 @@
     align-items: center;
 }
 
+
+
 .btnLogout {
     height: 5vh;
     margin-right: 2%
 }
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+  }

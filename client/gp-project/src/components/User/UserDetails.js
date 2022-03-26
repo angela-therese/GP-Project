@@ -12,7 +12,7 @@ const UserDetails = () => {
   const [user, setUser] = useState();
   const { getUser } = useContext(UserContext);
   const { id } = useParams();
-debugger
+
 
     
 
