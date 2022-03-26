@@ -27,8 +27,9 @@ const User = ({ user }) => {
             // 
             <>
             <article className="course-card">
-            <p>{c.name}</p>
-            <Link className="button-link"to={`/course/${c.id}`}>Details</Link>
+            <Link to={`/course/${c.id}`}>{c.name}</Link>
+            {/* <p>{c.name}</p> */}
+            {/* <Link className="button-link"to={`/course/${c.id}`}>Details</Link> */}
             
             </article>
             

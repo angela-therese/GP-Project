@@ -5,6 +5,7 @@ table {
     padding: 1em;
     /* border-collapse: separate; */
     border-spacing: 0 10px;
+    font-size: small;
    
 }
 
@@ -24,4 +25,5 @@ tr:nth-child(even) {
     text-decoration: none;
     color: black;
     border-radius: 10px;
+    text-align: center;
 }
