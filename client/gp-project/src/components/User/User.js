@@ -1,8 +1,9 @@
 import React from "react";
-import Card from 'react-bootstrap/Card'
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider"
 import { useContext } from "react";
+import NavBar from '../Nav/Nav'
+import './User.css'
 
 
 const User = ({ user }) => {
@@ -11,31 +12,28 @@ const User = ({ user }) => {
     
     return (
       <>
-      <h1>Welcome, {user.firstName}!</h1>
-      <button onClick={logout}>Log out</button>
-      <Card className="m-4">
-        {/* <div>
-        <p className="text-left px-2">{user.name}</p>
-        </div>
-         */}
+      <NavBar />
+      <div className="landing-container">
+      <h1>Welcome to GrowPath, {user.firstName}!</h1>
+        <br></br>
+        <section className="card-container" >
         
+        <h2>Choose a class.</h2>
         {user.courses?.map((c) => {
           return (
             // 
             <>
-            <Card>
+            <article className="course-card">
             {/* <Link to={`/post/${p.id}`}> */}
             <strong>{c.name}</strong>
           {/* </Link> */}
-            </Card>
-            
-          
+            </article>
           </>
           )
         })}
-        
-      </Card>
-      </>
+        </section>
+        </div>
+     </>
     );
   };
   

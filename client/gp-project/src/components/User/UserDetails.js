@@ -6,6 +6,7 @@ import User from "./User"
 
 
 
+
 const UserDetails = () => {
   
   const [user, setUser] = useState();

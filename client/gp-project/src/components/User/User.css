@@ -1,0 +1,28 @@
+.landing-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    background-color: white;
+    width: 30vw;
+    margin-bottom: 20px;
+    height: 10vh;
+    border-radius: 3.5em;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
