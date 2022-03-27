@@ -1,6 +1,51 @@
+*{
+   font-weight: lighter;
+}
+.heading {
+    width: 100vw;
+    text-align: center;
+    font-weight: bold;
+}
+.main-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.section-1-container {
+    width: 44vw;
+    text-align: center;
+}
+
+.section-2-container {
+    width: 20vw;
+    text-align: center;
+}
+
+.section-3-container{
+    width: 20vw;
+    text-align: center;
+}
+
+.garden-container {
+ width: 100%;
+ background-color: rgb(62, 134, 62); 
+ text-align: center;
+ border-radius: 4em;
+ color: white;
+ padding: .5em;
+}
+
+.reviews-container {
+    width: 98%;
+    background-color: white;
+    height: 40vh
+}
+
 table {
+   text-align: left;
     border: 1px lightblue solid;
-    width: 45%;
+    width: 100%;
     border-radius: 2em;
     padding: 1em;
     /* border-collapse: separate; */
@@ -26,4 +71,8 @@ tr:nth-child(even) {
     color: black;
     border-radius: 10px;
     text-align: center;
+}
+
+.light-heading {
+    font-weight: lighter;
 }

@@ -1,4 +1,8 @@
 
+Button {
+    cursor: grabbing;
+}
+
 .nav-menu{
     
     height: 15vh;
@@ -13,10 +17,24 @@
 
 .btnLogout {
     height: 5vh;
-    margin-right: 2%
+    margin-right: 2%;
+    border: none;
+    background-color: rgb(83, 175, 83);
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+   
+   
 }
 
 .row {
     margin-left: 0;
     margin-right: 0;
   }
+
+  button:not([disabled]) {
+    cursor:grab ;
+}
