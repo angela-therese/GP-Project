@@ -5,7 +5,7 @@ Button {
 
 .nav-menu{
     
-    height: 15vh;
+    height: 10vh;
     background-color: white;
     display: flex;
     flex-direction: row;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GrowPath.Models;
 
 namespace GrowPath.Models
 {
@@ -12,6 +13,7 @@ namespace GrowPath.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public int ClassId { get; set; }
-        public int ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
+        public List<Goal> Goals { get; set; }
     }
 }

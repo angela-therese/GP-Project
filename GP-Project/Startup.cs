@@ -35,6 +35,8 @@ namespace GrowPath
             });
             services.AddTransient<IUserProfileRepository, UserProfileRepository>();
             services.AddTransient<ICourseRepository, CourseRepository>();
+            services.AddTransient<IStudentRepository, StudentRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

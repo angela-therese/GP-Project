@@ -3,7 +3,8 @@ import Flower from '../../images/flower.png'
 
 
 
-let gardenCount = 42
+let gardenCount = 22
+
 
 export const GardenPrint = () => {
     
