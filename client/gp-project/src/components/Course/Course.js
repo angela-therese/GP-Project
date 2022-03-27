@@ -1,11 +1,11 @@
 import React from "react";
 import {GardenPrint} from "../Garden/Garden"
-import { useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider"
 import { useContext } from "react";
 import NavBar from '../Nav/Nav'
 import './Course.css'
-import Flower from '../../images/flower.png'
+
 
 
 
@@ -13,13 +13,19 @@ import Flower from '../../images/flower.png'
 const Course = ({ course }) => {
   
     const { logout } = useContext(AuthContext);
-    
+ 
+    console.log(course);
+  
     
     return (
       <>
      
         <NavBar />
-        <h1 className="heading">{course.name}</h1> 
+        <div className="heading">
+            <h1 className="heading">{course.name}</h1>
+            <Link to={`/user/${course.userProfileId}`}>Back to main</Link></div>
+        <br/><br/>
+        
         <div className="main-container" >
         <section className="section-3-container">
             <h3>Due for Review</h3>
