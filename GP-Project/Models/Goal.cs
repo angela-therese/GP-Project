@@ -14,8 +14,7 @@ namespace GrowPath.Models
         public DateTime DateCreated { get; set; }
         public int GrowthCount { get; set; }
         public int CategoryId { get; set; }
-        public DateTime DateReviewed { get; set; }
-
+        
 
     }
 }
