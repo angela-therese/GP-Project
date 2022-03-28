@@ -1,6 +1,6 @@
 import React from "react";
 import {GardenPrint} from "../Garden/Garden"
-import { Link} from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider"
 import { useContext } from "react";
 import NavBar from '../Nav/Nav'
@@ -13,6 +13,7 @@ import './Course.css'
 const Course = ({ course }) => {
   
     const { logout } = useContext(AuthContext);
+    const { id } = useParams();
  
     console.log(course);
   
@@ -48,10 +49,13 @@ const Course = ({ course }) => {
         {course.students?.map((s) => {
           return (
             <tr className="table-row">
-            <td>{s.firstName} {s.lastName}</td>
+
+
+            <td><Link to={`/student/${s.id}`}>{s.firstName} {s.lastName}</Link></td>
+            
             <td> <a href={"mailto:" + s.email}>{s.email}</a></td>
             <td>{course.name}</td>
-            <td className="button-link">View</td>
+            <td className="button-link"><button>View</button></td>
             {/* <Link className="button-link"to={`/course/${c.id}`}>Details</Link> */}
            </tr>
           

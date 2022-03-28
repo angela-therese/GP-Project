@@ -6,6 +6,7 @@ import Login from "./components/Auth/Login"
 import {UserAuthProvider} from "./providers/AuthProvider"
 import {UserProvider} from "./providers/UserProfileProvider"
 import {CourseProvider} from "./providers/CourseProvider"
+import { StudentProvider } from "./providers/StudentProvider";
 
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
       <UserAuthProvider>
         <UserProvider>
           <CourseProvider>
-          <ApplicationViews/>
+            <StudentProvider>
+              <ApplicationViews/>
+          </StudentProvider>
           </CourseProvider>
           </UserProvider>
       </UserAuthProvider>
