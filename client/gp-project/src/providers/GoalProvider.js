@@ -18,11 +18,22 @@ export const GoalProvider = (props) => {
         .then((res) => res.json());
             };
     
-            
+    
+    const addGoal = (goal) => {
+
+        debugger
+        return fetch (`${baseUrl}/api/Goal`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(goal),
+        })
+    }
 
 
 return (
-    <GoalContext.Provider value ={{getAllCategories, getById}}>
+    <GoalContext.Provider value ={{getAllCategories, getById, addGoal}}>
         {props.children}
     </GoalContext.Provider>
 )

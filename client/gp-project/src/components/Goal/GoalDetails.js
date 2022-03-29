@@ -15,12 +15,12 @@ const GoalDetails = () => {
   const { goalId, studentId } = useParams();
 
 
-    debugger
+    
 
   useEffect(() => {
     getById(goalId).then(setGoal);
   }, []);
-  debugger
+ 
 
   if (!goal) {
     return null;

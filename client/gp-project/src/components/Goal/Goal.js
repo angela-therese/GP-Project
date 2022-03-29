@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {GardenPrint} from "../Garden/Garden"
+import GoalForm from "./GoalForm";
 import NavBar from '../Nav/Nav'
 import './Goal.css'
 
@@ -29,6 +30,7 @@ const Goal = ({ goal }) => {
             </section>
         </div>
         </div>
+        <GoalForm/>
         
         
      </>
