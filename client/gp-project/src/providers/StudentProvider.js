@@ -11,7 +11,7 @@ export const StudentProvider = (props) => {
   const baseUrl = 'https://localhost:44362';
 
   const getById= (id) => {
-    debugger
+    
     return fetch(`${baseUrl}/api/Student/GetById?id=${id}`)
     .then((res) => res.json());
         };

@@ -5,7 +5,7 @@ import { StudentContext } from "../../providers/StudentProvider";
 
 
 const StudentDetails = () => {
- 
+
 
 const [student, setStudent] = useState();
 const { getById } = useContext(StudentContext);

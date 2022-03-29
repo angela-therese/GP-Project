@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GrowPath.Models;
 
 namespace GrowPath.Models
 {
@@ -14,6 +15,7 @@ namespace GrowPath.Models
         public DateTime DateCreated { get; set; }
         public int GrowthCount { get; set; }
         public int CategoryId { get; set; }
+        public Student Student { get; set; } 
 
     }
 }

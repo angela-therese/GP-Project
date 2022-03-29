@@ -14,7 +14,7 @@ export const GoalProvider = (props) => {
 
 
     const getById = (id) => {
-        return fetch (`${baseUrl}/api/Student/GetById?id=${id}`)
+        return fetch (`${baseUrl}/api/Goal/GetById?id=${id}`)
         .then((res) => res.json());
             };
     

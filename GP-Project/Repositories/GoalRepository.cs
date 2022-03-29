@@ -21,7 +21,7 @@ namespace GrowPath.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                    SELECT g.Id AS GoalId, g.Title, g.Description, g.studentId AS GoalStudentId, g.DateCreated, g.GrowthCount, g.CategoryId, s.Id AS StudentId, s.FirstName, s.LastName, s.ClassId, s.imageUrl
+                    SELECT g.Id AS GoalId, g.Title, g.Description, g.StudentId AS GoalStudentId, g.DateCreated, g.GrowthCount, g.CategoryId, s.Id AS StudentId, s.FirstName, s.LastName, s.Email, s.ClassId, s.imageUrl
                         FROM Goal g 
                         JOIN Student s on g.StudentId = s.Id
                         WHERE  g.Id = @id
@@ -43,17 +43,39 @@ namespace GrowPath.Repositories
                                 StudentId = DbUtils.GetInt(reader, "GoalStudentId"),
                                 DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
                                 GrowthCount = DbUtils.GetInt(reader, "GrowthCount"),
-                                CategoryId = DbUtils.GetInt(reader, "CategoryId")
-
-                            };
+                                CategoryId = DbUtils.GetInt(reader, "CategoryId"),
+                                Student = new Student()
+                                {
+                                    Id = DbUtils.GetInt(reader, "StudentId"),
+                                    FirstName = DbUtils.GetString(reader, "FirstName"),
+                                    LastName = DbUtils.GetString(reader, "LastName"),
+                                    Email = DbUtils.GetString(reader, "Email"),
+                                    ClassId = DbUtils.GetInt(reader, "ClassId"),
+                                    ImageUrl = DbUtils.GetString(reader, "ImageUrl")
+                                }
                         }
 
 
-                    }
+                        //if (DbUtils.IsNotDbNull(reader, "GoalStudentId"))
+                        //{
+                        //    Student Student = new Student()
+                        //    {
+                        //        Id = DbUtils.GetInt(reader, "StudentId"),
+                        //        FirstName = DbUtils.GetString(reader, "FirstName"),
+                        //        LastName=DbUtils.GetString(reader, "LastName"),
+                        //        Email = DbUtils.GetString(reader,"Email"),
+                        //        ClassId = DbUtils.GetInt(reader, "ClassId"),
+                        //        ImageUrl = DbUtils.GetString(reader, "ImageUrl")
 
+                        //    };
+                            ;
+                        }
+                    }
                     reader.Close();
                     return goal;
-                }
+
+                }      
+                
             }
 
 

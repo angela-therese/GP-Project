@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 import { useContext } from "react";
 import NavBar from '../Nav/Nav'
@@ -8,7 +8,8 @@ import './Student.css'
 
 const Student = ({ student }) => {
 
-  debugger
+
+ 
 
     return (
         <>
@@ -25,7 +26,7 @@ const Student = ({ student }) => {
                 <section className="goals-container" >
         {student.goals?.map((g) => {
                     return (
-                  <h1>{g.title}</h1>
+                  <h1><Link to={`/student/${student.id}/goal/${g.id}`}>{g.title} </Link></h1>
                      )
                 })}
         </section>
