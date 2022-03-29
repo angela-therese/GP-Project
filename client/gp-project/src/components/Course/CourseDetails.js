@@ -20,7 +20,7 @@ const CourseDetails = () => {
   useEffect(() => {
     getById(id).then(setCourse);
   }, []);
-  debugger
+ 
 
   if (!course) {
     return null;

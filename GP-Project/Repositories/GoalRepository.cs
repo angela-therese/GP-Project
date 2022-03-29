@@ -38,7 +38,7 @@ namespace GrowPath.Repositories
                             goal = new Goal()
                             {
                                 Id = DbUtils.GetInt(reader, "GoalId"),
-                                Title=DbUtils.GetString(reader, "Title"),
+                                Title = DbUtils.GetString(reader, "Title"),
                                 Description = DbUtils.GetString(reader, "Description"),
                                 StudentId = DbUtils.GetInt(reader, "GoalStudentId"),
                                 DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
@@ -53,35 +53,43 @@ namespace GrowPath.Repositories
                                     ClassId = DbUtils.GetInt(reader, "ClassId"),
                                     ImageUrl = DbUtils.GetString(reader, "ImageUrl")
                                 }
-                        }
-
-
-                        //if (DbUtils.IsNotDbNull(reader, "GoalStudentId"))
-                        //{
-                        //    Student Student = new Student()
-                        //    {
-                        //        Id = DbUtils.GetInt(reader, "StudentId"),
-                        //        FirstName = DbUtils.GetString(reader, "FirstName"),
-                        //        LastName=DbUtils.GetString(reader, "LastName"),
-                        //        Email = DbUtils.GetString(reader,"Email"),
-                        //        ClassId = DbUtils.GetInt(reader, "ClassId"),
-                        //        ImageUrl = DbUtils.GetString(reader, "ImageUrl")
-
-                        //    };
+                            }
                             ;
                         }
                     }
                     reader.Close();
                     return goal;
 
-                }      
-                
+                     }
+                 }    
             }
 
 
+            public void Add(Goal goal)
+            {
+                using (var conn = Connection)
+                {
+                    conn.Open();
+                    using (var cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = @"
+                        INSERT INTO Goal (Title, Description, StudentId, DateCreated, GrowthCount, CategoryId)
+                        OUTPUT INSERTED.ID
+                        VALUES (@Title, @Description, @StudentId, @DateCreated, @GrowthCount, @CategoryId )";
 
+                        DbUtils.AddParameter(cmd, "@Title", goal.Title);
+                        DbUtils.AddParameter(cmd, "@Description", goal.Description);
+                        DbUtils.AddParameter(cmd, "@StudentId", goal.StudentId);
+                        DbUtils.AddParameter(cmd, "@DateCreated", goal.DateCreated);
+                        DbUtils.AddParameter(cmd, "@GrowthCount", goal.GrowthCount);
+                    DbUtils.AddParameter(cmd, "@CategoryId", goal.CategoryId);
 
-        }
+                        goal.Id = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
 
     }
+
 }
+

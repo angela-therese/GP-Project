@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {GardenPrint} from "../Garden/Garden"
-import { Link, useParams} from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider"
-import { useContext } from "react";
 import NavBar from '../Nav/Nav'
-import Student from "../Student/Student";
+import './Goal.css'
+
+
 
 
 
@@ -12,12 +12,25 @@ import Student from "../Student/Student";
 
 const Goal = ({ goal }) => {
   
+    let studentId = goal.studentId
     
     return (
       <>
      
         <NavBar />
-        <h1>{goal.title}</h1>
+        <div className="goal-main-container">
+        <h1>Goal Details</h1>
+        <Link to={`/student/${studentId}`}>Back to student goal list</Link>
+        <div className="details-container">
+            <section className="section-1">
+                <h2>{goal.title}</h2>
+                <p>Your goal garden</p>
+                <section className="garden-section"><GardenPrint/></section>
+            </section>
+        </div>
+        </div>
+        
+        
      </>
     );
   };

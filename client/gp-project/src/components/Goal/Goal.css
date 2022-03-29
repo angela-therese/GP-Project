@@ -1,0 +1,12 @@
+.goal-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.garden-section {
+    background-color: rgb(62, 134, 62);
+    border-radius: 3em;
+}

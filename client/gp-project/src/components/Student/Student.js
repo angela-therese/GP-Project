@@ -16,7 +16,7 @@ const Student = ({ student }) => {
         <NavBar/>
         <div className="heading">
             <h1 className="heading">{student.firstName} {student.lastName} - Details</h1>
-            <Link to={`/user/${localStorage.growpathUser.id}`}>Back to main</Link>
+            <Link to={`/course/${student.classId}`}>Back to class roster</Link>
         </div>
         <br/><br/>
         

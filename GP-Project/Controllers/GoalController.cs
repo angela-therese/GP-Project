@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GrowPath.Repositories;
+using GrowPath.Models;
 
 namespace GrowPath.Controllers
 {
@@ -21,7 +22,7 @@ namespace GrowPath.Controllers
 
 
         [HttpGet("GetById")]
-        public IActionResult GetByIdWithCourses(int id)
+        public IActionResult GetById(int id)
         {
             var goal = _goalRepository.GetById(id);
             if (goal == null)
@@ -30,6 +31,14 @@ namespace GrowPath.Controllers
             }
             return Ok(goal);
         }
+
+        [HttpPost]
+        public IActionResult Post(Goal goal)
+        {
+            _goalRepository.Add(goal);
+            return CreatedAtAction("GetById", new { id = goal.Id }, goal);
+        }
+
 
     }
 }
