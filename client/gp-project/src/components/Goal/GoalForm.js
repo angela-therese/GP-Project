@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { GoalContext } from "../../providers/GoalProvider";
 // import GoalList from "./GoalList";
 import { useNavigate, useParams } from "react-router-dom";
+import './Goal.css'
 
 
 
@@ -94,7 +95,7 @@ return (
             <input type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Describe goal here" value={goal.description || ""} />
           </div>
         </fieldset>
-        <button className="btn btn-primary"
+        <button className="goal-button"
           onClick={handleClickSaveGoal}>
           Save Goal
         </button>

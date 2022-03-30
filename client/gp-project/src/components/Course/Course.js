@@ -8,9 +8,34 @@ import './Course.css'
 
 
 
+// export const GardenPrint = () => {
+
+//     const{getById} = useContext(GoalContext);
+//     const {goalId} = useParams
+
+    
+//     let flowerArray = []
+//     let i 
+//     for(i = 0; i < count; i++){
+//         flowerArray.push(i)
+//     }
+//     // console.log(flowerArray)
+
+//     return (
+//         flowerArray.map((f)=>{
+//             return (
+//                 <img alt="flower" src={Flower}/>
+//             )
+//         })
+//     )
+
+//  } 
+
+
 
 
 const Course = ({ course }) => {
+
   
     const { logout } = useContext(AuthContext);
     const { id } = useParams();

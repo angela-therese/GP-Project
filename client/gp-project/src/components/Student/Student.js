@@ -30,11 +30,11 @@ const Student = ({ student }) => {
                      )
                 })}
         </section>
+        
+       <section> <Link className="goal-button" to={`/student/${student.id}/goal/add`}>Add New Goal</Link></section>
         </section>
        
         </div>
-        
-        
         
         
         </>
