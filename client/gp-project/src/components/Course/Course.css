@@ -6,6 +6,11 @@
     text-align: center;
     font-weight: bold;
 }
+
+.table-headings {
+    font-weight: bold;
+    background-color: lightblue;
+}
 .main-container {
     display:flex;
     flex-direction: row;

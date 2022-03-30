@@ -89,6 +89,43 @@ namespace GrowPath.Repositories
                 }
             }
 
+
+        public void Update(Goal goal)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                        UPDATE Goal
+                           SET Title = @Title,
+                               Description = @Description,
+                               StudentId = @StudentId,
+                               DateCreated = @DateCreated,
+                               GrowthCount = @GrowthCount,
+                               CategoryId = @CategoryId 
+                              
+                               
+                               
+                             
+                         WHERE Id = @Id";
+
+
+                    DbUtils.AddParameter(cmd, "@Title", goal.Title);
+                    DbUtils.AddParameter(cmd, "@Description", goal.Description);
+                    DbUtils.AddParameter(cmd, "@StudentId", goal.StudentId);
+                    DbUtils.AddParameter(cmd, "@DateCreated", goal.DateCreated);
+                    DbUtils.AddParameter(cmd, "@GrowthCount", goal.GrowthCount);
+                    DbUtils.AddParameter(cmd, "@CategoryId", goal.CategoryId);
+                    DbUtils.AddParameter(cmd, "@Id", goal.Id);
+
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 
 }

@@ -21,7 +21,7 @@ namespace GrowPath.Controllers
         }
 
 
-        [HttpGet("GetById")]
+        [HttpGet("GetGoal")]
         public IActionResult GetById(int id)
         {
             var goal = _goalRepository.GetById(id);
@@ -37,6 +37,18 @@ namespace GrowPath.Controllers
         {
             _goalRepository.Add(goal);
             return CreatedAtAction("GetById", new { id = goal.Id }, goal);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Goal goal)
+        {
+            if (id != goal.Id)
+            {
+                return BadRequest();
+            }
+
+            _goalRepository.Update(goal);
+            return NoContent();
         }
 
 

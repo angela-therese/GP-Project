@@ -13,8 +13,8 @@ export const GoalProvider = (props) => {
     }
 
 
-    const getById = (id) => {
-        return fetch (`${baseUrl}/api/Goal/GetById?id=${id}`)
+    const getGoal= (id) => {
+        return fetch (`${baseUrl}/api/Goal/GetGoal?id=${id}`)
         .then((res) => res.json());
             };
     
@@ -32,8 +32,22 @@ export const GoalProvider = (props) => {
     }
 
 
+    const updateGoal = (goal) => {
+
+        debugger
+        return fetch(`${baseUrl}/api/Goal/${goal.id}`, 
+        {
+            method: "PUT",
+            headers : {
+                "Content-Type": "application/json"
+            }, 
+            body: JSON.stringify(goal)
+        })
+        .then(getGoal)
+    }
+
 return (
-    <GoalContext.Provider value ={{getAllCategories, getById, addGoal}}>
+    <GoalContext.Provider value ={{getAllCategories, getGoal, addGoal, updateGoal}}>
         {props.children}
     </GoalContext.Provider>
 )

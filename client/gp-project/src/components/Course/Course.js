@@ -8,30 +8,6 @@ import './Course.css'
 
 
 
-// export const GardenPrint = () => {
-
-//     const{getById} = useContext(GoalContext);
-//     const {goalId} = useParams
-
-    
-//     let flowerArray = []
-//     let i 
-//     for(i = 0; i < count; i++){
-//         flowerArray.push(i)
-//     }
-//     // console.log(flowerArray)
-
-//     return (
-//         flowerArray.map((f)=>{
-//             return (
-//                 <img alt="flower" src={Flower}/>
-//             )
-//         })
-//     )
-
-//  } 
-
-
 
 
 const Course = ({ course }) => {
@@ -65,7 +41,7 @@ const Course = ({ course }) => {
         <h3>Class Roster</h3>
         <table>
             <thead>
-            <tr>
+            <tr className="table-headings">
                 <th>Student Name</th>
                 <th>Email</th>
                 <th>Course</th>
@@ -80,7 +56,7 @@ const Course = ({ course }) => {
             
             <td> <a href={"mailto:" + s.email}>{s.email}</a></td>
             <td>{course.name}</td>
-            <td className="button-link"><button>View</button></td>
+            {/* <td className="button-link"><button>View</button></td> */}
             {/* <Link className="button-link"to={`/course/${c.id}`}>Details</Link> */}
            </tr>
           

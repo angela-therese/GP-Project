@@ -6,11 +6,11 @@ import {useParams} from 'react-router-dom'
 
 
 
+
+
 let count = 8
 
-
 export const GardenPrint = () => {
-
     let flowerArray = []
     let i 
     for(i = 0; i < count; i++){

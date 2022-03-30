@@ -11,14 +11,14 @@ import Goal from "./Goal"
 const GoalDetails = () => {
   
   const [goal, setGoal] = useState();
-  const { getById } = useContext(GoalContext);
+  const { getGoal } = useContext(GoalContext);
   const { goalId, studentId } = useParams();
 
 
     
 
   useEffect(() => {
-    getById(goalId).then(setGoal);
+    getGoal(goalId).then(setGoal);
   }, []);
  
 

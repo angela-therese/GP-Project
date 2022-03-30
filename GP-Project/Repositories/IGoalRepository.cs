@@ -6,5 +6,6 @@ namespace GrowPath.Repositories
     {
         Goal GetById(int id);
          void Add(Goal goal);
+        void Update(Goal goal);
     }
 }

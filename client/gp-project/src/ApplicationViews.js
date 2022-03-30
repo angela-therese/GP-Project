@@ -6,6 +6,7 @@ import StudentDetails from "./components/Student/StudentDetails";
 import CourseDetails from "./components/Course/CourseDetails";
 import GoalDetails from "./components/Goal/GoalDetails";
 import GoalForm from "./components/Goal/GoalForm";
+import GoalEditForm from "./components/Goal/GoalEditForm";
 
 
 
@@ -27,6 +28,9 @@ const ApplicationViews = () => {
           </Route>
 
           <Route exact path="/student/:studentId/goal/:goalId" element={<GoalDetails/>}>
+          </Route>
+
+          <Route exact path="/goal/edit/:goalId" element={<GoalEditForm/>}>
           </Route>
 
           <Route exact path="/student/:studentId/goal/add" element={<GoalForm/>}>

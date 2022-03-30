@@ -10,13 +10,15 @@ import { StudentContext } from "../../providers/StudentProvider";
 const currentTime = new Date();
 
 
-const GoalForm = () => { 
-  const { addGoal, updateGoal} = useContext(GoalContext)
+const GoalEditForm = () => { 
+  const { updateGoal, getGoal} = useContext(GoalContext)
   const {getById} = useContext(StudentContext)
   const { goalId, studentId} = useParams();
   const [student, setStudent] = useState();
+
   const navigate = useNavigate();
- debugger
+
+
   useEffect(() => {
     getById(studentId).then(setStudent);
   }, []);
@@ -25,13 +27,7 @@ const GoalForm = () => {
   
 
   //for edit hold onto state of Goal in this view
-  const [goal, setGoal] = useState({
-    title: "",
-    imageUrl: "",
-    caption: "",
-    userProfileId: null,
-    dateCreated: ""
-  });
+  const [goal, setGoal] = useState({})
   //wait for data before button is active
   const [isLoading, setIsLoading] = useState(true);
   
@@ -49,38 +45,45 @@ const GoalForm = () => {
 
 
   const handleClickSaveGoal = () => {
-    
-    //disable the button - no extra clicks
     setIsLoading(true);
-
     if(goalId){
+    //disable the button - no extra clicks
+       
         updateGoal({
             id:goal.id,
             title: goal.title,
             description: goal.description,
-            studentId: studentId,
+            studentId: goal.studentId,
             dateCreated: currentTime,
             categoryId: parseInt(goal.categoryId)
         })
+        .then(setGoal({}))
+        .then(getGoal)
         .then(() => navigate(`/student/${goal.student?.id}/goal/${goal.id}`))
-    }
+    }}
+ 
  //WHY PARSEINT
+    useEffect(() => {
+        if(goalId){
+            getGoal(goalId)
+            .then(goal => {
+                setGoal(goal)
+            setIsLoading(false)
+        })}
+        else {
+            setIsLoading(false)
+        }
+    }, [])
 
-    else {
-      addGoal({
-        title: goal.title,
-        description: goal.description,
-        studentId: studentId,
-        dateCreated: currentTime,
-        categoryId: 1
-      })
-        .then(setGoal ({}))
-        .then(() => {
-            return navigate(`/student/${studentId}`);
-        })
+ 
+   
+        // .then(setGoal ({}))
+        // .then(() => {
+        //     return navigate(`/student/${studentId}`);
+        // })
     
-  }
-}
+  
+
 
 return (
 
@@ -112,6 +115,6 @@ return (
 
 }
 
-export default GoalForm;
+export default GoalEditForm;
 
 
