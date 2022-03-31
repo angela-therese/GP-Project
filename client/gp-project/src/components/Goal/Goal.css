@@ -1,6 +1,17 @@
 h1, h2 {
     font-weight: bolder ;
 }
+
+#description {
+    width: 50vw;
+    height: 15vh;
+   
+}
+
+#title {
+    width: 30vw
+}
+
 .goal-main-container {
     display: flex;
     flex-direction: column;
@@ -17,7 +28,7 @@ h1, h2 {
 }
 
 .goal-button {
-    background-color: salmon;
+    background-color: lightskyblue;
     text-decoration: none;
     padding: .5em;
     border-radius:1em;
@@ -35,7 +46,25 @@ h1, h2 {
     border-radius: 3em;
     margin-top: 2em;
     padding: 0em 1em 1em;
+}
 
+.button-section {
+    display: flex;
+    flex-direction: column;
+}
 
+.delete-goal-button {
+    margin-top: 1em;
+    background-color: salmon;
+    border: none;
+    border-radius: .5em;
+    color: white;
+    font-weight: bold;
+    padding: .5em;
 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
 }

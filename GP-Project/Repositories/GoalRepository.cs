@@ -13,6 +13,49 @@ namespace GrowPath.Repositories
     {
         public GoalRepository(IConfiguration configuration) : base(configuration) { }
 
+
+        public List<Goal> GetAll()
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                SELECT Id, Title, Description, StudentId, DateCreated, GrowthCount, CategoryId
+                    FROM Goal";
+
+                    var reader = cmd.ExecuteReader();
+
+                    var goals = new List<Goal>();
+                    while (reader.Read())
+                    {
+                        goals.Add(new Goal()
+                        {
+                            Id = DbUtils.GetInt(reader, "Id"),
+                            Title = DbUtils.GetString(reader, "Title"),
+                            Description = DbUtils.GetString(reader, "Description"),
+                            StudentId = DbUtils.GetInt(reader, "StudentId"),
+                            DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
+                            GrowthCount = DbUtils.GetInt(reader, "GrowthCount"),
+                            CategoryId = DbUtils.GetInt(reader, "CategoryId")
+                        });
+
+
+                    }
+                    reader.Close();
+
+                    return goals;
+                }
+            }
+        }
+
+
+
+
+
+
+        //END GET ALL
         public Goal GetById(int id)
         {
             using (var conn = Connection)
@@ -64,7 +107,7 @@ namespace GrowPath.Repositories
                  }    
             }
 
-
+        //END BYID
             public void Add(Goal goal)
             {
                 using (var conn = Connection)
@@ -89,7 +132,7 @@ namespace GrowPath.Repositories
                 }
             }
 
-
+        //END ADD
         public void Update(Goal goal)
         {
             using (var conn = Connection)
@@ -125,6 +168,25 @@ namespace GrowPath.Repositories
                 }
             }
         }
+
+        //END UPDATE
+
+        public void Delete(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM Goal WHERE Id = @Id";
+                    DbUtils.AddParameter(cmd, "@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
 
     }
 

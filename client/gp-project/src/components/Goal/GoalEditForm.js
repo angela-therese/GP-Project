@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GoalContext } from "../../providers/GoalProvider";
 // import GoalList from "./GoalList";
-import { useNavigate, useParams } from "react-router-dom";
+import { GoalCategoryContext } from "../../providers/GoalCategoryProvider";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import './Goal.css'
 import { StudentContext } from "../../providers/StudentProvider";
 
@@ -12,18 +13,12 @@ const currentTime = new Date();
 
 const GoalEditForm = () => { 
   const { updateGoal, getGoal} = useContext(GoalContext)
-  const {getById} = useContext(StudentContext)
-  const { goalId, studentId} = useParams();
-  const [student, setStudent] = useState();
-
+  const {categories, getCategories} = useContext(GoalCategoryContext)
+  const { goalId} = useParams();
   const navigate = useNavigate();
 
 
-  useEffect(() => {
-    getById(studentId).then(setStudent);
-  }, []);
-
-  console.log(student)
+  
   
 
   //for edit hold onto state of Goal in this view
@@ -40,8 +35,22 @@ const GoalEditForm = () => {
     // update state
     setGoal(newGoal)
   }
+ 
 
-
+  useEffect(() => {
+    getCategories().then(() => {
+    if(goalId){
+        getGoal(goalId)
+        .then(goal => {
+            setGoal(goal)
+        setIsLoading(false)
+    })
+  }
+    else {
+        setIsLoading(false)
+    }
+  })
+}, [])
 
 
   const handleClickSaveGoal = () => {
@@ -63,26 +72,9 @@ const GoalEditForm = () => {
     }}
  
  //WHY PARSEINT
-    useEffect(() => {
-        if(goalId){
-            getGoal(goalId)
-            .then(goal => {
-                setGoal(goal)
-            setIsLoading(false)
-        })}
-        else {
-            setIsLoading(false)
-        }
-    }, [])
-
+ 
  
    
-        // .then(setGoal ({}))
-        // .then(() => {
-        //     return navigate(`/student/${studentId}`);
-        // })
-    
-  
 
 
 return (
@@ -90,7 +82,8 @@ return (
 
     <div>
       <form className="goal-form">
-        <h2 className="goal-form-title">{goalId ? <>Edit Goal</> : <>New Goal for {student?.firstName} {student?.lastName}</>}</h2>
+        <h2 className="goal-form-title">Edit Goal for {goal.student?.firstName}</h2>
+        <Link to={`/student/${goal.student?.id}`}>Back to goals</Link>
         <fieldset>
           <div className="form-group">
             <label htmlFor="title">Goal title:</label>
@@ -101,9 +94,22 @@ return (
         <fieldset>
           <div className="form-group">
             <label htmlFor="description">Goal description:</label>
-            <input type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Describe goal here" value={goal.description || ""} />
+            <textarea type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Describe goal here" value={goal.description || ""} />
           </div>
         </fieldset>
+
+        <fieldset>
+        <div className="form-group">
+            <label htmlFor="category">Goal category:</label>
+            <select value={goal.categoryId} name="categoryId" id="categoryId" onChange={handleControlledInputChange}>
+                <option value="0">Select a category</option>
+                {categories.map(c => (
+                  <option key={c.id} value={c.id}>{c.name}</option>
+                ))}
+            </select>
+        </div>
+        </fieldset>
+
         <button className="goal-button"
           onClick={handleClickSaveGoal}>
           Save Goal

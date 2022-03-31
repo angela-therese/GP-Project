@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GoalContext } from "../../providers/GoalProvider";
 // import GoalList from "./GoalList";
+import { GoalCategoryContext } from "../../providers/GoalCategoryProvider"
 import { useNavigate, useParams } from "react-router-dom";
 import './Goal.css'
 import { StudentContext } from "../../providers/StudentProvider";
@@ -12,11 +13,12 @@ const currentTime = new Date();
 
 const GoalForm = () => { 
   const { addGoal, updateGoal} = useContext(GoalContext)
-  const {getById} = useContext(StudentContext)
+  const {getById} = useContext(StudentContext);
+  const {categories, getCategories} = useContext(GoalCategoryContext)
   const { goalId, studentId} = useParams();
   const [student, setStudent] = useState();
   const navigate = useNavigate();
- debugger
+
   useEffect(() => {
     getById(studentId).then(setStudent);
   }, []);
@@ -88,6 +90,7 @@ return (
     <div>
       <form className="goal-form">
         <h2 className="goal-form-title">{goalId ? <>Edit Goal</> : <>New Goal for {student?.firstName} {student?.lastName}</>}</h2>
+        
         <fieldset>
           <div className="form-group">
             <label htmlFor="title">Goal title:</label>
@@ -98,9 +101,22 @@ return (
         <fieldset>
           <div className="form-group">
             <label htmlFor="description">Goal description:</label>
-            <input type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Describe goal here" value={goal.description || ""} />
+            <textarea type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Describe goal here" value={goal.description || ""} />
           </div>
         </fieldset>
+
+        <fieldset>
+        <div className="form-group">
+            <label htmlFor="category">Goal category:</label>
+            <select value={goal.categoryId} name="categoryId" id="categoryId" onChange={handleControlledInputChange}>
+                <option value="0">Select a category</option>
+                {categories.map(c => (
+                  <option key={c.id} value={c.id}>{c.name}</option>
+                ))}
+            </select>
+        </div>
+        </fieldset>
+       
         <button className="goal-button"
           onClick={handleClickSaveGoal}>
           Save Goal

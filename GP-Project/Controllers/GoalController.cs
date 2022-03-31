@@ -21,6 +21,13 @@ namespace GrowPath.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok(_goalRepository.GetAll());
+        }
+
+
         [HttpGet("GetGoal")]
         public IActionResult GetById(int id)
         {
@@ -48,6 +55,13 @@ namespace GrowPath.Controllers
             }
 
             _goalRepository.Update(goal);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _goalRepository.Delete(id);
             return NoContent();
         }
 

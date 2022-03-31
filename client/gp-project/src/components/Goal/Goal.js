@@ -1,7 +1,8 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { GoalContext } from "../../providers/GoalProvider";
+import { StudentContext } from "../../providers/StudentProvider";
 import {GardenPrint} from "../Garden/Garden"
-import GoalForm from "./GoalForm";
 import NavBar from '../Nav/Nav'
 import './Goal.css'
 import Flower from '../../images/flower.png'
@@ -17,7 +18,12 @@ const Goal = ({ goal }) => {
   
     let studentId = goal.studentId
     let count = goal.growthCount
-    let {goalId} = useParams();
+    const {goalId} = useParams();
+    const { deleteGoal } = useContext(GoalContext);
+    const { getById } = useContext(StudentContext);
+    const navigate = useNavigate()
+
+    debugger
     
     const GardenPrint = () => {
       let flowerArray = []
@@ -37,6 +43,12 @@ const Goal = ({ goal }) => {
 
     }
 
+    const handleClickDelete = () => {
+        deleteGoal(goalId)
+        .then(getById(studentId))
+        .then(navigate(`/student/${studentId}`))
+    }
+
     return (
       <>
      
@@ -52,8 +64,10 @@ const Goal = ({ goal }) => {
                  <GardenPrint />
                 </section>
                 <p>{goal.description}</p>
-                <section> <Link className="goal-button" to={`/goal/edit/${goal.id}`}>UpdateGoal</Link></section>
-            </section>
+                <section className="button-section"> 
+                    <Link className="goal-button" to={`/goal/edit/${goal.id}`}>Update Goal</Link></section>
+                    <button className="delete-goal-button" onClick={handleClickDelete}>Delete Goal</button>
+                </section>
         </div>
         </div>
        

@@ -8,6 +8,7 @@ import {UserProvider} from "./providers/UserProfileProvider"
 import {CourseProvider} from "./providers/CourseProvider"
 import { StudentProvider } from "./providers/StudentProvider";
 import { GoalProvider } from "./providers/GoalProvider";
+import { GoalCategoryProvider} from './providers/GoalCategoryProvider';
 
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
           <CourseProvider>
             <StudentProvider>
               <GoalProvider>
+                <GoalCategoryProvider>
                 <ApplicationViews/>
+                </GoalCategoryProvider>
               </GoalProvider>
           </StudentProvider>
           </CourseProvider>
