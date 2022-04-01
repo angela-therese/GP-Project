@@ -9,6 +9,7 @@ import {CourseProvider} from "./providers/CourseProvider"
 import { StudentProvider } from "./providers/StudentProvider";
 import { GoalProvider } from "./providers/GoalProvider";
 import { GoalCategoryProvider} from './providers/GoalCategoryProvider';
+import { FlowerProvider } from './providers/FlowerProvider'
 
 
 function App() {
@@ -20,7 +21,9 @@ function App() {
             <StudentProvider>
               <GoalProvider>
                 <GoalCategoryProvider>
+                  <FlowerProvider>
                 <ApplicationViews/>
+                </FlowerProvider>
                 </GoalCategoryProvider>
               </GoalProvider>
           </StudentProvider>

@@ -20,7 +20,9 @@ const GoalForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    getCategories().then(() => {
     getById(studentId).then(setStudent);
+    })
   }, []);
 
   console.log(student)

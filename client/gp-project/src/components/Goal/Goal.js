@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { GoalContext } from "../../providers/GoalProvider";
 import { StudentContext } from "../../providers/StudentProvider";
-import {GardenPrint} from "../Garden/Garden"
+import {GardenGoalPrint} from "../Garden/GardenGoalPrint"
 import NavBar from '../Nav/Nav'
 import './Goal.css'
 import Flower from '../../images/flower.png'
@@ -25,23 +25,23 @@ const Goal = ({ goal }) => {
 
     debugger
     
-    const GardenPrint = () => {
-      let flowerArray = []
-      let i 
-      for(i = 0; i < count; i++){
-          flowerArray.push(i)
-      }
+    // const GardenPrint = () => {
+    //   let flowerArray = []
+    //   let i 
+    //   for(i = 0; i < count; i++){
+    //       flowerArray.push(i)
+    //   }
 
-      return (
-        flowerArray.map((f)=>{
-            return (
-                <img alt="flower" src={Flower}/>
+    //   return (
+    //     flowerArray.map((f)=>{
+    //         return (
+    //             <img alt="flower" src={Flower}/>
                 
-            )
-        })
-    )
+    //         )
+    //     })
+    // )
 
-    }
+    // }
 
     const handleClickDelete = () => {
         deleteGoal(goalId)
@@ -61,7 +61,7 @@ const Goal = ({ goal }) => {
             
                 <h2>{goal.title}</h2>
                 <section className="garden-section">
-                 <GardenPrint />
+                 <GardenGoalPrint />
                 </section>
                 <p>{goal.description}</p>
                 <section className="button-section"> 

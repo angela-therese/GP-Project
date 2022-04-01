@@ -52,6 +52,8 @@ const GoalEditForm = () => {
   })
 }, [])
 
+console.log(categories.length)
+
 
   const handleClickSaveGoal = () => {
     setIsLoading(true);

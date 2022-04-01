@@ -38,6 +38,7 @@ namespace GrowPath
             services.AddTransient<IStudentRepository, StudentRepository>();
             services.AddTransient<IGoalCategoryRepository, GoalCategoryRepository >(); 
             services.AddTransient<IGoalRepository, GoalRepository>();
+            services.AddTransient<IFlowerRepository, FlowerRepository>();
 
 
         }

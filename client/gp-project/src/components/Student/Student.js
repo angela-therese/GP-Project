@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 import { useContext } from "react";
+import {GardenGoalPrint} from "../Garden/GardenGoalPrint"
 import NavBar from '../Nav/Nav'
 import './Student.css'
 
@@ -26,8 +27,10 @@ const Student = ({ student }) => {
                 <section className="goals-container" >
         {student.goals?.map((g) => {
                     return (
+                        
                   <h1><Link to={`/student/${student.id}/goal/${g.id}`}>{g.title} </Link></h1>
                      )
+                    
                 })}
         </section>
         

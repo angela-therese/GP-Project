@@ -1,5 +1,5 @@
 import React from "react";
-import {GardenPrint} from "../Garden/Garden"
+import {GardenClassPrint} from "../Garden/GardenClass"
 import { Link, useParams} from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider"
 import { useContext } from "react";
@@ -65,14 +65,11 @@ const Course = ({ course }) => {
         })}
         </table> 
         </section>
-        
-       
-
 
         <section className="section-2-container">
             <h3>Class Garden</h3>
         <section className="garden-container" >
-        <GardenPrint />
+        <GardenClassPrint />
         </section>
         </section>
          
