@@ -7,6 +7,7 @@ namespace GrowPath.Repositories
     {
         List<Flower> GetAll();
         List<Flower> GetByCourseId(int id);
-        List<Flower> GetByGoalId(int id); 
+        List<Flower> GetByGoalId(int id);
+        void Add(Flower flower);
     }
 }

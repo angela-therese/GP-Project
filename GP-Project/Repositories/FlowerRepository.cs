@@ -107,7 +107,8 @@ namespace GrowPath.Repositories
                SELECT f.Id AS FlowerId, f.GoalId AS FlowerGoalId, f.Note, f.DateAdded, g.Id AS GoalId 
                     FROM Flower f
                     JOIN Goal g ON f.GoalId = g.id
-                    WHERE f.GoalId = @Id";
+                    WHERE f.GoalId = @Id
+                       ORDER BY f.Id DESC";
 
 
 
@@ -124,13 +125,41 @@ namespace GrowPath.Repositories
                             Note = DbUtils.GetString(reader, "Note"),
                             DateAdded = DbUtils.GetDateTime(reader, "DateAdded")
 
-                        });
+                        }); 
 
 
                     }
                     reader.Close();
 
                     return flowers;
+                }
+            }
+        }
+
+
+        //END GET BY GOAL ID
+
+        public void Add(Flower flower)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                        INSERT INTO Flower (GoalId, Note, DateAdded)
+                        OUTPUT INSERTED.ID
+                        VALUES (@GoalId, @Note, @DateAdded)
+                                 ";
+
+
+                    DbUtils.AddParameter(cmd, "@GoalId", flower.GoalId);
+                    DbUtils.AddParameter(cmd, "@Note", flower.Note);
+                    DbUtils.AddParameter(cmd, "@DateAdded", flower.DateAdded);
+                   
+
+                    flower.Id = (int)cmd.ExecuteScalar();
+
                 }
             }
         }

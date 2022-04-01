@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GrowPath.Repositories;
+using GrowPath.Models;
 
 namespace GP_Project.Controllers
 {
@@ -45,6 +46,13 @@ namespace GP_Project.Controllers
                 return NotFound();
             }
             return Ok(flower);
+        }
+
+        [HttpPost]
+        public IActionResult Post(Flower flower)
+        {
+            _flowerRepository.Add(flower);
+            return CreatedAtAction("GetByGoalId", new { id = flower.Id }, flower);
         }
 
 

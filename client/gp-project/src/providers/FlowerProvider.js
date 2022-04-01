@@ -28,11 +28,22 @@ export const FlowerProvider = (props) => {
         .then(setFlowers)
     };
 
+    const addFlower = (flower) => {
+        return fetch (`${baseUrl}/api/flower`,{
+        
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(flower),
+        })
+    };
+
     return (
-        <FlowerContext.Provider value ={{flowers, getAllFlowers, getByCourseId, getByGoalId}}>
+        <FlowerContext.Provider value ={{flowers, getAllFlowers, getByCourseId, getByGoalId, addFlower}}>
             {props.children}
         </FlowerContext.Provider>
     )
 }
 
-// export default FlowerProvider
+export default FlowerProvider

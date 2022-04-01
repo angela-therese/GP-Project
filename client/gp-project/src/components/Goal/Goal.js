@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { GoalContext } from "../../providers/GoalProvider";
 import { StudentContext } from "../../providers/StudentProvider";
+import { FlowerContext } from "../../providers/FlowerProvider";
 import {GardenGoalPrint} from "../Garden/GardenGoalPrint"
 import NavBar from '../Nav/Nav'
 import './Goal.css'
-import Flower from '../../images/flower.png'
-
+import WateringCan from '../../images/wateringCan.png'
 
 
 
@@ -21,27 +21,11 @@ const Goal = ({ goal }) => {
     const {goalId} = useParams();
     const { deleteGoal } = useContext(GoalContext);
     const { getById } = useContext(StudentContext);
+    const {flowers, getByGoalId} = useContext(FlowerContext);
     const navigate = useNavigate()
 
-    debugger
-    
-    // const GardenPrint = () => {
-    //   let flowerArray = []
-    //   let i 
-    //   for(i = 0; i < count; i++){
-    //       flowerArray.push(i)
-    //   }
 
-    //   return (
-    //     flowerArray.map((f)=>{
-    //         return (
-    //             <img alt="flower" src={Flower}/>
-                
-    //         )
-    //     })
-    // )
 
-    // }
 
     const handleClickDelete = () => {
         deleteGoal(goalId)
@@ -49,32 +33,72 @@ const Goal = ({ goal }) => {
         .then(navigate(`/student/${studentId}`))
     }
 
+    useEffect(() => 
+    {  getByGoalId(goalId);
+    }, [])
+
+    console.log(flowers)
+    
+
     return (
       <>
      
         <NavBar />
         <div className="goal-main-container">
-        <h1>Goal Details</h1>
+        
+        <h1>{goal.title}</h1>
         <Link to={`/student/${studentId}`}>Back to student goal list</Link>
-        <div className="details-container">
-            <section className="section-1 goal-details-section">
-            
-                <h2>{goal.title}</h2>
-                <section className="garden-section">
-                 <GardenGoalPrint />
-                </section>
-                <p>{goal.description}</p>
-                <section className="button-section"> 
-                    <Link className="goal-button" to={`/goal/edit/${goal.id}`}>Update Goal</Link></section>
-                    <button className="delete-goal-button" onClick={handleClickDelete}>Delete Goal</button>
-                </section>
+
+
+        <div className="landing-div">
+
+        <div className ="section-1 garden-section">
+            <h2>Garden</h2>
+            <section className="garden-print-section">
+            <GardenGoalPrint />
+            </section>
         </div>
+
+        <div className="section-2 goal-details-section">
+
+            <section className="goal-heading">
+            <h1>Description</h1>
+            </section>
+            <p>{goal.description}</p>
+               
         </div>
-       
+   
+
+        <div className ="section-3 actions-section">
+            <h2>Goal Actions</h2>
+            <section className="button-section"> 
+            <Link className="flower-add-button" to={`/student/${studentId}/goal/${goal.id}/flower/add`}>Add a Flower</Link>
+             <Link className="goal-update-button" to={`/goal/edit/${goal.id}`}>Update Goal</Link>
+            <button className="delete-goal-button" onClick={handleClickDelete}>Delete Goal</button>
+            </section>
+        </div>
         
-        
+
+        </div>
+        <div className ="section-4 notes-section">
+           <h3>Flower Notes</h3>
+            {flowers.map((f) => {
+                return (
+                <div className="notes-div">
+                    <p>{f.note}</p>
+                    <p>{f.dateAdded} &nbsp; &nbsp; <button className="goal-update-button">Edit Notes</button> &nbsp; &nbsp; <button className="delete-goal-button">Delete Flower</button></p>
+                </div>  
+                )
+            })}
+        </div>
+           
+
+        </div>
      </>
     );
   };
   
   export default Goal;
+
+
+//   <a href={`/student/${studentId}/goal/${goal.id}/flower/add`}><img alt="watering-can" width="60" src={WateringCan}/></a>

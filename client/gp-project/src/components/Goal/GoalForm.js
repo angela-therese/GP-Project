@@ -76,7 +76,7 @@ const GoalForm = () => {
         description: goal.description,
         studentId: studentId,
         dateCreated: currentTime,
-        categoryId: 1
+        categoryId: goal.categoryId
       })
         .then(setGoal ({}))
         .then(() => {

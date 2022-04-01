@@ -7,11 +7,11 @@ import {FlowerContext} from "../../providers/FlowerProvider";
 
 export const GardenGoalPrint = () => {
 
-    debugger;
+   
      const {flowers, getByGoalId} = useContext(FlowerContext)
 
      const { goalId } = useParams(); 
-     debugger
+ 
      
      
      useEffect(() => {
@@ -28,11 +28,15 @@ export const GardenGoalPrint = () => {
     // console.log(flowerArray)
 
     return (
-        flowerArray.map((f)=>{
+        
+        flowerArray.map((f)=> {
             return (
+                
                 <img alt="flower" src={Flower}/>
             )
         })
+           
+
     )
 
  } 

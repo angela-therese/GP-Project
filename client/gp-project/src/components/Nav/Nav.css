@@ -36,5 +36,5 @@ Button {
   }
 
   button:not([disabled]) {
-    cursor:grab ;
+    cursor:pointer;
 }
