@@ -57,20 +57,20 @@ const GoalForm = () => {
     //disable the button - no extra clicks
     setIsLoading(true);
 
-    if(goalId){
-        updateGoal({
-            id:goal.id,
-            title: goal.title,
-            description: goal.description,
-            studentId: studentId,
-            dateCreated: currentTime,
-            categoryId: parseInt(goal.categoryId)
-        })
-        .then(() => navigate(`/student/${goal.student?.id}/goal/${goal.id}`))
-    }
- //WHY PARSEINT
+//     if(goalId){
+//         updateGoal({
+//             id:goal.id,
+//             title: goal.title,
+//             description: goal.description,
+//             studentId: studentId,
+//             dateCreated: currentTime,
+//             categoryId: parseInt(goal.categoryId)
+//         })
+//         .then(() => navigate(`/student/${goal.student?.id}/goal/${goal.id}`))
+//     }
+//  //WHY PARSEINT
 
-    else {
+//     else {
       addGoal({
         title: goal.title,
         description: goal.description,
@@ -83,7 +83,7 @@ const GoalForm = () => {
             return navigate(`/student/${studentId}`);
         })
     
-  }
+  // }
 }
 
 return (

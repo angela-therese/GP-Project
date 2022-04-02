@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using GrowPath.Models;
 using GrowPath.Utils;
 
+
 namespace GrowPath.Repositories
 {
     public class FlowerRepository : BaseRepository, IFlowerRepository
@@ -52,6 +53,44 @@ namespace GrowPath.Repositories
         }
 
         //END GET ALL 
+
+        public Flower GetByFlowerId(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+
+                {
+                    cmd.CommandText = @"
+                     SELECT  Id, GoalId, Note, DateAdded
+                    FROM Flower
+                    WHERE Id = @Id
+                                ";
+                    DbUtils.AddParameter(cmd, "@Id", id);
+                    var reader = cmd.ExecuteReader();
+
+                    Flower flower = null;
+                    while (reader.Read())
+                    {
+                        if (flower == null)
+                        {
+                            flower = new Flower()
+                            {
+                                Id = DbUtils.GetInt(reader, "Id"),
+                                GoalId = DbUtils.GetInt(reader, "GoalId"),
+                                Note = DbUtils.GetString(reader, "Note"),
+                                DateAdded = DbUtils.GetDateTime(reader, "DateAdded")
+
+                            };
+                        }
+                    }
+                    reader.Close();
+                    return flower;
+                }
+            }
+        }
+
 
         public List<Flower> GetByCourseId(int id)
         {
@@ -164,6 +203,35 @@ namespace GrowPath.Repositories
             }
         }
 
+        //END ADD FLOWER
+
+        public void Update(Flower flower)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                        UPDATE Flower 
+                        SET  GoalId = @GoalId, 
+                             Note = @Note,
+                            DateAdded = @DateAdded
+                        WHERE Id = @Id
+                                 ";
+
+
+                    DbUtils.AddParameter(cmd, "@GoalId", flower.GoalId);
+                    DbUtils.AddParameter(cmd, "@Note", flower.Note);
+                    DbUtils.AddParameter(cmd, "@DateAdded", flower.DateAdded);
+                    DbUtils.AddParameter(cmd, "@Id", flower.Id);
+
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
 
     }
 }

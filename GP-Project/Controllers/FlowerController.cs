@@ -26,6 +26,17 @@ namespace GP_Project.Controllers
             return Ok(_flowerRepository.GetAll());
         }
 
+        [HttpGet("GetByFlowerId")]
+        public IActionResult GetByFlowerId(int id)
+        {
+            var flower = _flowerRepository.GetByFlowerId(id);
+            if (flower == null)
+            {
+                return NotFound();
+            }
+            return Ok(flower);
+        }
+
         [HttpGet("GetByCourse")]
         public IActionResult GetById(int id)
         {
@@ -55,6 +66,17 @@ namespace GP_Project.Controllers
             return CreatedAtAction("GetByGoalId", new { id = flower.Id }, flower);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Flower flower)
+        {
+            if (id != flower.Id)
+            {
+                return BadRequest();
+            }
+            _flowerRepository.Update(flower);
+            return NoContent();
+           
+        }
 
     }
 }

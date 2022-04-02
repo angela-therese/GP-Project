@@ -1,3 +1,10 @@
+.section-1-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .goal-button {
     background-color: salmon;
     text-decoration: none;
@@ -7,3 +14,23 @@
     font-weight: bold;
     
 }
+
+.goal-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    text-decoration: none;
+    width: 30vw;
+    margin-bottom: 1em;
+    height: 9vh;
+    border-radius: 3em;
+
+}
+
+p.subheader {
+    font-size: small;
+    margin-top: 0em;
+    margin-bottom: 2em;
+}
+

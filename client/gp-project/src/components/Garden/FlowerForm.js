@@ -14,13 +14,6 @@ const FlowerForm = () => {
   const { goalId, studentId} = useParams();
   const navigate = useNavigate();
 
-//   useEffect(() => {
-//     getCategories().then(() => {
-//     getById(studentId).then(setStudent);
-//     })
-//   }, []);
-
-  
 
   //for edit hold onto state of flower in this view
   const [flower, setFlower] = useState({

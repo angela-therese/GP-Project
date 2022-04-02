@@ -16,19 +16,20 @@ const Student = ({ student }) => {
         <>
         <NavBar/>
         <div className="heading">
-            <h1 className="heading">{student.firstName} {student.lastName} - Details</h1>
-            <Link to={`/course/${student.classId}`}>Back to class roster</Link>
+            <h1 className="heading">{student.firstName} {student.lastName} - Goals</h1>
+            <Link className="subheader" to={`/course/${student.classId}`}>Back to class roster</Link>
         </div>
         <br/><br/>
         
         <div className="main-container" >
             <section className="section-1-container">
-            <h3>Goals</h3>
+            <p className="subheader">Click on a goal for details</p>
                 <section className="goals-container" >
         {student.goals?.map((g) => {
                     return (
-                        
-                  <h1><Link to={`/student/${student.id}/goal/${g.id}`}>{g.title} </Link></h1>
+                 <div className="goal-div">
+                  <h1><Link className="goal-div" to={`/student/${student.id}/goal/${g.id}`}>{g.title} </Link></h1>
+                  </div>
                      )
                     
                 })}

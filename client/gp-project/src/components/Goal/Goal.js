@@ -33,6 +33,7 @@ const Goal = ({ goal }) => {
         .then(navigate(`/student/${studentId}`))
     }
 
+    
     useEffect(() => 
     {  getByGoalId(goalId);
     }, [])
@@ -73,7 +74,7 @@ const Goal = ({ goal }) => {
             <h2>Goal Actions</h2>
             <section className="button-section"> 
             <Link className="flower-add-button" to={`/student/${studentId}/goal/${goal.id}/flower/add`}>Add a Flower</Link>
-             <Link className="goal-update-button" to={`/goal/edit/${goal.id}`}>Update Goal</Link>
+             <Link className="goal-update-button" to={`/goal/edit/${goal.id}`}>Edit Goal</Link>
             <button className="delete-goal-button" onClick={handleClickDelete}>Delete Goal</button>
             </section>
         </div>
@@ -86,7 +87,9 @@ const Goal = ({ goal }) => {
                 return (
                 <div className="notes-div">
                     <p>{f.note}</p>
-                    <p>{f.dateAdded} &nbsp; &nbsp; <button className="goal-update-button">Edit Notes</button> &nbsp; &nbsp; <button className="delete-goal-button">Delete Flower</button></p>
+                    <p>{f.dateAdded} &nbsp; &nbsp; 
+                    <Link to={`/student/${studentId}/flower/edit/${f.id}`} className="goal-update-button">Edit Notes</Link>
+                     &nbsp; &nbsp; <button className="delete-goal-button">Delete Flower</button></p>
                 </div>  
                 )
             })}

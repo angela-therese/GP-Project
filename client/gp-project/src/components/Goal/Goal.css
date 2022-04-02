@@ -36,6 +36,7 @@ h1, h2, h3 {
     margin-top: 2em;
     width: 20vw;
     border-radius: 3em;
+    
     /* border: salmon solid 1px; */
 }
 
@@ -58,7 +59,7 @@ h1, h2, h3 {
     background-color: white;
     padding-bottom: 1em;
     margin-top: 2em;
-    width: 25vw;
+    width: 20vw;
     border-radius: 3em;
     /* border: salmon solid 1px; */
 }
