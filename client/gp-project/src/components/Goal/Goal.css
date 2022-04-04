@@ -117,11 +117,13 @@ h1, h2, h3 {
     color:white;
     font-weight: bold;
     border: none;
+    
 }
 
 .delete-goal-button {
     margin-top: 1em;
     background-color: salmon;
+    text-decoration: none;
     border: none;
     border-radius: 3em;
     color: white;

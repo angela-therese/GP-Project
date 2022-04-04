@@ -11,5 +11,6 @@ namespace GrowPath.Repositories
         List<Flower> GetByGoalId(int id);
         void Add(Flower flower);
         void Update(Flower flower);
+        void Delete(int id);
     }
 }

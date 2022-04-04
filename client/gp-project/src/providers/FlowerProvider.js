@@ -56,8 +56,15 @@ export const FlowerProvider = (props) => {
         })
     };
 
+    const deleteFlower = (id) => {
+        return fetch (`${baseUrl}/api/flower/${id}`,{
+        
+            method: "DELETE"
+        })
+    };
+
     return (
-        <FlowerContext.Provider value ={{flowers, getAllFlowers, getByCourseId, getByGoalId, getByFlowerId, addFlower, updateFlower}}>
+        <FlowerContext.Provider value ={{flowers, getAllFlowers, getByCourseId, getByGoalId, getByFlowerId, addFlower, updateFlower, deleteFlower}}>
             {props.children}
         </FlowerContext.Provider>
     )

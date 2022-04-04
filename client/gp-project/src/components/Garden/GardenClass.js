@@ -7,11 +7,10 @@ import {FlowerContext} from "../../providers/FlowerProvider";
 
 export const GardenClassPrint = () => {
 
-    debugger;
+    
      const {flowers, getByCourseId} = useContext(FlowerContext)
-
      const { id } = useParams(); 
-     debugger
+    
      
      
      useEffect(() => {
@@ -25,7 +24,7 @@ export const GardenClassPrint = () => {
     for(i = 0; i < count; i++){
         flowerArray.push(i)
     }
-    // console.log(flowerArray)
+   
 
     return (
         flowerArray.map((f)=>{

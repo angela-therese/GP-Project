@@ -4,6 +4,13 @@ Link {
     cursor: grabbing
 }
 
+.welcome-section {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+}
+
 .course-card {
     display: flex;
     flex-direction: row;
@@ -35,4 +42,8 @@ Link {
     text-decoration: none;
     color: black;
     border-radius: 10px;
+}
+
+img {
+    size: 10%;
 }

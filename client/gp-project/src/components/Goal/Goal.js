@@ -21,18 +21,24 @@ const Goal = ({ goal }) => {
     const {goalId} = useParams();
     const { deleteGoal } = useContext(GoalContext);
     const { getById } = useContext(StudentContext);
-    const {flowers, getByGoalId} = useContext(FlowerContext);
+    const {flowers, getByGoalId, deleteFlower} = useContext(FlowerContext);
     const navigate = useNavigate()
 
 
 
 
-    const handleClickDelete = () => {
+    const handleClickDeleteGoal = () => {
         deleteGoal(goalId)
         .then(getById(studentId))
         .then(navigate(`/student/${studentId}`))
     }
 
+
+    // const handleClickDeleteFlower= () => {
+    //     deleteFlower(flowerId)
+    //     .then(getById(studentId))
+    //     .then(navigate(`/student/${studentId}`))
+    // }
     
     useEffect(() => 
     {  getByGoalId(goalId);
@@ -74,8 +80,8 @@ const Goal = ({ goal }) => {
             <h2>Goal Actions</h2>
             <section className="button-section"> 
             <Link className="flower-add-button" to={`/student/${studentId}/goal/${goal.id}/flower/add`}>Add a Flower</Link>
-             <Link className="goal-update-button" to={`/goal/edit/${goal.id}`}>Edit Goal</Link>
-            <button className="delete-goal-button" onClick={handleClickDelete}>Delete Goal</button>
+             
+       <Link className="goal-update-button" to={`/goal/edit/${goal.id}`}>Edit Goal</Link>     <button className="delete-goal-button" onClick={handleClickDeleteGoal}>Delete Goal</button>
             </section>
         </div>
         
@@ -89,7 +95,12 @@ const Goal = ({ goal }) => {
                     <p>{f.note}</p>
                     <p>{f.dateAdded} &nbsp; &nbsp; 
                     <Link to={`/student/${studentId}/flower/edit/${f.id}`} className="goal-update-button">Edit Notes</Link>
-                     &nbsp; &nbsp; <button className="delete-goal-button">Delete Flower</button></p>
+                     &nbsp; &nbsp; 
+                     <Link to={`/student/${studentId}/flower/delete/${f.id}`} className="delete-goal-button">Delete Notes</Link>
+                     &nbsp; &nbsp;
+                     
+                     {/* <button className="delete-goal-button">Delete Flower</button> */}
+                     </p>
                 </div>  
                 )
             })}

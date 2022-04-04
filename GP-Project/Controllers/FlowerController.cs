@@ -78,5 +78,12 @@ namespace GP_Project.Controllers
            
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _flowerRepository.Delete(id);
+            return NoContent();
+        }
+
     }
 }

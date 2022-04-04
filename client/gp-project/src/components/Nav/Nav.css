@@ -5,11 +5,11 @@ Button {
 
 .nav-menu{
     
-    height: 10vh;
+    height: 14vh;
     background-color: white;
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
 }
 
