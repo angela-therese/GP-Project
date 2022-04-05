@@ -37,6 +37,12 @@ namespace GP_Project.Controllers
             return Ok(flower);
         }
 
+        [HttpGet("GetByUser")]
+        public IActionResult GetByUser(int id)
+        {
+            return Ok(_flowerRepository.GetByUser(id));
+        }
+
         [HttpGet("GetByCourse")]
         public IActionResult GetById(int id)
         {

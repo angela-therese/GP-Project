@@ -91,6 +91,48 @@ namespace GrowPath.Repositories
             }
         }
 
+        //END GetByFlowerId
+
+        public List<Flower> GetByUser(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+
+                {
+                    cmd.CommandText = @"
+                     SELECT  f.Id, f.GoalId, f.Note, f.DateAdded,g.StudentId, s.ClassId, c.UserProfileId, up.Id
+                    FROM Flower f
+                    JOIN Goal g ON f.GoalId = g.Id
+                    JOIN Student s ON g.StudentId = s.Id
+                    JOIN Course c ON s.ClassId = c.Id
+                    JOIN UserProfile up ON c.UserProfileId = up.Id
+                    WHERE up.Id = @id
+                                ";
+                    DbUtils.AddParameter(cmd, "@id", id);
+                    var reader = cmd.ExecuteReader();
+
+                    var flowers = new List<Flower>();
+                    while (reader.Read())
+                    {
+                        
+                       
+                            flowers.Add(new Flower()
+                            {
+                                Id = DbUtils.GetInt(reader, "Id"),
+                                GoalId = DbUtils.GetInt(reader, "GoalId"),
+                                Note = DbUtils.GetString(reader, "Note"),
+                                DateAdded = DbUtils.GetDateTime(reader, "DateAdded")
+
+                            });
+                        
+                    }
+                    reader.Close();
+                    return flowers;
+                }
+            }
+        }
 
         public List<Flower> GetByCourseId(int id)
         {
