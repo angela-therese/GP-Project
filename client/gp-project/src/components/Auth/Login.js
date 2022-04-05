@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import {Form, Button} from 'react-bootstrap'
 import { AuthContext } from "../../providers/AuthProvider";
-import logo from '../../../src/images/GrowPath.png';
+import logo from '../../../src/images/logo-bulbs.png';
+import './Auth.css'
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ export const Login = () => {
         <input className="auth-input" type="email" name="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
         <input className="auth-input" type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
       </Form.Group>
-      <Button variant="success" onClick={submitLoginForm}>Submit</Button>
+      <Button className="submit-button" onClick={submitLoginForm}>Log in</Button>
       <br/>
       <h6>Need an account? Sign up here.</h6>
     </Form>

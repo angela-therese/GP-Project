@@ -25,6 +25,12 @@ Link {
     border-radius: 3.5em;
 }
 
+.class-card-text {
+    font-weight: 600;
+    text-decoration: none;
+    color: olivedrab;
+}
+
 
 .card-container {
     display: flex;
@@ -47,3 +53,12 @@ Link {
 img {
     size: 10%;
 }
+
+.header-landing-text {
+    font-size: xx-large;
+}
+
+.bold-text {
+    font-weight: 600;
+}
+

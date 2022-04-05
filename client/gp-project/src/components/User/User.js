@@ -24,15 +24,15 @@ const User = ({ user }) => {
         <div className="main-container">
         <section className="card-container" >
         <section className="welcome-section">
-        <h1>Welcome to GrowPath, {user.firstName}!</h1> 
+        <h1 className="header-landing-text bold-text">Welcome to GrowPath, {user.firstName}!</h1> 
        </section>
-        <h3>Choose a class.</h3>
+        <h3 className="bold-text">Choose a class.</h3>
         {user.courses?.map((c) => {
           return (
             // 
             <>
             <article className="course-card">
-            <Link to={`/course/${c.id}`}>{c.name}</Link>
+            <Link className="class-card-text" to={`/course/${c.id}`}>{c.name}</Link>
             </article>
           </>
           )

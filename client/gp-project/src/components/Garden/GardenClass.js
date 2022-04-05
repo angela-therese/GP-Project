@@ -1,6 +1,6 @@
 import React,  { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Flower from '../../images/flower.png'
+import Flower from '../../images/flora (1).png'
 import {FlowerContext} from "../../providers/FlowerProvider";
 
 

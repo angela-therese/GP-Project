@@ -6,8 +6,8 @@ import { Button } from "react-bootstrap"
 import { useNavigate, Link} from "react-router-dom"
 import "./Nav.css"
 import Home from '../../images/home-icon.png'
-import ProfilePic from '../../images/angieGlasses.jpg'
-import Logo from '../../images/GrowPath.png'
+import ProfilePic from '../../images/headshot.jpg'
+import Logo from '../../images/logo-bulbs.png'
 
 
 
@@ -39,7 +39,7 @@ export const NavBar = () => {
             className="nav-menu">
                 
                 <div className="left-nav">
-                <img className="logo-nav-image" width="60px" alt="profile_picture" src={Logo}/>
+                <img className="logo-nav-image" width="100px" alt="profile_picture" src={Logo}/>
                 <Link className="header-text" to={`/user/${growpathUser.id}`}><h1>GrowPath</h1></Link>
                 
                 
@@ -48,7 +48,7 @@ export const NavBar = () => {
                 </div>
                 
                 <div className="right-nav">
-                <img className="profile-image" width="7%" height="7%" alt="profile_picture" src={ProfilePic}/>
+                <img className="profile-image" width="8%" alt="profile_picture" src={ProfilePic}/>
                 
                 <h3>{growpathUser.firstName} {growpathUser.lastName}</h3>
                 <button className="btnLogout" onClick={handleLogout}>Logout</button>
