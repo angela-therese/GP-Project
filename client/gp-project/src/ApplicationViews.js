@@ -10,6 +10,7 @@ import GoalEditForm from "./components/Goal/GoalEditForm";
 import FlowerForm from "./components/Garden/FlowerForm";
 import FlowerEditForm from "./components/Garden/FlowerFormEdit";
 import { FlowerDelete } from "./components/Garden/FlowerDelete";
+import { GoalDelete } from "./components/Goal/GoalDelete";
 
 
 
@@ -46,6 +47,9 @@ const ApplicationViews = () => {
           </Route>
 
           <Route exact path="/student/:studentId/flower/delete/:flowerId" element={<FlowerDelete/>}>
+          </Route>
+
+          <Route exact path="student/:studentId/goal/:goalId/delete" element={<GoalDelete/>}>
           </Route>
 
           

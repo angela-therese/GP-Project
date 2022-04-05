@@ -52,7 +52,6 @@ export const GoalProvider = (props) => {
 
     const deleteGoal = (id) => {
 
-        debugger
         return fetch(`${baseUrl}/api/Goal/${id}`, 
         {
             method: "DELETE",
