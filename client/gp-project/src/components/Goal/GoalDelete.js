@@ -23,26 +23,24 @@ export const GoalDelete = () => {
     
     const handleClickDeleteGoal = () => {
         deleteGoal(goalId)
-        // .then(getById(studentId))
-        .then(useState[{}])
+        .then(getById(studentId))
         .then(navigate(`/student/${studentId}`))
     }
     
-
+ 
     
     useEffect(()=> {
         if(goalId) {
             getGoal(goalId)
             .then(goal => {
-                setGoal(goal)
-               
+                setGoal(goal) 
         })}
         
       
       
     }, [])
 
-debugger
+
 
     
     const handleClickRouteChange = () => {

@@ -21,7 +21,7 @@ namespace GrowPath.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                SELECT s.Id, s.FirstName, s.LastName, s.Email, s.ClassId, s.ImageUrl, g.Id AS GoalId, g.Title, g.Description, g.StudentId, g.DateCreated, g.GrowthCount, g.CategoryId
+                SELECT s.Id, s.FirstName, s.LastName, s.Email, s.ClassId, s.ImageUrl, g.Id AS GoalId, g.Title, g.Description, g.StudentId, g.DateCreated, g.CategoryId
                      FROM Student s
                      LEFT JOIN Goal g on s.Id = g.StudentId
                      WHERE s.Id = @Id
@@ -58,7 +58,6 @@ namespace GrowPath.Repositories
                                 Description = DbUtils.GetString(reader, "Description"),
                                 StudentId = DbUtils.GetInt(reader, "StudentId"),
                                 DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
-                                GrowthCount = DbUtils.GetInt(reader, "GrowthCount"),
                                 CategoryId = DbUtils.GetInt(reader, "CategoryId")
 
                             });

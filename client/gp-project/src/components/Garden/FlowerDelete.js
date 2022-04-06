@@ -16,7 +16,7 @@ const {getById} = useContext(StudentContext);
 const {flowerId, studentId} = useParams();
 const [flower, setFlower] = useState({});
 const [student, setStudent] = useState({});
-const [isLoading, setIsLoading] = useState(true);
+// const [isLoading, setIsLoading] = useState(true);
 
 
 const handleClickDeleteFlower = () => {
@@ -38,7 +38,6 @@ useEffect(()=> {
         getById(studentId)
         .then(student => {
             setStudent(student)
-         
         })
     }
   

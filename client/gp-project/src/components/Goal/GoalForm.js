@@ -78,23 +78,23 @@ return (
 
     <div className="form-div">
       <form className="goal-form">
-        <h2 className="goal-form-title">{goalId ? <>Edit Goal</> : <>New Goal for {student?.firstName} {student?.lastName}</>}</h2>
+        <h2 className="goal-form-title">New Goal for {student?.firstName} {student?.lastName}</h2>
         
-        <fieldset>
+        
           <div className="form-group">
             <label htmlFor="title">Goal title:</label>
             <input type="text" id="title" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Goal title" value={goal.title || ""} />
           </div>
-        </fieldset>
+      
   
-        <fieldset>
+       
           <div className="form-group">
             <label htmlFor="description">Goal description:</label>
-            <textarea type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Describe goal here" value={goal.description || ""} />
+            <textarea type="text" maxLength={255} id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Describe goal here" value={goal.description || ""} />
           </div>
-        </fieldset>
+        
 
-        <fieldset>
+      
         <div className="form-group">
             <label htmlFor="category">Goal category:</label>
             <select value={goal.categoryId} name="categoryId" id="categoryId" onChange={handleControlledInputChange}>
@@ -104,7 +104,7 @@ return (
                 ))}
             </select>
         </div>
-        </fieldset>
+    
        
         <button className="goal-update-button margin-2em"
           onClick={handleClickSaveGoal}>

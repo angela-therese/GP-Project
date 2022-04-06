@@ -1,7 +1,5 @@
 import React from "react";
-import { Link, useParams} from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider"
-import { useContext } from "react";
+import { Link } from "react-router-dom";
 import NavBar from '../Nav/Nav'
 import GardenUserPrint from '../Garden/GardenUserPrint'
 import './User.css';
@@ -24,10 +22,10 @@ const User = ({ user }) => {
         <div className="main-user-container">
           <section className="card-container" >
              <section className="welcome-section">
-              <h1 className="header-landing-text">Welcome to GrowPath, {user.firstName}!</h1> 
+              <h1 className="header-landing-text">Current Courses</h1> 
             </section>
        
-           <h3 className="bold-text">Choose a class.</h3>
+           <h3 className="bold-text">Click the course you'd like to view.</h3>
              {user.courses?.map((c) => {
               return (
             // 

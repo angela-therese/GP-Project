@@ -5,10 +5,13 @@ Link {
 }
 
 .main-user-container {
-    width: 100vw;
+    width: 95vw;
+    height: 85vh;
+    padding-top: 4em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 
 .card-container {
@@ -87,6 +90,7 @@ img {
 .header-landing-text {
     font-size: xx-large;
     font-weight: 700;
+    margin-bottom: 0;
 }
 
 .bold-text {

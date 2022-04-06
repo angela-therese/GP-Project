@@ -22,7 +22,7 @@ namespace GrowPath.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                SELECT Id, Title, Description, StudentId, DateCreated, GrowthCount, CategoryId
+                SELECT Id, Title, Description, StudentId, DateCreated, CategoryId
                     FROM Goal";
 
                     var reader = cmd.ExecuteReader();
@@ -37,7 +37,6 @@ namespace GrowPath.Repositories
                             Description = DbUtils.GetString(reader, "Description"),
                             StudentId = DbUtils.GetInt(reader, "StudentId"),
                             DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
-                            GrowthCount = DbUtils.GetInt(reader, "GrowthCount"),
                             CategoryId = DbUtils.GetInt(reader, "CategoryId")
                         });
 
@@ -64,7 +63,7 @@ namespace GrowPath.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                    SELECT g.Id AS GoalId, g.Title, g.Description, g.StudentId AS GoalStudentId, g.DateCreated, g.GrowthCount, g.CategoryId, s.Id AS StudentId, s.FirstName, s.LastName, s.Email, s.ClassId, s.imageUrl
+                    SELECT g.Id AS GoalId, g.Title, g.Description, g.StudentId AS GoalStudentId, g.DateCreated, g.CategoryId, s.Id AS StudentId, s.FirstName, s.LastName, s.Email, s.ClassId, s.imageUrl
                         FROM Goal g 
                         JOIN Student s on g.StudentId = s.Id
                         WHERE  g.Id = @id
@@ -85,7 +84,6 @@ namespace GrowPath.Repositories
                                 Description = DbUtils.GetString(reader, "Description"),
                                 StudentId = DbUtils.GetInt(reader, "GoalStudentId"),
                                 DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
-                                GrowthCount = DbUtils.GetInt(reader, "GrowthCount"),
                                 CategoryId = DbUtils.GetInt(reader, "CategoryId"),
                                 Student = new Student()
                                 {
@@ -116,16 +114,15 @@ namespace GrowPath.Repositories
                     using (var cmd = conn.CreateCommand())
                     {
                         cmd.CommandText = @"
-                        INSERT INTO Goal (Title, Description, StudentId, DateCreated, GrowthCount, CategoryId)
+                        INSERT INTO Goal (Title, Description, StudentId, DateCreated, CategoryId)
                         OUTPUT INSERTED.ID
-                        VALUES (@Title, @Description, @StudentId, @DateCreated, @GrowthCount, @CategoryId )";
+                        VALUES (@Title, @Description, @StudentId, @DateCreated,  @CategoryId )";
 
                         DbUtils.AddParameter(cmd, "@Title", goal.Title);
                         DbUtils.AddParameter(cmd, "@Description", goal.Description);
                         DbUtils.AddParameter(cmd, "@StudentId", goal.StudentId);
                         DbUtils.AddParameter(cmd, "@DateCreated", goal.DateCreated);
-                        DbUtils.AddParameter(cmd, "@GrowthCount", goal.GrowthCount);
-                    DbUtils.AddParameter(cmd, "@CategoryId", goal.CategoryId);
+                        DbUtils.AddParameter(cmd, "@CategoryId", goal.CategoryId);
 
                         goal.Id = (int)cmd.ExecuteScalar();
                     }
@@ -146,7 +143,6 @@ namespace GrowPath.Repositories
                                Description = @Description,
                                StudentId = @StudentId,
                                DateCreated = @DateCreated,
-                               GrowthCount = @GrowthCount,
                                CategoryId = @CategoryId 
                               
                                
@@ -159,7 +155,6 @@ namespace GrowPath.Repositories
                     DbUtils.AddParameter(cmd, "@Description", goal.Description);
                     DbUtils.AddParameter(cmd, "@StudentId", goal.StudentId);
                     DbUtils.AddParameter(cmd, "@DateCreated", goal.DateCreated);
-                    DbUtils.AddParameter(cmd, "@GrowthCount", goal.GrowthCount);
                     DbUtils.AddParameter(cmd, "@CategoryId", goal.CategoryId);
                     DbUtils.AddParameter(cmd, "@Id", goal.Id);
 

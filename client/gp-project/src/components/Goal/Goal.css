@@ -105,6 +105,7 @@ h1, h2, h3 {
 }
 
 
+/* BUTTONS */
 
 .button-section {
     display: flex;
@@ -148,6 +149,8 @@ h1, h2, h3 {
 }
 
 
+/*FORM*/
+
 .form-div{
     width: 100vw;
     display: flex;
@@ -156,12 +159,23 @@ h1, h2, h3 {
     justify-content: center;
 }
 
+.goal-form {
+    background-color: white;
+    width: 60vw;
+    margin-top: 3em;
+    padding: 3em;
+    border-radius: 3em;
+    border: 3px solid olivedrab
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
-    width: 60vw;
+    padding-bottom: 2em;
+    
 }
 
+/*EXTRAS*/
 .no-margin {
     margin-bottom: 0;
 }

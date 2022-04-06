@@ -10,18 +10,8 @@
 }
 
 .goals-container {
-    margin-top: 2em;
-    margin-bottom: 3em;
-}
-
-.add-goal-button {
-    background-color: #D43753;
-    text-decoration: none;
-    padding: .5em;
-    border-radius:1em;
-    color:white;
-    font-weight: bold;
-   
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .goal-div {
@@ -38,6 +28,17 @@
 .goal-card{
     text-decoration: none;
 }
+
+.add-goal-button {
+    background-color: #D43753;
+    text-decoration: none;
+    padding: .5em;
+    border-radius:1em;
+    color:white;
+    font-weight: bold;
+}
+
+
 
 p.subheader {
     font-size: small;
