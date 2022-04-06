@@ -57,20 +57,7 @@ const GoalForm = () => {
     //disable the button - no extra clicks
     setIsLoading(true);
 
-//     if(goalId){
-//         updateGoal({
-//             id:goal.id,
-//             title: goal.title,
-//             description: goal.description,
-//             studentId: studentId,
-//             dateCreated: currentTime,
-//             categoryId: parseInt(goal.categoryId)
-//         })
-//         .then(() => navigate(`/student/${goal.student?.id}/goal/${goal.id}`))
-//     }
-//  //WHY PARSEINT
 
-//     else {
       addGoal({
         title: goal.title,
         description: goal.description,
@@ -89,7 +76,7 @@ const GoalForm = () => {
 return (
 
 
-    <div>
+    <div className="form-div">
       <form className="goal-form">
         <h2 className="goal-form-title">{goalId ? <>Edit Goal</> : <>New Goal for {student?.firstName} {student?.lastName}</>}</h2>
         
@@ -119,7 +106,7 @@ return (
         </div>
         </fieldset>
        
-        <button className="goal-button"
+        <button className="goal-update-button margin-2em"
           onClick={handleClickSaveGoal}>
           Save Goal
         </button>

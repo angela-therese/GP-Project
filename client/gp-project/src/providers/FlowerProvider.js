@@ -34,6 +34,12 @@ export const FlowerProvider = (props) => {
         .then(setFlowers)
     };
 
+    const getByUserId = (id) => {
+        return fetch(`${baseUrl}/api/flower/GetByUser?id=${id}`)
+        .then((res) => res.json())
+        .then(setFlowers)
+    }
+
     const addFlower = (flower) => {
         return fetch (`${baseUrl}/api/flower`,{
         
@@ -64,7 +70,7 @@ export const FlowerProvider = (props) => {
     };
 
     return (
-        <FlowerContext.Provider value ={{flowers, getAllFlowers, getByCourseId, getByGoalId, getByFlowerId, addFlower, updateFlower, deleteFlower}}>
+        <FlowerContext.Provider value ={{flowers, getAllFlowers, getByUserId, getByCourseId, getByGoalId, getByFlowerId, addFlower, updateFlower, deleteFlower}}>
             {props.children}
         </FlowerContext.Provider>
     )

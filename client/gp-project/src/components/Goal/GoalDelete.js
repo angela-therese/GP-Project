@@ -15,29 +15,36 @@ export const GoalDelete = () => {
     const { getById } = useContext(StudentContext);
     const [goal, setGoal] = useState({});
     const [student, setStudent] = useState({});
+    // const [isLoading, setIsLoading] = useState(true);
 
     const navigate = useNavigate()
     
     
     
+    const handleClickDeleteGoal = () => {
+        deleteGoal(goalId)
+        // .then(getById(studentId))
+        .then(useState[{}])
+        .then(navigate(`/student/${studentId}`))
+    }
+    
+
     
     useEffect(()=> {
         if(goalId) {
             getGoal(goalId)
             .then(goal => {
                 setGoal(goal)
+               
         })}
+        
+      
       
     }, [])
 
+debugger
 
-    const handleClickDeleteGoal = () => {
-        deleteGoal(goalId)
-        .then(getById(studentId))
-        .then(navigate(`/student/${studentId}`))
-    }
-
-
+    
     const handleClickRouteChange = () => {
         navigate(`/student/${studentId}`)
     }
@@ -49,13 +56,13 @@ export const GoalDelete = () => {
     <h1>{student?.firstName} {student?.lastName}</h1>
     <section className="confirm-container">
     <h2>Are you sure you want to delete this goal?</h2>
-    <h3 className="note-text">{goal.description}</h3>
+    <h3 className="note-text"> {goal.description}</h3>
 
 
     
     
     <button onClick={handleClickRouteChange} className="return-button">No, go back.</button>
-    <button className="delete-notes-button" onClick={handleClickDeleteGoal}>Yes, delete.</button>
+    <button className="delete-goal-button" onClick={handleClickDeleteGoal}>Yes, delete.</button>
 
     </section>
     </div>

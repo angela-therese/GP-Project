@@ -82,8 +82,13 @@ const Goal = ({ goal }) => {
         
 
         </div>
+
+        {/* <div className="left-align"> */}
+        
+        <h2 className="no-margin">Garden Log</h2>
+        <p>(To remove a flower, delete its note.)</p>
         <div className ="section-4 notes-section">
-           <h3>Flower Notes</h3>
+            
             {flowers.map((f) => {
                 return (
                 <div className="notes-div">
@@ -91,14 +96,16 @@ const Goal = ({ goal }) => {
                     <p>{f.dateAdded} &nbsp; &nbsp; 
                     <Link to={`/student/${studentId}/flower/edit/${f.id}`} className="goal-update-button">Edit Notes</Link>
                      &nbsp; &nbsp; 
-                     <Link to={`/student/${studentId}/flower/delete/${f.id}`} className="delete-goal-button">Delete Notes</Link>
-                     &nbsp; &nbsp;
+                     <Link to={`/student/${studentId}/flower/delete/${f.id}`} className="delete-goal-button">Delete</Link>
+                     &nbsp; &nbsp; 
                      
                      {/* <button className="delete-goal-button">Delete Flower</button> */}
                      </p>
                 </div>  
                 )
             })}
+            {/* </div> */}
+
         </div>
            
 

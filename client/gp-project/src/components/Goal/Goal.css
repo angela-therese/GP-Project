@@ -1,5 +1,6 @@
 h1, h2, h3 {
-    font-weight: bolder ;
+    font-weight: 700 ;
+    
 }
 
 #description {
@@ -18,6 +19,7 @@ h1, h2, h3 {
     justify-content: center;
     align-items: center;
     width: 100vw;
+   
 }
 
 .landing-div {
@@ -31,11 +33,12 @@ h1, h2, h3 {
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: olivedrab;
     padding-bottom: 1em;
     margin-top: 2em;
     width: 20vw;
     border-radius: 3em;
+    color: white;
     
     /* border: salmon solid 1px; */
 }
@@ -67,28 +70,27 @@ h1, h2, h3 {
 .notes-section {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    margin-top: 1em;
+    justify-content: center;
+    align-items: center;
     border-radius: 3em;
     margin-left: 0em;
-    width: 90vw;
-    padding-left: 1em;
+    width: 60vw;
+    padding: 1em;
+    background-color: white;
 }
 
 .notes-div {
     background-color:rgb(228, 228, 228);
-    /* color: white; */
-    margin-bottom: 1em;
-    width: 60vw;
-    height: auto;
-    padding: .25em;
+    width: 40vw; 
     border-radius: 1em;
-    border:rgb(83, 175, 83) ridge 1px
+    border:rgb(83, 175, 83) ridge 1px;
+    padding: .3em;
+    margin-bottom: 1em;
 
 }
 
-.goal-heading{
+
+.goal-heading {
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -96,11 +98,13 @@ h1, h2, h3 {
 
 
 .garden-print-section {
-    background-color: rgb(83, 175, 83);
+    /* background-color: rgb(83, 175, 83); */
     border-radius: 1em;
     width:fit-content;
     margin-top: 1em;
 }
+
+
 
 .button-section {
     display: flex;
@@ -129,6 +133,7 @@ h1, h2, h3 {
     color: white;
     font-weight: bold;
     padding: .5em;
+    margin-bottom: 1em;
 }
 
 .flower-add-button {
@@ -142,7 +147,25 @@ h1, h2, h3 {
     margin-bottom: 1em;
 }
 
+
+.form-div{
+    width: 100vw;
+    display: flex;
+    flex-direction: colum;
+    align-items: center;
+    justify-content: center;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
+    width: 60vw;
+}
+
+.no-margin {
+    margin-bottom: 0;
+}
+
+.margin-2em {
+    margin-top: 2em;
 }

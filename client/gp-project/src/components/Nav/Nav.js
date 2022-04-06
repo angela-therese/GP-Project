@@ -7,7 +7,7 @@ import { useNavigate, Link} from "react-router-dom"
 import "./Nav.css"
 import Home from '../../images/home-icon.png'
 import ProfilePic from '../../images/headshot.jpg'
-import Logo from '../../images/logo-bulbs.png'
+import Logo from '../../images/logo-text-circle.png'
 
 
 
@@ -39,7 +39,7 @@ export const NavBar = () => {
             className="nav-menu">
                 
                 <div className="left-nav">
-                <img className="logo-nav-image" width="100px" alt="profile_picture" src={Logo}/>
+                <img className="logo-nav-image" width="80px" alt="profile_picture" src={Logo}/>
                 <Link className="header-text" to={`/user/${growpathUser.id}`}><h1>GrowPath</h1></Link>
                 
                 

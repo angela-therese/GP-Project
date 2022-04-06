@@ -37,7 +37,7 @@ export const GoalProvider = (props) => {
 
     const updateGoal = (goal) => {
 
-        debugger
+       
         return fetch(`${baseUrl}/api/Goal/${goal.id}`, 
         {
             method: "PUT",
@@ -51,12 +51,13 @@ export const GoalProvider = (props) => {
 
 
     const deleteGoal = (id) => {
-
+        debugger
         return fetch(`${baseUrl}/api/Goal/${id}`, 
         {
-            method: "DELETE",
+            method: "DELETE"
             
         })
+        .then(useState[{}])
         
     }
 

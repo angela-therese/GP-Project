@@ -5,14 +5,23 @@
     align-items: center;
 }
 
-.goal-button {
+.heading {
+    margin-top: 1em;
+}
+
+.goals-container {
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.add-goal-button {
     background-color: #D43753;
     text-decoration: none;
     padding: .5em;
     border-radius:1em;
     color:white;
     font-weight: bold;
-    
+   
 }
 
 .goal-div {
@@ -20,12 +29,14 @@
     flex-direction: column;
     justify-content: center;
     background-color: white;
-    text-decoration: none;
     width: 30vw;
     margin-bottom: 1em;
     height: 9vh;
     border-radius: 3em;
+}
 
+.goal-card{
+    text-decoration: none;
 }
 
 p.subheader {

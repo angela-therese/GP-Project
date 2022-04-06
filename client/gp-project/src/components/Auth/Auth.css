@@ -6,7 +6,8 @@
   }
   
   .auth-section {
-    height: 100vh
+    height: 100vh;
+    width: 65vw;
   }
   
   .auth-section-logo {
@@ -17,17 +18,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40vw;
+    width: 35vw;
   }
   
   .auth-section-form{
     margin-top: 2em;
     background-color: whitesmoke;
     display: flex;
-    width: 60vw;
+    width: 75vw;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
+    align-items: flex-start;
+    padding-left: 9em;
+    
   
   }
   

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import {Form, Button} from 'react-bootstrap'
 import { AuthContext } from "../../providers/AuthProvider";
-import logo from '../../../src/images/logo-bulbs.png';
+import logo from '../../../src/images/logo-text-circle.png';
 import './Auth.css'
 
 export const Login = () => {
@@ -14,11 +14,13 @@ export const Login = () => {
     login({ email, password });
   };
 
+
+
   return (
  <>
 <div className="auth-container">
   <section className=' auth-section auth-section-logo'>
-    <img src={logo} className="App-logo" alt="logo" />
+    <img src={logo}  width="50%"className="App-logo" alt="logo" />
   </section>
 
   <section className='auth-section auth-section-form'>
