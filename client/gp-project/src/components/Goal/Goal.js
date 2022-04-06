@@ -75,7 +75,7 @@ const Goal = ({ goal }) => {
             <section className="button-section"> 
             <Link className="flower-add-button" to={`/student/${studentId}/goal/${goal.id}/flower/add`}>Add a Flower</Link>
              
-        <Link className="goal-update-button" to={`/goal/edit/${goal.id}`}>Edit Goal</Link>   
+        <Link className="goal-edit-button" to={`/goal/edit/${goal.id}`}>Edit Goal</Link>   
         <Link className="delete-goal-button" to={`/student/${studentId}/goal/${goalId}/delete`}>Delete Goal</Link>
             </section>
         </div>

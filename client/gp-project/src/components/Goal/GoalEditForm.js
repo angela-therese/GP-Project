@@ -82,25 +82,23 @@ console.log(categories.length)
 return (
 
 
-    <div>
-      <form className="goal-form">
+    <div className="form-div">
+      <form className="goal-edit-form">
         <h2 className="goal-form-title">Edit Goal for {goal.student?.firstName}</h2>
         <Link to={`/student/${goal.student?.id}`}>Back to goals</Link>
-        <fieldset>
+        
           <div className="form-group">
             <label htmlFor="title">Goal title:</label>
             <input type="text" id="title" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Goal title" value={goal.title || ""} />
           </div>
-        </fieldset>
+        
   
-        <fieldset>
           <div className="form-group">
             <label htmlFor="description">Goal description:</label>
             <textarea type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Describe goal here" value={goal.description || ""} />
           </div>
-        </fieldset>
+      
 
-        <fieldset>
         <div className="form-group">
             <label htmlFor="category">Goal category:</label>
             <select value={goal.categoryId} name="categoryId" id="categoryId" onChange={handleControlledInputChange}>
@@ -110,11 +108,11 @@ return (
                 ))}
             </select>
         </div>
-        </fieldset>
+       
 
-        <button className="goal-button"
+        <button className="goal-update-button"
           onClick={handleClickSaveGoal}>
-          Save Goal
+          Update Goal
         </button>
       </form>
       {/* <GoalList /> */}

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { GoalContext } from "../../providers/GoalProvider";
 // import GoalList from "./GoalList";
 import { GoalCategoryContext } from "../../providers/GoalCategoryProvider"
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import './Goal.css'
 import { StudentContext } from "../../providers/StudentProvider";
 
@@ -79,6 +79,7 @@ return (
     <div className="form-div">
       <form className="goal-form">
         <h2 className="goal-form-title">New Goal for {student?.firstName} {student?.lastName}</h2>
+        <Link to={`/student/${studentId}`}>Back to student</Link>
         
         
           <div className="form-group">

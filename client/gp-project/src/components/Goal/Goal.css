@@ -114,6 +114,17 @@ h1, h2, h3 {
     align-items: center;
 }
 
+.goal-edit-button {
+    background-color: lightskyblue;
+    text-decoration: none;
+    padding: .5em;
+    border-radius:1em;
+    color:white;
+    font-weight: bold;
+    border: none;
+    
+}
+
 .goal-update-button {
     background-color: lightskyblue;
     text-decoration: none;
@@ -122,6 +133,7 @@ h1, h2, h3 {
     color:white;
     font-weight: bold;
     border: none;
+    width: 10em;
     
 }
 
@@ -168,10 +180,22 @@ h1, h2, h3 {
     border: 3px solid rgb(248, 245, 245)
 }
 
+.goal-edit-form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 60vw;
+    margin-top: 3em;
+    padding: 1em;
+    border-radius: 3em;
+    border: 3px solid rgb(248, 245, 245)
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
     padding-bottom: 2em;
+    margin-top: 1em;
     
 }
 
