@@ -5,7 +5,6 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 
 
 
-
 export const GoalDelete = () => {
     
     
@@ -20,14 +19,15 @@ export const GoalDelete = () => {
     const navigate = useNavigate()
     
     
-    
+    debugger
+   
     const handleClickDeleteGoal = () => {
+
         deleteGoal(goalId)
-        .then(getById(studentId))
+        // .then(getById(studentId))
+        // .then((setStudent))
         .then(navigate(`/student/${studentId}`))
     }
-    
- 
     
     useEffect(()=> {
         if(goalId) {
@@ -35,8 +35,7 @@ export const GoalDelete = () => {
             .then(goal => {
                 setGoal(goal) 
         })}
-        
-      
+
       
     }, [])
 

@@ -10,8 +10,6 @@ import './Student.css'
 const Student = ({ student }) => {
 
 
- 
-
     return (
         <>
         <NavBar/>

@@ -39,4 +39,8 @@ const GoalDetails = () => {
   );
 };
 
+
+
+
+
 export default GoalDetails;

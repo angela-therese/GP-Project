@@ -5,7 +5,7 @@ export const StudentContext = React.createContext();
 
 
 export const StudentProvider = (props) => {
-  // const [students, setStudent] = useState([]);
+  const [student, setStudent] = useState([]);
 
 
   const baseUrl = 'https://localhost:44362';
@@ -13,7 +13,8 @@ export const StudentProvider = (props) => {
   const getById= (id) => {
     
     return fetch(`${baseUrl}/api/Student/GetById?id=${id}`)
-    .then((res) => res.json());
+    .then((res) => res.json())
+    
         };
 
 
@@ -24,7 +25,7 @@ export const StudentProvider = (props) => {
 
 
   return (
-    <StudentContext.Provider value={{getById}}>
+    <StudentContext.Provider value={{getById, student}}>
       {props.children}
     </StudentContext.Provider>
   );

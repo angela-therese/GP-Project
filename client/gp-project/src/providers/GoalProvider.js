@@ -56,7 +56,7 @@ export const GoalProvider = (props) => {
         {
             method: "DELETE"
             
-        })
+        }).then(getAllGoals)
         
         
     }

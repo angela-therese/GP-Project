@@ -2,23 +2,25 @@ import React, { useEffect, useContext, useState} from "react";
 import { useParams } from "react-router-dom";
 import Student from "./Student"
 import { StudentContext } from "../../providers/StudentProvider";
+import { GoalContext } from "../../providers/GoalProvider";
 
 
 const StudentDetails = () => {
 
 
-const [student, setStudent] = useState();
+const [student, setStudent] = useState({});
+const {goals} = useContext(GoalContext)
 const { getById } = useContext(StudentContext);
 const { id } = useParams();
 
     useEffect(() => {
         getById(id).then(setStudent);
-    }, []);
+    }, [goals]);
 //don't understand the empty bracket
 
-if (!student) {
-    return null;
-}
+// if (!student) {
+//     return null;
+// }
 
 return (
 

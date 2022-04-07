@@ -6,7 +6,6 @@ import { FlowerContext } from "../../providers/FlowerProvider";
 import {GardenGoalPrint} from "../Garden/GardenGoalPrint"
 import NavBar from '../Nav/Nav'
 import './Goal.css'
-import WateringCan from '../../images/wateringCan.png'
 
 
 
@@ -17,21 +16,12 @@ import WateringCan from '../../images/wateringCan.png'
 const Goal = ({ goal }) => {
   
     let studentId = goal.studentId
-    let count = goal.growthCount
     const {goalId} = useParams();
     const { deleteGoal } = useContext(GoalContext);
     const { getById } = useContext(StudentContext);
-    const {flowers, getByGoalId, deleteFlower} = useContext(FlowerContext);
-    const navigate = useNavigate()
+    const {flowers, getByGoalId} = useContext(FlowerContext);
+    // const navigate = useNavigate()
 
-
-
-
-    const handleClickDeleteGoal = () => {
-        deleteGoal(goalId)
-        .then(getById(studentId))
-        .then(navigate(`/student/${studentId}`))
-    }
 
     
     useEffect(() => 
@@ -113,8 +103,11 @@ const Goal = ({ goal }) => {
      </>
     );
   };
+
+
   
   export default Goal;
+  
 
 
 //   <a href={`/student/${studentId}/goal/${goal.id}/flower/add`}><img alt="watering-can" width="60" src={WateringCan}/></a>
