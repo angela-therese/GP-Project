@@ -5,13 +5,23 @@ Link {
 }
 
 .main-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.user-row {
     width: 95vw;
-    height: 85vh;
-    padding-top: 4em;
+    height: auto;
+    padding-top: 2em;
+    margin-bottom: 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
+    
 }
 
 .card-container {
@@ -19,28 +29,41 @@ Link {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50vw;
-    background-color: white;
+    width: auto;
+    padding: 2em;
+    background-color: #D43753;
+    /* background-color: white; */
     border-radius: 3em;
+    /* border: #D43753 5px solid; */
+    /* color: white */
     
 }
 
-.welcome-section {
+.course-card {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    justify-content: center;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight:light;
+    background-color: white;
+    width: 30vw;
+    margin-bottom: 10px;
+    height: auto;
+    padding: 1em;
+    border-radius: 3.5em;
 }
 
 .user-garden-section {
     display:flex;
     flex-direction: column;
-    align-items: center;
-    background-color: white;
+    /* align-items: center; */
+    /* background-color: white; */
     padding-bottom: 1em;
     margin-top: 2em;
     width: 30vw;
     border-radius: 3em;  
+    /* border: olivedrab 1px dotted */
 }
 
 .print-section {
@@ -51,19 +74,40 @@ Link {
 
 }
 
-.course-card {
+
+.stats-container {
+    margin-top: 0;
+    width: 90vw;
+    height: 45vh;
+    background-color: white;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    font-weight:light;
-    background-color: whitesmoke;
-    width: 30vw;
-    margin-bottom: 20px;
-    height: 11vh;
-    border-radius: 3.5em;
+    justify-content: space-evenly;
+    padding: 2em;
+    border-radius: 3em;
+    
 }
+
+.stat-article {
+    width: 30%;
+    background-color: whitesmoke;
+    border: gray 3px solid;
+    height: 40vh; 
+    border-radius: 1em;
+}
+
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: left;
+    margin-left: 1em;
+    
+}
+
+
+
 
 .class-card-text {
     font-weight: 600;
@@ -89,11 +133,11 @@ img {
 
 .header-landing-text {
     font-size: xx-large;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 0;
 }
 
 .bold-text {
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
