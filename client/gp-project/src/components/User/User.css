@@ -24,6 +24,16 @@ Link {
     
 }
 
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: left;
+    margin-left: 1em;
+}
+
+
 .card-container {
     display: flex;
     flex-direction: column;
@@ -77,11 +87,11 @@ Link {
 
 .stats-container {
     margin-top: 0;
-    width: 90vw;
+    width: 80vw;
     height: 45vh;
     background-color: white;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     padding: 2em;
     border-radius: 3em;
@@ -96,17 +106,17 @@ Link {
     border-radius: 1em;
 }
 
-.welcome-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: left;
-    margin-left: 1em;
-    
+.title-section {
+    margin-left: 1.5em;
+    font-size: x-large;
+    font-weight: 600;  
 }
 
-
+.stats-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
 
 .class-card-text {

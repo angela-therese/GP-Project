@@ -11,7 +11,7 @@ export const GoalProvider = (props) => {
     const [goals, setGoals] = useState([]);
 
     const getAllGoals = () => {
-        return fetch (`${baseUrl}/api/goal}`)
+        return fetch (`${baseUrl}/api/goal`)
         .then((res) => res.json())
         .then(setGoals)
     };

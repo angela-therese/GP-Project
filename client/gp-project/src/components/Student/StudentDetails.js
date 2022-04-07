@@ -8,14 +8,18 @@ import { GoalContext } from "../../providers/GoalProvider";
 const StudentDetails = () => {
 
 
+
 const [student, setStudent] = useState({});
-const {goals} = useContext(GoalContext)
+const {goals, getAllGoals} = useContext(GoalContext)
 const { getById } = useContext(StudentContext);
 const { id } = useParams();
 
+
     useEffect(() => {
-        getById(id).then(setStudent);
+        getById(id).then(setStudent)
+        // .then(getAllGoals);
     }, [goals]);
+    console.log(goals)
 //don't understand the empty bracket
 
 // if (!student) {

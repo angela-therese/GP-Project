@@ -57,7 +57,7 @@ const GoalForm = () => {
     //disable the button - no extra clicks
     setIsLoading(true);
 
-
+debugger
       addGoal({
         title: goal.title,
         description: goal.description,

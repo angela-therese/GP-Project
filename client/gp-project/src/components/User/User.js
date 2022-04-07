@@ -51,7 +51,11 @@ const User = ({ user }) => {
           </div> 
 
           <div className="stats-container">
-            
+            <section  >
+            <p className="title-section">Growth Garden Data</p>
+            </section>
+           
+          <section className="stats-row">
            <article className="article-1 stat-article">
 
            </article>
@@ -64,6 +68,8 @@ const User = ({ user }) => {
 
 
            </article>
+           </section>
+
           </div>
        
           </div>
