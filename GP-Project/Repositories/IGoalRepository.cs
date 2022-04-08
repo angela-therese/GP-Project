@@ -10,5 +10,7 @@ namespace GrowPath.Repositories
         void Update(Goal goal);
         void Delete(int id);
         List<Goal> GetAll();
+        List<Goal> GetGoalsByCourse(int id);
+
     }
 }

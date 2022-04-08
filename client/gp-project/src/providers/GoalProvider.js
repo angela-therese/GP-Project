@@ -15,6 +15,12 @@ export const GoalProvider = (props) => {
         .then((res) => res.json())
         .then(setGoals)
     };
+
+    const getGoalsByCourse = (id) => {
+        return fetch(`${baseUrl}/api/Goal/GetGoalsByCourse?id=${id}`)
+        .then((res) => res.json())
+        .then(setGoals);
+    }
     
     const getGoal= (id) => {
         return fetch (`${baseUrl}/api/Goal/GetGoal?id=${id}`)
@@ -62,7 +68,7 @@ export const GoalProvider = (props) => {
     }
 
 return (
-    <GoalContext.Provider value ={{goals, getAllGoals, getGoal, addGoal, updateGoal, deleteGoal}}>
+    <GoalContext.Provider value ={{goals, getAllGoals, getGoalsByCourse, getGoal, addGoal, updateGoal, deleteGoal}}>
         {props.children}
     </GoalContext.Provider>
 )

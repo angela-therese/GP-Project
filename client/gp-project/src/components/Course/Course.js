@@ -29,14 +29,8 @@ const Course = ({ course }) => {
         <br/><br/>
         
         <div className="main-container" >
-        <section className="section-3-container">
-            <h3>Due for Review</h3>
-        <section className="reviews-container" >
         
-        </section>
-
-        </section>
-
+        <div className="row-div">
         <section className="section-1-container" >
         <h3>Class Roster</h3>
         <table>
@@ -72,7 +66,33 @@ const Course = ({ course }) => {
         <GardenClassPrint />
         </section>
         </section>
-         
+        </div>
+        {/*END ROSTER AND GARDEN ROW)*/}
+
+        {/*START REPORTS CONTAINER)*/}
+        <div className="reports-container">
+            <section className="title-section">
+            <p className="title-section">Class Goal Insights</p>
+            </section>
+           
+          <section className="reports-row">
+           <article className="article-1 report-article">
+
+           </article>
+
+           <article className="article-2 report-article">
+
+           </article>
+
+           <article className="article-3 report-article">
+
+
+           </article>
+           </section>
+
+          </div>
+        {/*END REPORTS CONTAINER)*/}
+
        
         </div>
      </>

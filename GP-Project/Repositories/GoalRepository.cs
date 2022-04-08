@@ -49,12 +49,8 @@ namespace GrowPath.Repositories
             }
         }
 
-
-
-
-
-
         //END GET ALL
+
         public Goal GetById(int id)
         {
             using (var conn = Connection)
@@ -106,7 +102,49 @@ namespace GrowPath.Repositories
             }
 
         //END BYID
-            public void Add(Goal goal)
+        public List<Goal> GetGoalsByCourse(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                SELECT g.Id AS GoalId, g.Title, g.Description, g.DateCreated, g.CategoryId, gc.Id as CategoryId,  gc.Name AS CategoryName, s.Id AS StudentId, c.Id AS CourseId, c.Name AS CourseName 
+                FROM Goal g LEFT JOIN GoalCategory gc ON g.CategoryId = gc.Id
+                JOIN Student s ON g.StudentId = s.Id
+                JOIN Course c ON s.ClassId = c.Id
+                WHERE c.Id = @Id
+                ORDER BY g.CategoryId ASC";
+
+                    DbUtils.AddParameter(cmd, "@Id", id);
+
+                    var reader = cmd.ExecuteReader();
+
+                    var goals = new List<Goal>();
+                    while (reader.Read())
+                    {
+                        goals.Add(new Goal()
+                        {
+                            Id = DbUtils.GetInt(reader, "GoalId"),
+                            Title = DbUtils.GetString(reader, "Title"),
+                            Description = DbUtils.GetString(reader, "Description"),
+                            StudentId = DbUtils.GetInt(reader, "StudentId"),
+                            DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
+                            CategoryId = DbUtils.GetInt(reader, "CategoryId")
+                        });
+
+
+                    }
+                    reader.Close();
+
+                    return goals;
+                }
+            }
+        }
+
+        //END BYCOURSE
+        public void Add(Goal goal)
             {
                 using (var conn = Connection)
                 {

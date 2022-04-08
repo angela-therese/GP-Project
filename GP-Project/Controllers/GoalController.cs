@@ -27,6 +27,11 @@ namespace GrowPath.Controllers
             return Ok(_goalRepository.GetAll());
         }
 
+        [HttpGet ("GetGoalsByCourse")]
+        public IActionResult GetGoalsByCourse(int id)
+        {
+            return Ok(_goalRepository.GetGoalsByCourse(id));
+        }
 
         [HttpGet("GetGoal")]
         public IActionResult GetById(int id)
