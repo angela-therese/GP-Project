@@ -30,6 +30,7 @@ namespace GrowPath.Repositories
                         ORDER BY s.LastName ASC
                                                 ";
 
+
                     DbUtils.AddParameter(cmd, "@Id", id);
 
                     var reader = cmd.ExecuteReader();

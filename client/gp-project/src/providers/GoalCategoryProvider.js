@@ -16,12 +16,24 @@ export const GoalCategoryProvider = (props) => {
         .then(setCategories)
     }
 
+    const getCategoriesWithGoals = (id) => {
+      return fetch (`${baseUrl}/api/GoalCategory/GetAllWithGoals?id=${id}`)
+      .then((res) => res.json())
+      .then(setCategories)
+    }
+
+    const getByCourseWithGoals = (id) => {
+      return fetch (`${baseUrl}/api/GoalCategory/GetByCourseWithGoals?=${id}`)
+      .then((res) => res.json())
+      .then(setCategories)
+    }
+
 
 
 
 return (
     <GoalCategoryContext.Provider
-      value={{ categories, getCategories}}
+      value={{ categories, getByCourseWithGoals, getCategoriesWithGoals, getCategories}}
     >
       {props.children}
     </GoalCategoryContext.Provider>

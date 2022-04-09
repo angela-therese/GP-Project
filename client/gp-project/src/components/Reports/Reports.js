@@ -1,23 +1,39 @@
 import React, {useContext, useEffect} from "react"
 import { useParams } from "react-router-dom";
 import { GoalContext } from "../../providers/GoalProvider";
+import { GoalCategoryContext } from "../../providers/GoalCategoryProvider";
 import './../Course/Course.css'
 
 
 export const ReportList = () => {
 
     const {goals, getGoalsByCourse} = useContext(GoalContext)
+    // const { categories, getByCourseWithGoals, getCategoriesWithGoals} = useContext(GoalCategoryContext)
     const { id } = useParams();
 
 
     useEffect(() => {
+        // getGoalsByCourse(id);
         getGoalsByCourse(id);
     }, [])
     
- 
 
+    console.log(goals)
+
+        const newArray = goals.map(g => {
+        return (
+            g.categoryName
+        )
+
+    })
+
+    console.log(newArray)
+
+
+
+   
+    debugger
     const totalGoals = goals?.length
-    const masterArray =[]
 
 
     //GOAL CATEGORY BY PERCENTAGE OF TOTAL GOALS
@@ -26,51 +42,12 @@ export const ReportList = () => {
     const categoryGeneralPercentage = ((categoryGeneral.length/totalGoals)*100).toFixed(2)
 
   
-   
-
-    // const categoryCourseContent = goals.filter(g => g.categoryId == 2);
-    // const categoryCourseContentPercentage = ((categoryCourseContent.length/totalGoals)*100).toFixed(2)
-
-    // const categoryCommunication = goals.filter(g => g.categoryId == 3);
-    // const categoryCommunicationPercentage = ((categoryCommunication.length/totalGoals)*100).toFixed(2)
-
-    // const categoryInterpersonal = goals.filter(g => g.categoryId == 4);
-    // const categoryInterpersonalPercentage = ((categoryInterpersonal.length/totalGoals)*100).toFixed(2)
-
-    // const categoryBehavior = goals.filter(g => g.categoryId == 5);
-    // const categoryBehaviorPercentage = ((categoryBehavior.length/totalGoals)*100).toFixed(2)
-   
-    // const categorySelfCare = goals.filter(g => g.categoryId == 6);
-    // const categorySelfCarePercentage = ((categorySelfCare.length/totalGoals)*100).toFixed(2)
-
-    // const categoryTeamwork = goals.filter(g => g.categoryId == 7);
-    // const categoryTeamworkPercentage = ((categoryTeamwork.length/totalGoals)*100).toFixed(2)
+ 
 
     const categoryLearningStrategies = goals.filter(g => g.categoryId == 8);
     const categoryLearningStrategiesPercentage = ((categoryLearningStrategies.length/totalGoals)*100).toFixed(2);
     
-    // const newArray = goals.map(g => {
-    //     return (
-    //         {"name": g.categoryName, "length": g}
-    //     )
-
-    // })
-
-
-    //map masterArray
-    masterArray.push(categoryGeneral);
-    masterArray.push(categoryLearningStrategies)
-    console.log(masterArray)
     
-    // const newMasterArray = masterArray.map(a => {
-    //     return(
-    //         {"name" : a(1).categoryName, "length": a.length}
-    //     )
-    
-    // })
-
-    // console.log(newMasterArray)
-
        
    
 
@@ -106,3 +83,54 @@ export const ReportList = () => {
        </>
     )
 }
+
+
+
+
+
+
+
+
+
+// const newArray = goals.map(g => {
+    //     return (
+    //         {"name": g.categoryName, "length": g}
+    //     )
+
+    // })
+
+
+    //map masterArray
+    // masterArray.push(categoryGeneral);
+    // masterArray.push(categoryLearningStrategies)
+    // console.log(masterArray)
+    
+    // const newMasterArray = masterArray.map(a => {
+    //     return(
+    //         {"name" : a(1).categoryName, "length": a.length}
+    //     )
+    
+    // })
+
+    // console.log(newMasterArray)
+
+
+  
+
+    // const categoryCourseContent = goals.filter(g => g.categoryId == 2);
+    // const categoryCourseContentPercentage = ((categoryCourseContent.length/totalGoals)*100).toFixed(2)
+
+    // const categoryCommunication = goals.filter(g => g.categoryId == 3);
+    // const categoryCommunicationPercentage = ((categoryCommunication.length/totalGoals)*100).toFixed(2)
+
+    // const categoryInterpersonal = goals.filter(g => g.categoryId == 4);
+    // const categoryInterpersonalPercentage = ((categoryInterpersonal.length/totalGoals)*100).toFixed(2)
+
+    // const categoryBehavior = goals.filter(g => g.categoryId == 5);
+    // const categoryBehaviorPercentage = ((categoryBehavior.length/totalGoals)*100).toFixed(2)
+   
+    // const categorySelfCare = goals.filter(g => g.categoryId == 6);
+    // const categorySelfCarePercentage = ((categorySelfCare.length/totalGoals)*100).toFixed(2)
+
+    // const categoryTeamwork = goals.filter(g => g.categoryId == 7);
+    // const categoryTeamworkPercentage = ((categoryTeamwork.length/totalGoals)*100).toFixed(2)
