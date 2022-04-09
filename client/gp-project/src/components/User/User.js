@@ -50,9 +50,9 @@ const User = ({ user }) => {
             
           </div> 
 
-          <div className="stats-container">
+          {/* <div className="stats-container">
             <section  >
-            <p className="title-section">Growth Garden Insights</p>
+            <p className="title-section">Instructor Insights</p>
             </section>
            
           <section className="stats-row">
@@ -68,9 +68,9 @@ const User = ({ user }) => {
 
 
            </article>
-           </section>
+           </section> */}
 
-          </div>
+          {/* </div> */}
        
           </div>
         

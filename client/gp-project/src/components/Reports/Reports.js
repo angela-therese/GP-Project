@@ -1,14 +1,25 @@
 import React, {useContext, useEffect} from "react"
 import { useParams } from "react-router-dom";
 import { GoalContext } from "../../providers/GoalProvider";
-import { GoalCategoryContext } from "../../providers/GoalCategoryProvider";
+import {  Bar, Line, Pie } from "react-chartjs-2";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    ArcElement,
+    Legend, PointElement, LineElement
+  } from 'chart.js';
+
 import './../Course/Course.css'
 
+    ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, PointElement, ArcElement, LineElement)
 
 export const ReportList = () => {
 
     const {goals, getGoalsByCourse} = useContext(GoalContext)
-    // const { categories, getByCourseWithGoals, getCategoriesWithGoals} = useContext(GoalCategoryContext)
     const { id } = useParams();
 
 
@@ -30,9 +41,6 @@ export const ReportList = () => {
     console.log(newArray)
 
 
-
-   
-    debugger
     const totalGoals = goals?.length
 
 
@@ -40,8 +48,6 @@ export const ReportList = () => {
     const categoryGeneral = goals.filter(g => g.categoryId == 1);
     console.log(categoryGeneral)
     const categoryGeneralPercentage = ((categoryGeneral.length/totalGoals)*100).toFixed(2)
-
-  
  
 
     const categoryLearningStrategies = goals.filter(g => g.categoryId == 8);
@@ -57,28 +63,131 @@ export const ReportList = () => {
            <>
            <div className="reports-container">
            <section className="title-section">
-           <p className="title-section">Class Goal Insights</p>
+           <p className="title-section">Class Insights</p>
            </section>
           
          <section className="reports-row">
-          <article className="article-1 report-article">
+          <article className="">
             <h1><strong>Goals by Category</strong></h1>
-            <p>General : {categoryGeneralPercentage}</p>
-            <p>Learning Strategies: {categoryLearningStrategiesPercentage}</p>
+            <Pie
+            data={{
+                    labels: ['Jun', 'Jul', 'Aug'],
+                    datasets: [
+                        {
+                             id: 1,
+                             label: '',
+                             data: [5, 6, 7],
+                        },
+                          {
+                              id: 2,
+                              label: '',
+                              data: [3, 2, 1],
+                        },
+                             ],
+                        }}
+
+            />
+
+            {/* <p>General : {categoryGeneralPercentage}</p>
+            <p>Learning Strategies: {categoryLearningStrategiesPercentage}</p> */}
           </article>
 
-          <article className="article-2 report-article">
+          <article className="">
+          <h1><strong>Top Five Categories</strong></h1>
+          <Bar
+                datasetIdKey='id'
+                data={{
+                     labels: ['Jun', 'Jul', 'Aug'],
+                    datasets: [
+                        {
+                             id: 1,
+                             label: '',
+                             data: [5, 6, 7],
+                        },
+                          {
+                              id: 2,
+                            label: '',
+                            data: [3, 2, 1],
+                        },
+                             ],
+                        }}
+                    />
+          
+        
 
           </article>
 
-          <article className="article-3 report-article">
-
-
-          </article>
           </section>
+
+
+          <section className="reports-row">
+          <article className="">
+            <h1><strong>Goals by Category</strong></h1>
+            <Pie
+            data={{
+                    labels: ['Jun', 'Jul', 'Aug'],
+                    datasets: [
+                        {
+                             id: 1,
+                             label: '',
+                             data: [5, 6, 7],
+                        },
+                          {
+                              id: 2,
+                              label: '',
+                              data: [3, 2, 1],
+                        },
+                             ],
+                        }}
+
+            />
+
+            {/* <p>General : {categoryGeneralPercentage}</p>
+            <p>Learning Strategies: {categoryLearningStrategiesPercentage}</p> */}
+          </article>
+
+          <article className="">
+          <h1><strong>Top Five Categories</strong></h1>
+          <Bar
+                datasetIdKey='id'
+                data={{
+                     labels: ['Jun', 'Jul', 'Aug'],
+                    datasets: [
+                        {
+                             id: 1,
+                             label: '',
+                             data: [5, 6, 7],
+                        },
+                          {
+                              id: 2,
+                            label: '',
+                            data: [3, 2, 1],
+                        },
+                             ],
+                        }}
+                    />
+          
+        
+
+          </article>
+
+          </section>
+
+
+
+
+
+
+
+
+
+
 
          </div>
         
+         
+
+
        {/*END REPORTS CONTAINER)*/}
        </>
     )
