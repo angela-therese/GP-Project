@@ -25,8 +25,12 @@ const Course = ({ course }) => {
      
         <NavBar />
         <div className="heading">
+             <Link to={`/user/${course.userProfileId}`}>Back to main</Link>
             <h1 className="heading">{course.name}</h1>
-            <Link to={`/user/${course.userProfileId}`}>Back to main</Link></div>
+            <button className="jump-button"><a className="jump-button" href="#insights">Jump to course insights</a></button>
+            
+           
+          </div> 
         <br/><br/>
         
         <div className="main-container" >
@@ -71,7 +75,8 @@ const Course = ({ course }) => {
         {/*END ROSTER AND GARDEN ROW)*/}
 
         {/*START REPORTS CONTAINER)*/}
-        <ReportList/>
+        <div id="insights"><ReportList/></div>
+        
         {/*END REPORTS CONTAINER)*/}
 
        

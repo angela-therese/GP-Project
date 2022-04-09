@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from "react"
 import { useParams } from "react-router-dom";
 import { GoalContext } from "../../providers/GoalProvider";
-import {  Bar, Line, Pie } from "react-chartjs-2";
+import {  Bar, Doughnut, Pie } from "react-chartjs-2";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -63,132 +63,92 @@ export const ReportList = () => {
            <>
            <div className="reports-container">
            <section className="title-section">
-           <p className="title-section">Class Insights</p>
+           <p className="title-section">Goal Insights</p>
            </section>
           
-         <section className="reports-row">
-          <article className="">
-            <h1><strong>Goals by Category</strong></h1>
+         <section className="stats-row">
+
+         <article className="stat-article">
+            <h1 className="text-center"><strong>Goals by Category - %</strong></h1>
             <Pie
             data={{
-                    labels: ['Jun', 'Jul', 'Aug'],
+                    labels: ['Jun', 'Jul', 'Aug', 'Sep'],
                     datasets: [
                         {
                              id: 1,
                              label: '',
-                             data: [5, 6, 7],
-                        },
-                          {
-                              id: 2,
-                              label: '',
-                              data: [3, 2, 1],
-                        },
+                             data: [5, 6, 7, 8],
+                             backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod']
+                        }
+                          
                              ],
-                        }}
+                       
 
+                    
+                        }}
             />
+
+          </article>
+
+
+          <article className="stat-article">
+          <h1 className="text-center"><strong>Number of goals by category</strong></h1>
+          <Bar
+                datasetIdKey='id'
+                
+                data={{
+                  
+                     labels: ['Jun', 'Jul', 'Aug', 'Sep'],
+                     datasets: [
+                        {
+                            axis: 'y',
+                             id: 1,
+                             label: '',
+                             data: [5, 6, 7, 8],
+                             backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod'],
+                             
+                        }, ]
+                             
+                        }}
+                     options={{
+                         indexAxis: 'y'
+                     }}
+                    />
+            </article>
+
+
+            <article className="stat-article">
+            <h1 className="text-center"><strong>Flowers by Category - %</strong></h1>
+            <Doughnut
+            data={{
+                    labels: ['Jun', 'Jul', 'Aug', 'Sep'],
+                    datasets: [
+                        {
+                             id: 1,
+                             label: '',
+                             data: [5, 6, 7, 8],
+                             backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod']
+                        }
+                          
+                             ],
+                    
+                        }}
+            />
+
+          </article>
+        </section>
+
+
+       
 
             {/* <p>General : {categoryGeneralPercentage}</p>
             <p>Learning Strategies: {categoryLearningStrategiesPercentage}</p> */}
-          </article>
+          {/* </article>
 
-          <article className="">
-          <h1><strong>Top Five Categories</strong></h1>
-          <Bar
-                datasetIdKey='id'
-                data={{
-                     labels: ['Jun', 'Jul', 'Aug'],
-                    datasets: [
-                        {
-                             id: 1,
-                             label: '',
-                             data: [5, 6, 7],
-                        },
-                          {
-                              id: 2,
-                            label: '',
-                            data: [3, 2, 1],
-                        },
-                             ],
-                        }}
-                    />
-          
-        
-
-          </article>
-
-          </section>
-
-
-          <section className="reports-row">
-          <article className="">
-            <h1><strong>Goals by Category</strong></h1>
-            <Pie
-            data={{
-                    labels: ['Jun', 'Jul', 'Aug'],
-                    datasets: [
-                        {
-                             id: 1,
-                             label: '',
-                             data: [5, 6, 7],
-                        },
-                          {
-                              id: 2,
-                              label: '',
-                              data: [3, 2, 1],
-                        },
-                             ],
-                        }}
-
-            />
-
-            {/* <p>General : {categoryGeneralPercentage}</p>
-            <p>Learning Strategies: {categoryLearningStrategiesPercentage}</p> */}
-          </article>
-
-          <article className="">
-          <h1><strong>Top Five Categories</strong></h1>
-          <Bar
-                datasetIdKey='id'
-                data={{
-                     labels: ['Jun', 'Jul', 'Aug'],
-                    datasets: [
-                        {
-                             id: 1,
-                             label: '',
-                             data: [5, 6, 7],
-                        },
-                          {
-                              id: 2,
-                            label: '',
-                            data: [3, 2, 1],
-                        },
-                             ],
-                        }}
-                    />
-          
-        
-
-          </article>
-
-          </section>
-
-
-
-
-
-
-
-
-
-
-
-         </div>
-        
-         
-
-
+    
        {/*END REPORTS CONTAINER)*/}
+
+       </div>
        </>
     )
 }
