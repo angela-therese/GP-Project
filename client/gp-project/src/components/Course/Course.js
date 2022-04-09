@@ -3,6 +3,7 @@ import {GardenClassPrint} from "../Garden/GardenClass"
 import { Link, useParams} from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider"
 import { useContext } from "react";
+import { ReportList } from "../Reports/Reports";
 import NavBar from '../Nav/Nav'
 import './Course.css'
 
@@ -70,27 +71,7 @@ const Course = ({ course }) => {
         {/*END ROSTER AND GARDEN ROW)*/}
 
         {/*START REPORTS CONTAINER)*/}
-        <div className="reports-container">
-            <section className="title-section">
-            <p className="title-section">Class Goal Insights</p>
-            </section>
-           
-          <section className="reports-row">
-           <article className="article-1 report-article">
-
-           </article>
-
-           <article className="article-2 report-article">
-
-           </article>
-
-           <article className="article-3 report-article">
-
-
-           </article>
-           </section>
-
-          </div>
+        <ReportList/>
         {/*END REPORTS CONTAINER)*/}
 
        

@@ -6,5 +6,7 @@ namespace GrowPath.Repositories
     public interface IGoalCategoryRepository
     {
         List<GoalCategory> GetAll();
+        List<GoalCategory> GetAllWithGoals();
+
     }
 }

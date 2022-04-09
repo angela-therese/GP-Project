@@ -131,6 +131,7 @@ namespace GrowPath.Repositories
                             Description = DbUtils.GetString(reader, "Description"),
                             StudentId = DbUtils.GetInt(reader, "StudentId"),
                             DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
+                            CategoryName = DbUtils.GetString(reader,"CategoryName"),
                             CategoryId = DbUtils.GetInt(reader, "CategoryId")
                         });
 

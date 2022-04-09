@@ -19,13 +19,20 @@ namespace GrowPath.Controllers
             _goalCategoryRepository = goalCategoryRepository;
         }
 
-        
-        
+
+
         [HttpGet]
         public IActionResult GetAll()
         {
 
             return Ok(_goalCategoryRepository.GetAll());
+        }
+
+
+        [HttpGet("GetAllWithGoals")]
+        public IActionResult GetAllWithGoals()
+        {
+            return Ok(_goalCategoryRepository.GetAllWithGoals());
         }
 
     }

@@ -13,7 +13,7 @@ namespace GrowPath.Models
         public string Description { get; set; }
         public int StudentId { get; set; }
         public DateTime DateCreated { get; set; }
-        public int GrowthCount { get; set; }
+        public string CategoryName { get; set; }
         public int CategoryId { get; set; }
         public Student Student { get; set; } 
 

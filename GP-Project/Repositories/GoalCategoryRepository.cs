@@ -44,5 +44,58 @@ namespace GrowPath.Repositories
                 }
             }
         }
+        //End GETALL
+
+        public List<GoalCategory> GetAllWithGoals()
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                SELECT gc.Id AS GoalCategoryId, gc.Name, g.id AS GoalId, g.DateCreated, g.StudentId, g.CategoryId
+                FROM GoalCategory gc LEFT JOIN Goal g ON gc.Id = g.CategoryId
+              ORDER BY Name ASC";
+
+                    var reader = cmd.ExecuteReader();
+
+                    var categories = new List<GoalCategory>();
+
+                    while (reader.Read())
+                    {
+                        var category = new GoalCategory()
+                        {
+                                Id = DbUtils.GetInt(reader, "GoalCategoryId"),
+                                Name = DbUtils.GetString(reader, "Name"),
+                                Goals = new List<Goal>()
+                         };
+
+                        categories.Add(category);
+
+                        if (DbUtils.IsNotDbNull(reader, "GoalId"))
+                        {
+                            category.Goals.Add(new Goal()
+                            {
+                                Id = DbUtils.GetInt(reader, "GoalId"),
+                                Title = null,
+                                Description = null,
+                                StudentId = DbUtils.GetInt(reader, "StudentId"),
+                                DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
+                                CategoryId = DbUtils.GetInt(reader, "CategoryId")
+                            });
+
+                        }  
+                    }
+
+                        reader.Close();
+
+                        return categories;
+                    }
+                }
+            }
+        //END GET ALL CATEGORIES WITH GOALS
+
+        }
     }
-}
+
