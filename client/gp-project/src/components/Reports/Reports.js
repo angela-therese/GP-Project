@@ -14,7 +14,7 @@ import {
     Legend, PointElement, LineElement
   } from 'chart.js';
 
-import './../Course/Course.css'
+import './Reports.css'
 
     ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, PointElement, ArcElement, LineElement)
 
@@ -203,7 +203,14 @@ import './../Course/Course.css'
                              
                         }}
                      options={{
-                         indexAxis: 'y'
+                         indexAxis: 'y',
+                         scales:{
+                           yAxes:[ {
+      
+                             ticks: 
+                             {autoskip: false}
+                           }]
+                         }
                        
                      }}
                     />

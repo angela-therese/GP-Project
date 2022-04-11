@@ -1,0 +1,47 @@
+
+/*STATS*/
+
+.reports-container {
+    width: 100%;
+    height: auto;
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+   padding-left: 2em;
+    
+}
+
+.title-section {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: 600;  
+    width: 100%;
+}
+
+.stats-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 1em;
+    
+}
+
+.stat-article {
+    background-color: whitesmoke;
+    border: gray 3px solid;
+    height: auto;
+    border-radius: 1em;
+}
+
+.round-chart {
+    width: 28%;
+   
+}
+
+.bar-chart {
+    width: 50%;
+   
+}

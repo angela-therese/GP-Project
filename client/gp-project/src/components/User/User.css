@@ -30,29 +30,37 @@ Link {
 
 .main-user-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: flex-start;
-    
+   
 }
 
 .user-row {
-    width: 95vw;
+    width: 30vw;
     height: auto;
-    padding-top: 2em;
+    padding-left: 2em;
     /* margin-bottom: 2em; */
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
+}
+
+.report-list-container {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .welcome-section {
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: left;
     margin-left: 1em;
 }
@@ -81,7 +89,7 @@ Link {
     font-size: 1.2em;
     font-weight:light;
     background-color: white;
-    width: 30vw;
+    width: 25vw;
     margin-bottom: 10px;
     height: auto;
     padding: 1em;
@@ -91,7 +99,7 @@ Link {
 .user-garden-section {
     display:flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: left;
     /* background-color: white; */
     padding-bottom: 1em;
     margin-top: 2em;
@@ -111,7 +119,7 @@ Link {
 
 /*BEGIN REPORTS*/
 
-
+/* 
 #insights{
     width: 100%;
 }
@@ -165,7 +173,7 @@ Link {
     font-weight: 600;
     text-decoration: none;
     color: olivedrab;
-}
+} */
 
 
 

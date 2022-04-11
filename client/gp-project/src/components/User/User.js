@@ -9,6 +9,7 @@ import './User.css';
 
 
 
+
 const User = ({ user }) => {
   
     
@@ -71,8 +72,10 @@ const User = ({ user }) => {
            </section> */}
 
           {/* </div> */}
-       
-          <UserReportList/>
+           <div className="report-list-container">
+           <UserReportList/>
+           </div>
+         
           </div>
         
      </>
