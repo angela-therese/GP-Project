@@ -46,3 +46,47 @@
     padding: 2em;
     width: 43%;
 }
+
+
+
+
+.flower-form-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5em;
+    
+}
+
+.flower-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    background-color: white;
+    border-radius: 5em;
+    padding: 2em;
+
+}
+
+form {
+    width: 50vw;
+}
+
+textarea {
+    height: 3em;
+}
+.flower-add-button {
+    background-color: olivedrab;
+    text-decoration: none;
+    padding: .5em;
+    border-radius:1em;
+    color:white;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 1em;
+}

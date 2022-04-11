@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FlowerContext } from "../../providers/FlowerProvider";
 // import flowerList from "./flowerList";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import { NavBar } from './../Nav/Nav'
 
 
 
@@ -56,27 +57,32 @@ const FlowerForm = () => {
 
 return (
 
-
-    <div>
-      <form className="flower-form">
+    <>
+    <NavBar/>
+    <div className="flower-form-container">
+      <section className="flower-form">
+        <Link to={`/student/${studentId}/goal/${goalId}`}>Back to Goal</Link>
         <h2 className="flower-form-title">Add a Flower</h2>
-        
+        <form>
   
-        <fieldset>
+        
           <div className="form-group">
             <label htmlFor="note">Enter note:</label>
             <textarea type="text" id="note" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Type here" value={flower.note || ""} />
           </div>
-        </fieldset>
+        
 
        
-        <button className="flower-button"
+        <button className="flower-add-button"
           onClick={handleClickSaveFlower}>
           Save flower
         </button>
-      </form>
+        </form>
+      </section>
       {/* <flowerList /> */}
     </div>
+    </>
+   
   )
 
 }
