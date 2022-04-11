@@ -3,19 +3,15 @@ import {GardenClassPrint} from "../Garden/GardenClass"
 import { Link, useParams} from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider"
 import { useContext } from "react";
-import { ReportList } from "../Reports/Reports";
+import { ReportList} from "../Reports/Reports"
 import NavBar from '../Nav/Nav'
 import './Course.css'
-
-
-
-
 
 const Course = ({ course }) => {
 
   
-    const { logout } = useContext(AuthContext);
-    const { id } = useParams();
+    // const { logout } = useContext(AuthContext);
+    // const { id } = useParams();
  
     console.log(course);
   

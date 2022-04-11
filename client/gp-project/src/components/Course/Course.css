@@ -127,7 +127,7 @@ tr:nth-child(even) {
     width: 100%;
 }
 
-.reports-row {
+.stats-row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -135,13 +135,18 @@ tr:nth-child(even) {
     
 }
 
-.report-article {
-    width: 30%;
+.stat-article {
+    width: 40%;
     background-color: whitesmoke;
     border: gray 3px solid;
     height: auto;
     border-radius: 1em;
 }
+
+.round-chart {
+    width: 30%
+}
+
 
 
 

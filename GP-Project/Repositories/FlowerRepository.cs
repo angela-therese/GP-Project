@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GrowPath.Repositories;
-using Microsoft.Extensions.Configuration;
-using GrowPath.Models;
+﻿using GrowPath.Models;
 using GrowPath.Utils;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 
 namespace GrowPath.Repositories
@@ -142,7 +138,7 @@ namespace GrowPath.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-               SELECT f.Id AS FlowerId, f.GoalId, f.Note, f.DateAdded, g.Title, g.Id AS GoalId, g.StudentId, s.ClassId
+               SELECT f.Id AS FlowerId, f.GoalId, f.Note, f.DateAdded, g.Title, g.Id AS GoalId, g.CategoryId, g.StudentId, s.ClassId
                     FROM Flower f
                     JOIN Goal g ON f.GoalId = g.id
                     JOIN  Student s ON s.Id = g.StudentId
@@ -161,6 +157,7 @@ namespace GrowPath.Repositories
                         {
                             Id = DbUtils.GetInt(reader, "FlowerId"),
                             GoalId = DbUtils.GetInt(reader, "GoalId"),
+                            GoalCategoryId = DbUtils.GetInt(reader, "CategoryId"),
                             Note = DbUtils.GetString(reader, "Note"),
                             DateAdded = DbUtils.GetDateTime(reader, "DateAdded")
 
