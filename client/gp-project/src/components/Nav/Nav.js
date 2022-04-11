@@ -1,8 +1,4 @@
 import React, { useEffect,  useState }  from "react"
-
-// import { UserContext } from "../UsersProvider"
-import { Nav } from "react-bootstrap"
-import { Button } from "react-bootstrap"
 import { useNavigate, Link} from "react-router-dom"
 import "./Nav.css"
 import Home from '../../images/home-icon.png'
@@ -35,7 +31,7 @@ export const NavBar = () => {
 
     return (
         <>
-            <Nav defaultActiveKey="/home" 
+            <nav defaultActiveKey="/home" 
             className="nav-menu">
                 
                 <div className="left-nav">
@@ -55,7 +51,7 @@ export const NavBar = () => {
                 <button className="btnLogout" onClick={handleLogout}>Logout</button>
                 </div>
                 
-            </Nav>
+            </nav>
 
             {/* </section> */}
 

@@ -98,15 +98,12 @@ namespace GrowPath.Repositories
 
                 {
                     cmd.CommandText = @"
-                     SELECT  f.Id, f.GoalId, f.Note, f.DateAdded,g.StudentId, s.ClassId, c.UserProfileId, up.Id
+                    SELECT  f.Id, f.GoalId, f.Note, f.DateAdded, f.UserId, g.CategoryId
                     FROM Flower f
                     JOIN Goal g ON f.GoalId = g.Id
-                    JOIN Student s ON g.StudentId = s.Id
-                    JOIN Course c ON s.ClassId = c.Id
-                    JOIN UserProfile up ON c.UserProfileId = up.Id
-                    WHERE up.Id = @id
+                    WHERE f.UserId = @Id
                                 ";
-                    DbUtils.AddParameter(cmd, "@id", id);
+                    DbUtils.AddParameter(cmd, "@Id", id);
                     var reader = cmd.ExecuteReader();
 
                     var flowers = new List<Flower>();
@@ -119,6 +116,8 @@ namespace GrowPath.Repositories
                                 Id = DbUtils.GetInt(reader, "Id"),
                                 GoalId = DbUtils.GetInt(reader, "GoalId"),
                                 Note = DbUtils.GetString(reader, "Note"),
+                                UserId = DbUtils.GetInt(reader, "UserId"),
+                                GoalCategoryId = DbUtils.GetInt(reader, "CategoryId"),
                                 DateAdded = DbUtils.GetDateTime(reader, "DateAdded")
 
                             });
@@ -225,15 +224,16 @@ namespace GrowPath.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        INSERT INTO Flower (GoalId, Note, DateAdded)
+                        INSERT INTO Flower (GoalId, Note, DateAdded, UserId)
                         OUTPUT INSERTED.ID
-                        VALUES (@GoalId, @Note, @DateAdded)
+                        VALUES (@GoalId, @Note, @DateAdded, @UserId)
                                  ";
 
 
                     DbUtils.AddParameter(cmd, "@GoalId", flower.GoalId);
                     DbUtils.AddParameter(cmd, "@Note", flower.Note);
                     DbUtils.AddParameter(cmd, "@DateAdded", flower.DateAdded);
+                    DbUtils.AddParameter(cmd, "UserId", flower.UserId);
                    
 
                     flower.Id = (int)cmd.ExecuteScalar();

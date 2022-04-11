@@ -51,6 +51,50 @@ namespace GrowPath.Repositories
 
         //END GET ALL
 
+
+        public List<Goal> GetAllByUserId(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                SELECT g.Id AS GoalId, g.Title AS GoalTitle, g.Description, g.StudentId, g.DateCreated, g.CategoryId, s.Id, s.ClassId, c.UserProfileId
+      FROM Goal g 
+      JOIN Student s ON g.StudentId = s.Id
+      JOIN Course c ON s.ClassId = c.Id
+      WHERE c.UserProfileId = @Id";
+
+                    DbUtils.AddParameter(cmd, "@Id", id);
+                    var reader = cmd.ExecuteReader();
+
+                    var goals = new List<Goal>();
+                    while (reader.Read())
+                    {
+                        goals.Add(new Goal()
+                        {
+                            Id = DbUtils.GetInt(reader, "GoalId"),
+                            Title = DbUtils.GetString(reader, "GoalTitle"),
+                            Description = DbUtils.GetString(reader, "Description"),
+                            StudentId = DbUtils.GetInt(reader, "StudentId"),
+                            DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
+                            UserProfileId = DbUtils.GetInt(reader, "UserProfileId"), 
+                            CategoryId = DbUtils.GetInt(reader, "CategoryId")
+                        });
+
+
+                    }
+                    reader.Close();
+
+                    return goals;
+                }
+            }
+        }
+
+
+        //END GET ALL BY USER ID
+
         public Goal GetById(int id)
         {
             using (var conn = Connection)

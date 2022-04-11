@@ -68,7 +68,7 @@ const Course = ({ course }) => {
         </section>
         </section>
         </div>
-        {/*END ROSTER AND GARDEN ROW)*/}
+        {/*END ROSTER ROW)*/}
 
         {/*START REPORTS CONTAINER)*/}
         <div id="insights"><ReportList/></div>

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {Form, Button} from 'react-bootstrap'
+// import {Form, Button} from 'react-bootstrap'
 import { AuthContext } from "../../providers/AuthProvider";
 import logo from '../../../src/images/logo-circle-text.png';
 import './Auth.css'
@@ -24,16 +24,15 @@ export const Login = () => {
   </section>
 
   <section className='auth-section auth-section-form'>
-    <Form>
-      <Form.Group>
+    <form>
+      
       <h2>Registered? Log in here.</h2>
         <input className="auth-input" type="email" name="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
         <input className="auth-input" type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
-      </Form.Group>
-      <Button className="submit-button" onClick={submitLoginForm}>Log in</Button>
+      <button className="submit-button" onClick={submitLoginForm}>Log in</button>
       <br/>
       <h6>Need an account? Sign up here.</h6>
-    </Form>
+    </form>
   </section>
 </div>
 </> 

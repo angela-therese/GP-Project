@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from '../Nav/Nav'
 import GardenUserPrint from '../Garden/GardenUserPrint'
+import { UserReportList } from "../Reports/UserReport";
 import './User.css';
 
 
@@ -10,9 +11,6 @@ import './User.css';
 
 const User = ({ user }) => {
   
-    // const { logout } = useContext(AuthContext);
-    // const { id } = useParams();
-    
     
     return (
       <>
@@ -47,6 +45,8 @@ const User = ({ user }) => {
                   <GardenUserPrint />
                 </section>
             </article>
+
+
             
           </div> 
 
@@ -72,6 +72,7 @@ const User = ({ user }) => {
 
           {/* </div> */}
        
+          <UserReportList/>
           </div>
         
      </>

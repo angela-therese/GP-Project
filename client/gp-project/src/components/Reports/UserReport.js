@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from "react"
 import { useParams } from "react-router-dom";
 import { GoalContext } from "../../providers/GoalProvider";
 import { FlowerContext } from "../../providers/FlowerProvider";
-import {  Bar, Doughnut, Pie } from "react-chartjs-2";
+import {  Bar, Pie } from "react-chartjs-2";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -20,16 +20,17 @@ import './../Course/Course.css'
 
 
 
-    export const ReportList = () => {
+    export const UserReportList = () => {
 
-    const {goals, getGoalsByCourse} = useContext(GoalContext)
-    const { flowers, getByCourseId } = useContext(FlowerContext);
+    const {goals, getGoalsByUser} = useContext(GoalContext)
+    const { flowers, getByUserId} = useContext(FlowerContext);
     const { id } = useParams();
+   
 
 
     useEffect(() => {
-        getGoalsByCourse(id)
-        .then(getByCourseId(id))
+        getGoalsByUser(id)
+        .then(getByUserId(id))
     }, [])
     
 
@@ -44,7 +45,6 @@ import './../Course/Course.css'
 
     //GOAL CATEGORY BY PERCENTAGE OF TOTAL GOALS
     const categoryGeneral = goals.filter(g => g.categoryId == 1);
-    console.log(categoryGeneral)
     const categoryGeneralPercentage = ((categoryGeneral.length/totalGoals)*100).toFixed(2)
  
     const categoryLearningStrategies = goals.filter(g => g.categoryId == 8);
@@ -73,15 +73,18 @@ import './../Course/Course.css'
 
     const categoryFlowerGeneral = flowers.filter(f => f.categoryId == 1);
     const categoryFlowerGeneralPercentage = ((categoryFlowerGeneral.length/totalFlowers)*100).toFixed(2)
+    
 
     const categoryFlowerLearningStrategies = flowers.filter(f => f.goalCategoryId == 8);
      const categoryFlowerLearningStrategiesPercentage = ((categoryFlowerLearningStrategies.length/totalFlowers)*100).toFixed(2)
 
      const categoryFlowerCourseContent = flowers.filter(f => f.goalCategoryId == 2);
      const categoryFlowerCourseContentPercentage = ((categoryFlowerCourseContent.length/totalFlowers)*100).toFixed(2)
+     
  
      const categoryFlowerCommunication = flowers.filter(f => f.goalCategoryId == 3);
      const categoryFlowerCommunicationPercentage = ((categoryFlowerCommunication.length/totalFlowers)*100).toFixed(2)
+     console.log(categoryFlowerCommunicationPercentage)
  
      const categoryFlowerInterpersonal = flowers.filter(f => f.goalCategoryId == 4);
      const categoryFlowerInterpersonalPercentage = ((categoryFlowerInterpersonal.length/totalFlowers)*100).toFixed(2)
@@ -105,7 +108,7 @@ import './../Course/Course.css'
            <>
            <div className="reports-container">
            <section className="title-section">
-           <p className="title-section">Course Insights</p>
+           <p className="title-section">Instructor Insights</p>
            </section>
           
          <section className="stats-row">
@@ -254,45 +257,3 @@ import './../Course/Course.css'
        </>
     )
 }
-
-
-
-
-
-
-
-
-
-// const newArray = goals.map(g => {
-    //     return (
-    //         {"name": g.categoryName, "length": g}
-    //     )
-
-    // })
-
-
-    //map masterArray
-    // masterArray.push(categoryGeneral);
-    // masterArray.push(categoryLearningStrategies)
-    // console.log(masterArray)
-    
-    // const newMasterArray = masterArray.map(a => {
-    //     return(
-    //         {"name" : a(1).categoryName, "length": a.length}
-    //     )
-    
-    // })
-
-    // console.log(newMasterArray)
-
-
-      //     const newArray = goals.map(g => {
-    //     return (
-    //         g.categoryName
-    //     )
-
-    // })
-
-    // console.log(newArray)
-
-    

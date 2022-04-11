@@ -11,6 +11,7 @@ namespace GrowPath.Repositories
         void Delete(int id);
         List<Goal> GetAll();
         List<Goal> GetGoalsByCourse(int id);
+        List<Goal> GetAllByUserId(int id);
 
     }
 }

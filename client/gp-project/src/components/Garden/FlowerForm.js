@@ -3,6 +3,7 @@ import { FlowerContext } from "../../providers/FlowerProvider";
 // import flowerList from "./flowerList";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { NavBar } from './../Nav/Nav'
+import './Flower.css'
 
 
 
@@ -16,12 +17,34 @@ const FlowerForm = () => {
   const navigate = useNavigate();
 
 
+  const [growpathUser, setGrowPathUser] = useState({});
+  useEffect(() => {
+      const growpathUser = JSON.parse(localStorage.getItem('growpathUser'));
+      if (growpathUser){
+          setGrowPathUser(growpathUser)
+      }
+  }, {})
+
+ 
+  const user = growpathUser;
+  console.log(user)
+  console.log(user.id)
+  
+
+
+
+
   //for edit hold onto state of flower in this view
   const [flower, setFlower] = useState({
-    flowerId: "",
+   
+    goalId: "",
     note: "",
-    dateAdded: ""
+    dateAdded: "",
+    userId: ""
+  
   });
+
+
   //wait for data before button is active
   const [isLoading, setIsLoading] = useState(true);
   
@@ -45,7 +68,8 @@ const FlowerForm = () => {
       addFlower({
         goalId: goalId,
         note: flower.note,
-        dateAdded: currentTime
+        dateAdded: currentTime, 
+        userId: user.id
       })
         .then(setFlower ({}))
         .then(() => {
@@ -53,7 +77,7 @@ const FlowerForm = () => {
         })
     
   }
-
+debugger
 
 return (
 
