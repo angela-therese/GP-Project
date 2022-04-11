@@ -18,11 +18,16 @@ const User = ({ user }) => {
       
         <NavBar />
         <br></br>
+        <div className="full-width"><button className="garden-button"><a className="user-garden-button" href="#garden">View garden</a></button></div>
+        
         <div className="main-user-container">
           {/* <h1 className="header-landing-text">Welcome to Growpath, {user.firstName}!</h1> */}
+         
           <div className="user-row">
             <article>
               <section className="welcome-section">
+          
+               
                <h1 className="header-landing-text">Current Courses</h1> 
                <p>Click the course you'd like to view.</p>
                </section>
@@ -39,7 +44,7 @@ const User = ({ user }) => {
                 
             </article>
 
-            <article className ="user-garden-section">
+            <article id="garden" className ="user-garden-section">
                <h3 className="header-landing-text">Instructor Garden</h3>
               <p>These are the flowers you've helped to grow--<br/>all of the flowers from your students' gardens! </p>
                 <section className="print-section">

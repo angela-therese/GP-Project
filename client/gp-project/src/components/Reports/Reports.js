@@ -141,40 +141,8 @@ import './Reports.css'
 
           {/*//END GOAL PERCENTAGE*/}
 
-      
-          <article className="stat-article round-chart">
-            <h1 className="text-center"><strong>Flowers by Category - %</strong></h1>
-            <Pie
-            data={{
-                    labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal','Learning Strategies', 'Self Care', 'Teamwork'],
-                    datasets: [
-                        {
-                            //  id: 1,
-                             label: '',
-                             data: [
-                                categoryFlowerBehaviorPercentage,
-                                categoryFlowerCommunicationPercentage,
-                                categoryFlowerCourseContentPercentage,
-                                categoryFlowerGeneralPercentage,
-                                categoryFlowerInterpersonalPercentage,
-                                categoryFlowerLearningStrategiesPercentage,
-                                categoryFlowerSelfCarePercentage,
-                                categoryFlowerTeamworkPercentage
-                                ],
-                             backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo']
-                        }
-                          
-                             ],
-                    
-                        }}
-                 />
-            </article>
-          {/*END FLOWER PERCENTAGE*/}
-        </section>
 
-
-        <section className="stats-row">
-        <article className="stat-article">
+          <article className="stat-article bar-chart">
           <h1 className="text-center"><strong>Number of goals by category</strong></h1>
           <Bar
                 // datasetIdKey='id'
@@ -218,7 +186,42 @@ import './Reports.css'
 
             {/* END RAW NUMBERS GOALS */}
 
-            <article className="stat-article">
+      
+         
+        </section>
+
+
+        <section className="stats-row">
+       
+        <article className="stat-article round-chart">
+            <h1 className="text-center"><strong>Flowers by Category - %</strong></h1>
+            <Pie
+            data={{
+                    labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal','Learning Strategies', 'Self Care', 'Teamwork'],
+                    datasets: [
+                        {
+                            //  id: 1,
+                             label: '',
+                             data: [
+                                categoryFlowerBehaviorPercentage,
+                                categoryFlowerCommunicationPercentage,
+                                categoryFlowerCourseContentPercentage,
+                                categoryFlowerGeneralPercentage,
+                                categoryFlowerInterpersonalPercentage,
+                                categoryFlowerLearningStrategiesPercentage,
+                                categoryFlowerSelfCarePercentage,
+                                categoryFlowerTeamworkPercentage
+                                ],
+                             backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo']
+                        }
+                          
+                             ],
+                    
+                        }}
+                 />
+            </article>
+          {/*END FLOWER PERCENTAGE*/}
+            <article className="stat-article bar-chart">
           <h1 className="text-center"><strong>Number of flowers by category</strong></h1>
           <Bar
                 // datasetIdKey='id'

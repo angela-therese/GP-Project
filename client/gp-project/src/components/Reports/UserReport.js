@@ -108,7 +108,7 @@ import './Reports.css'
            <>
            <div className="reports-container">
            <section className="title-section">
-           <p className="title-section">Instructor Insights</p>
+           <p className="title-section">Instructor Data</p>
            </section>
           
          <section className="stats-row">

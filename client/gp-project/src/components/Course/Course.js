@@ -23,23 +23,24 @@ const Course = ({ course }) => {
         <div className="heading">
              <Link to={`/user/${course.userProfileId}`}>Back to main</Link>
             <h1 className="heading">{course.name}</h1>
-            <button className="jump-button"><a className="jump-button" href="#insights">Jump to course insights</a></button>
+            <button className="garden-button"><a className="garden-button" href="#garden">View course garden</a></button>
             
            
           </div> 
-        <br/><br/>
+        {/* <br/><br/> */}
         
-        <div className="main-container" >
+        <div className="main-course-container" >
         
-        <div className="row-div">
-        <section className="section-1-container" >
-        <h3>Class Roster</h3>
+        <div className="column-div">
+        <h3 className="header-landing-text">Course Roster</h3>
+        <section className="table-section" >
+        
         <table>
             <thead>
             <tr className="table-headings">
                 <th>Student Name</th>
                 <th>Email</th>
-                <th>Course</th>
+                {/* <th>Course</th> */}
             </tr>
            </thead>
         {course.students?.map((s) => {
@@ -50,7 +51,7 @@ const Course = ({ course }) => {
             <td><Link to={`/student/${s.id}`}>{s.firstName} {s.lastName}</Link></td>
             
             <td> <a href={"mailto:" + s.email}>{s.email}</a></td>
-            <td>{course.name}</td>
+            {/* <td>{course.name}</td> */}
             {/* <td className="button-link"><button>View</button></td> */}
             {/* <Link className="button-link"to={`/course/${c.id}`}>Details</Link> */}
            </tr>
@@ -61,8 +62,8 @@ const Course = ({ course }) => {
         </table> 
         </section>
 
-        <section className="section-2-container">
-            <h3>Class Garden</h3>
+        <section id="garden" className="garden-section-container">
+            <h3 className='header-landing-text'>Course Garden</h3>
         <section className="garden-container" >
         <GardenClassPrint />
         </section>
@@ -71,11 +72,11 @@ const Course = ({ course }) => {
         {/*END ROSTER ROW)*/}
 
         {/*START REPORTS CONTAINER)*/}
-        <div id="insights"><ReportList/></div>
+        
         
         {/*END REPORTS CONTAINER)*/}
-
        
+        <div className="report-list-container"><ReportList/></div>
         </div>
      </>
     );

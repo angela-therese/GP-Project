@@ -2,69 +2,80 @@
    font-weight: lighter;
 }
 .heading {
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.garden-button {
+    background-color: olivedrab;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    border-radius: 2em;
+    font-weight: 800;
 }
 
 .table-headings {
     font-weight: bold;
     background-color: lightblue;
 }
-.main-container {
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 95vw;
-}
-
-.row-div {
+.main-course-container {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     justify-content: space-evenly;
-    width: 90vw;
-}
-.section-1-container {
-    width: 50vw;
-    text-align: center;
+    width: 100vw;
 }
 
-.section-2-container {
-    width: 20vw;
-    text-align: center;
+.column-div {
+    width: 30vw;
+    height: auto;
+    padding-left: 2em;
+    /* margin-bottom: 2em; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    
 }
 
-/* .section-3-container{
-    width: 20vw;
-    text-align: center;
-} */
+
+.table-section {
+    width: 30vw;
+}
+
+.garden-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    width: 25vw;
+    
+}
 
 .garden-container {
  width: 100%;
  background-color: rgb(129, 160, 68); 
- text-align: center;
+ text-align: left;
  border-radius: 4em;
  color: white;
  padding: .5em;
+ margin-top: 1em;
 }
 
-.reviews-container {
-    width: 98%;
-    background-color: white;
-    height: 40vh
-}
 
 table {
-   text-align: left;
+    margin-top: 2em;
+    text-align: left;
     border: 1px lightblue solid;
     width: 100%;
     border-radius: 2em;
     padding: 1em;
     /* border-collapse: separate; */
     border-spacing: 0 10px;
-    font-size: small;
-   
+    font-size: small; 
    
 }
 
@@ -72,9 +83,6 @@ tr :visited {
     color: blue
 }
 
-/* tr :not(:visited) {
-    color: black
-} */
 
 th {
     text-align: left;
@@ -101,7 +109,38 @@ tr:nth-child(even) {
 }
 
 
+.report-list-container {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
+/* .reviews-container {
+    width: 98%;
+    background-color: white;
+    height: 40vh
+} */
+
+/* .row-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90vw;
+} */
+/* .section-1-container {
+    width: 50vw;
+    text-align: center;
+}
+
+.section-2-container {
+    width: 20vw;
+    text-align: left;
+} */
 
 
+/* tr :not(:visited) {
+    color: black
+} */

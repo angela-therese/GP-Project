@@ -17,9 +17,20 @@ Link {
     color: white;
     font-weight: bold;
     border: none;
-    
-
 }
+
+.user-garden-button {
+    background-color: olivedrab;
+    color: white;
+    text-decoration: none;
+    padding: .5em;
+    border-radius: 2em;
+    font-weight: 800;
+    width: auto;
+    
+    
+}
+
 
 .heading {
     display: flex;
@@ -47,6 +58,14 @@ Link {
     align-items: center;
     
 }
+
+.table-section {
+   
+   
+    border-radius: 3em;
+ 
+}
+
 
 .report-list-container {
     width: 60vw;
@@ -87,13 +106,17 @@ Link {
     justify-content: left;
     align-items: center;
     font-size: 1.2em;
-    font-weight:light;
+    font-weight: bold;
     background-color: white;
     width: 25vw;
     margin-bottom: 10px;
     height: auto;
     padding: 1em;
     border-radius: 3.5em;
+}
+
+.class-card-text {
+    text-decoration: none;
 }
 
 .user-garden-section {
@@ -117,66 +140,6 @@ Link {
 }
 
 
-/*BEGIN REPORTS*/
-
-/* 
-#insights{
-    width: 100%;
-}
-
-.text-center {
-    width: 100%;
-    text-align: center;
-    font-weight: 800;
-}
-
-.stats-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-bottom: 2em;
-}
-
-
-.stats-container {
-    margin-top: 0;
-    width: 80vw;
-    height: 45vh;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    padding: 2em;
-    border-radius: 3em;
-    
-}
-
-.stat-article {
-    width: 25%;
-    background-color: whitesmoke;
-    border: gray 3px solid;
-    height: auto; 
-    border-radius: 1em;
-}
-
-.title-section {
-    margin-left: 1.5em;
-    font-size: x-large;
-    font-weight: 600;  
-}
-
-
-.class-card-text {
-    font-weight: 600;
-    text-decoration: none;
-    color: olivedrab;
-} */
-
-
-
 .button-link {
     background-color: lightblue;
     font-size:small;
@@ -197,7 +160,9 @@ img {
     margin-bottom: 0;
 }
 
-.bold-text {
-    /* font-weight: 600; */
+.full-width {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-
