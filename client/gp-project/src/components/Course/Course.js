@@ -33,6 +33,7 @@ const Course = ({ course }) => {
         
         <div className="column-div">
         <h3 className="header-landing-text">Course Roster</h3>
+        <p>Click on a student's name to add a goal.</p>
         <section className="table-section" >
         
         <table>

@@ -52,31 +52,8 @@ const User = ({ user }) => {
                 </section>
             </article>
 
-
-            
           </div> 
 
-          {/* <div className="stats-container">
-            <section  >
-            <p className="title-section">Instructor Insights</p>
-            </section>
-           
-          <section className="stats-row">
-           <article className="article-1 stat-article">
-
-           </article>
-
-           <article className="article-2 stat-article">
-
-           </article>
-
-           <article className="article-3 stat-article">
-
-
-           </article>
-           </section> */}
-
-          {/* </div> */}
            <div className="report-list-container">
            <UserReportList/>
            </div>

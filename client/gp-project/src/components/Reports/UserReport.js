@@ -101,16 +101,70 @@ import './Reports.css'
      //END TOTAL & PERCENTAGE
        
    
+     //BEGIN INSIGHTS
+
+    const insight = (percent1, percent2) => {
+            return (percent2 -percent1).toFixed(2)
+    }
+
+    
+    const behaviorInsight = insight(categoryBehaviorPercentage, categoryFlowerBehaviorPercentage)
+
+    const commInsight = insight(categoryCommunicationPercentage, categoryFlowerCommunicationPercentage)
+
+    const contentInsight = insight(categoryCourseContentPercentage, categoryFlowerCourseContentPercentage)
+
+    const generalInsight = categoryFlowerGeneralPercentage - categoryGeneralPercentage
+
+    const interpersonalInsight = insight(categoryInterpersonalPercentage, categoryFlowerInterpersonalPercentage)
+
+    const learningStrategiesInsight = insight(categoryLearningStrategiesPercentage, categoryFlowerLearningStrategiesPercentage)
+
+    const selfCareInsight = insight(categorySelfCarePercentage, categoryFlowerSelfCarePercentage)
+
+    const teamworkInsight = insight(categoryTeamworkPercentage, categoryFlowerTeamworkPercentage)
+
+   
 
 
     return (
           
            <>
            <div className="reports-container">
+           
+           <section className="title-section">
+           <p className="title-section">Data Insights</p>
+           <br/>
+           </section>
+
+           <article className="insights-row">Your data shows the following relationships between the percentage of goals that you are assigning to a particular category and the flowers (which represent growth) that you are assigning in those cateogries. If there is a significant difference between the two numbers, take a moment to reflect on the discrepancy. For example, are you paying attention to some categories more or less than others? Is there a lack of growth in some areas? Do you need to modify any of your practices accordingly? </article>
+
+           <table className="insights-table">
+            <thead>
+            <tr className="table-headings">
+                <th>Category</th>
+                <th>Goal Percentage </th>
+                <th>Flowers Percentage</th>
+                <th>Difference</th>
+            </tr>
+            <tr>
+                <td>General</td>
+                <td>{categoryGeneralPercentage}</td>
+                <td>{categoryFlowerGeneralPercentage} </td>
+                <td>{generalInsight} General Category </td>
+            </tr>
+            <tr>
+                <td>Course Content</td>
+                <td>{categoryCourseContentPercentage}</td>
+                <td>{categoryFlowerCourseContentPercentage} </td>
+                <td>{contentInsight} Course Content Flowers</td>
+            </tr>
+           </thead>
+           </table>
            <section className="title-section">
            <p className="title-section">Instructor Data</p>
            </section>
-          
+        
          <section className="stats-row">
 
          <article className="stat-article round-chart">
