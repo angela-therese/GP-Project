@@ -1,9 +1,19 @@
-.section-1-container {
+
+
+.main-student-container {
+    width: 100vw;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+/* .section-1-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
 
 .heading {
     margin-top: 1em;
@@ -11,7 +21,7 @@
 
 .goals-container {
     margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 
 .goal-div {
@@ -20,7 +30,7 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    width: 30vw;
+    width: 35vw;
     margin-bottom: 1em;
     height: 9vh;
     border-radius: 3em;
@@ -28,6 +38,7 @@
 
 .goal-card{
     text-decoration: none;
+    font-size:medium;
     
 }
 
@@ -38,6 +49,8 @@
     border-radius:1em;
     color:white;
     font-weight: bold;
+    margin-bottom: 2em;
+  
 }
 
 
@@ -46,4 +59,3 @@ p.subheader {
     margin-top: 0em;
     margin-bottom: 2em;
 }
-

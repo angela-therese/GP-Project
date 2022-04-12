@@ -77,7 +77,7 @@ const Course = ({ course }) => {
        
         <div className="report-list-container"><ReportList/></div>
         </div>
-        <footer>Angela Iafrate © 2022 All Rights (and Wrongs) Reserved</footer>
+        
      </>
     );
   };

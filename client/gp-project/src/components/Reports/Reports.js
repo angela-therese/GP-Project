@@ -41,23 +41,7 @@ import './Reports.css'
     const totalFlowers = flowers?.length
     const totalGoals = goals?.length
 
-  
 
-// const behaviorInsight = insight(categoryBehaviorPercentage, categoryFlowerBehaviorPercentage)
-
-// const commInsight = insight(categoryCommunicationPercentage, categoryFlowerCommunicationPercentage)
-
-// const contentInsight = insight(categoryCourseContentPercentage, categoryFlowerCourseContentPercentage)
-
-// const generalInsight = categoryFlowerGeneralPercentage - categoryGeneralPercentage
-
-// const interpersonalInsight = insight(categoryInterpersonalPercentage, categoryFlowerInterpersonalPercentage)
-
-// const learningStrategiesInsight = insight(categoryLearningStrategiesPercentage, categoryFlowerLearningStrategiesPercentage)
-
-// const selfCareInsight = insight(categorySelfCarePercentage, categoryFlowerSelfCarePercentage)
-
-// const teamworkInsight = insight(categoryTeamworkPercentage, categoryFlowerTeamworkPercentage)
 
 
     //GOAL CATEGORY BY PERCENTAGE OF TOTAL GOALS
@@ -310,7 +294,7 @@ return (
                       <th>Category</th>
                       <th>Goal Percentage </th>
                       <th>Flowers Percentage</th>
-                      <th>Difference</th>
+                      <th>Flowers Difference</th>
                   </tr>
                   <tr>
                       <td>Behavior</td>
@@ -378,36 +362,3 @@ return (
 
 
 
-// const newArray = goals.map(g => {
-    //     return (
-    //         {"name": g.categoryName, "length": g}
-    //     )
-
-    // })
-
-
-    //map masterArray
-    // masterArray.push(categoryGeneral);
-    // masterArray.push(categoryLearningStrategies)
-    // console.log(masterArray)
-    
-    // const newMasterArray = masterArray.map(a => {
-    //     return(
-    //         {"name" : a(1).categoryName, "length": a.length}
-    //     )
-    
-    // })
-
-    // console.log(newMasterArray)
-
-
-      //     const newArray = goals.map(g => {
-    //     return (
-    //         g.categoryName
-    //     )
-
-    // })
-
-    // console.log(newArray)
-
-    

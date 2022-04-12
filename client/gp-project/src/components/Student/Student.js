@@ -13,6 +13,7 @@ const Student = ({ student }) => {
     return (
         <>
         <NavBar/>
+        <div className="main-student-container" >
         <div className="heading">
         <Link className="subheader" to={`/course/${student.classId}`}>Back to class roster</Link>
             <h1 className="heading">{student.firstName} {student.lastName} - Goals</h1>
@@ -20,8 +21,8 @@ const Student = ({ student }) => {
         </div>
         
         
-        <div className="main-container" >
-            <section className="section-1-container">
+        
+            {/* <section className="section-1-container"> */}
             <p className="subheader">Click on a goal for details</p>
                 <section className="goals-container" >
         {student.goals?.map((g) => {
@@ -32,10 +33,10 @@ const Student = ({ student }) => {
                      )
                     
                 })}
-        </section>
+                 </section>
         
-       <section> <br/><Link className="add-goal-button" to={`/student/${student.id}/goal/add`}>Add New Goal</Link></section>
-        </section>
+       <Link className="add-goal-button" to={`/student/${student.id}/goal/add`}>Add New Goal</Link>
+        {/* </section> */}
        
         </div>
         

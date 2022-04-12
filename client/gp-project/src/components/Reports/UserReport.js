@@ -298,7 +298,7 @@ export const UserReportList = () => {
                             <th>Category</th>
                             <th>Goal Percentage </th>
                             <th>Flowers Percentage</th>
-                            <th>Difference</th>
+                            <th>Flowers Difference</th>
                         </tr>
                         <tr>
                             <td>Behavior</td>

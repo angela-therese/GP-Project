@@ -100,6 +100,7 @@ const Goal = ({ goal }) => {
            
 
         </div>
+       
      </>
     );
   };

@@ -8,6 +8,7 @@ import './index.css';
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <footer>Angela Iafrate © 2022 All Rights (and Wrongs) Reserved</footer>
   </React.StrictMode>,
   document.getElementById('root')
 );
