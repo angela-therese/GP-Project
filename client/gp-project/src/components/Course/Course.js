@@ -11,7 +11,7 @@ const Course = ({ course }) => {
 
   
     // const { logout } = useContext(AuthContext);
-    // const { id } = useParams();
+    const { id } = useParams();
  
     console.log(course);
   
@@ -25,8 +25,7 @@ const Course = ({ course }) => {
             <h1 className="heading">{course.name}</h1>
             <button className="garden-button"><a className="garden-button" href="#garden">View course garden</a></button>
             
-           
-          </div> 
+        </div> 
         {/* <br/><br/> */}
         
         <div className="main-course-container" >
@@ -35,7 +34,6 @@ const Course = ({ course }) => {
         <h3 className="header-landing-text">Course Roster</h3>
         <p>Click on a student's name to add a goal.</p>
         <section className="table-section" >
-        
         <table>
             <thead>
             <tr className="table-headings">
@@ -79,6 +77,7 @@ const Course = ({ course }) => {
        
         <div className="report-list-container"><ReportList/></div>
         </div>
+        <footer>Angela Iafrate © 2022 All Rights (and Wrongs) Reserved</footer>
      </>
     );
   };

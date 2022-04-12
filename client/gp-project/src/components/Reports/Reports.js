@@ -41,6 +41,24 @@ import './Reports.css'
     const totalFlowers = flowers?.length
     const totalGoals = goals?.length
 
+  
+
+// const behaviorInsight = insight(categoryBehaviorPercentage, categoryFlowerBehaviorPercentage)
+
+// const commInsight = insight(categoryCommunicationPercentage, categoryFlowerCommunicationPercentage)
+
+// const contentInsight = insight(categoryCourseContentPercentage, categoryFlowerCourseContentPercentage)
+
+// const generalInsight = categoryFlowerGeneralPercentage - categoryGeneralPercentage
+
+// const interpersonalInsight = insight(categoryInterpersonalPercentage, categoryFlowerInterpersonalPercentage)
+
+// const learningStrategiesInsight = insight(categoryLearningStrategiesPercentage, categoryFlowerLearningStrategiesPercentage)
+
+// const selfCareInsight = insight(categorySelfCarePercentage, categoryFlowerSelfCarePercentage)
+
+// const teamworkInsight = insight(categoryTeamworkPercentage, categoryFlowerTeamworkPercentage)
+
 
     //GOAL CATEGORY BY PERCENTAGE OF TOTAL GOALS
     const categoryGeneral = goals.filter(g => g.categoryId == 1);
@@ -70,7 +88,7 @@ import './Reports.css'
 
     //END  GOALS
 
-
+    //start INSIGHTS
     const categoryFlowerGeneral = flowers.filter(f => f.categoryId == 1);
     const categoryFlowerGeneralPercentage = ((categoryFlowerGeneral.length/totalFlowers)*100).toFixed(2)
 
@@ -97,172 +115,259 @@ import './Reports.css'
 
      //END TOTAL & PERCENTAGE
        
-   
+     const insight = (percent1, percent2) => {
+      return (percent2 -percent1).toFixed(2)
+}
 
 
-    return (
-          
-           <>
-           <div className="reports-container">
-           <section className="title-section">
-           <p className="title-section">Course Data</p>
-           </section>
-          
-         <section className="stats-row">
+const behaviorInsight = insight(categoryBehaviorPercentage, categoryFlowerBehaviorPercentage)
 
-         <article className="stat-article round-chart">
-            <h1 className="text-center"><strong>Goals by Category - %</strong></h1>
-            <Pie
-            data={{
-                    labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal','Learning Strategies', 'Self Care', 'Teamwork'],
-                    datasets: [
-                        {
-                            //  id: 1,
-                             label: '',
-                             data: [
-                                categoryBehaviorPercentage,
-                                categoryCommunicationPercentage,
-                                categoryCourseContentPercentage,
-                                categoryGeneralPercentage,
-                                categoryInterpersonalPercentage,
-                                categoryLearningStrategiesPercentage,
-                                categorySelfCarePercentage,
-                                categoryTeamworkPercentage
-                                ],
-                             backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo' ]
-                        }
-                          
-                             ]
-                    
-                        }}
-            />
+const commInsight = insight(categoryCommunicationPercentage, categoryFlowerCommunicationPercentage)
 
-          </article>
+const contentInsight = insight(categoryCourseContentPercentage, categoryFlowerCourseContentPercentage)
 
-          {/*//END GOAL PERCENTAGE*/}
+const generalInsight = categoryFlowerGeneralPercentage - categoryGeneralPercentage
+
+const interpersonalInsight = insight(categoryInterpersonalPercentage, categoryFlowerInterpersonalPercentage)
+
+const learningStrategiesInsight = insight(categoryLearningStrategiesPercentage, categoryFlowerLearningStrategiesPercentage)
+
+const selfCareInsight = insight(categorySelfCarePercentage, categoryFlowerSelfCarePercentage)
+
+const teamworkInsight = insight(categoryTeamworkPercentage, categoryFlowerTeamworkPercentage)
 
 
-          <article className="stat-article bar-chart">
-          <h1 className="text-center"><strong>Number of goals by category</strong></h1>
-          <Bar
-                // datasetIdKey='id'
-                
-                data={{
-                  
-                     labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal','Learning Strategies', 'Self Care', 'Teamwork'],
-                     datasets: [
-                        {
-                            axis: 'y',
-                             id: '2',
-                             label: 'Raw number of goals by category',
-                             data: [
-                                categoryBehavior.length,
-                                categoryCommunication.length,
-                                categoryCourseContent.length,
-                                categoryGeneral.length,
-                                categoryInterpersonal.length,
-                                categoryLearningStrategies.length,
-                                categorySelfCare.length,
-                                categoryTeamwork.length
-                                ],
-                                backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo' ]
-                             
-                        }, ]
-                             
-                        }}
-                     options={{
-                         indexAxis: 'y',
-                         scales:{
-                           yAxes:[ {
-      
-                             ticks: 
-                             {autoskip: false}
-                           }]
-                         }
-                       
-                     }}
-                    />
-            </article>
-
-            {/* END RAW NUMBERS GOALS */}
-
-      
-         
-        </section>
 
 
-        <section className="stats-row">
-       
-        <article className="stat-article round-chart">
-            <h1 className="text-center"><strong>Flowers by Category - %</strong></h1>
-            <Pie
-            data={{
-                    labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal','Learning Strategies', 'Self Care', 'Teamwork'],
-                    datasets: [
-                        {
-                            //  id: 1,
-                             label: '',
-                             data: [
-                                categoryFlowerBehaviorPercentage,
-                                categoryFlowerCommunicationPercentage,
-                                categoryFlowerCourseContentPercentage,
-                                categoryFlowerGeneralPercentage,
-                                categoryFlowerInterpersonalPercentage,
-                                categoryFlowerLearningStrategiesPercentage,
-                                categoryFlowerSelfCarePercentage,
-                                categoryFlowerTeamworkPercentage
-                                ],
-                             backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo']
-                        }
-                          
-                             ],
-                    
-                        }}
-                 />
-            </article>
-          {/*END FLOWER PERCENTAGE*/}
-            <article className="stat-article bar-chart">
-          <h1 className="text-center"><strong>Number of flowers by category</strong></h1>
-          <Bar
-                // datasetIdKey='id'
-                
-                data={{
-                  
-                     labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal','Learning Strategies', 'Self Care', 'Teamwork'],
-                     datasets: [
-                        {
-                            axis: 'y',
-                             id: '2',
-                             label: 'Raw number of flowers by category',
-                             data: [
-                                categoryFlowerBehavior.length,
-                                categoryFlowerCommunication.length,
-                                categoryFlowerCourseContent.length,
-                                categoryFlowerGeneral.length,
-                                categoryFlowerInterpersonal.length,
-                                categoryFlowerLearningStrategies.length,
-                                categoryFlowerSelfCare.length,
-                                categoryFlowerTeamwork.length
-                                ],
-                                backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo' ]
-                             
-                        }, ]
-                             
-                        }}
-                     options={{
-                         indexAxis: 'y'
-                       
-                     }}
-                    />
-            </article>
-            
-            </section>
-    
-       {/*END REPORTS CONTAINER)*/}
+return (
 
-       </div>
-       </>
-    )
+  <>
+      <div className="reports-container">
+
+          <section className="title-section">
+              <p className="title-section">Instructor Data</p>
+              <a className="small-text-link" href="#insights">View insights</a>
+              <br />
+          </section>
+          <section className="stats-row">
+
+              <article className="stat-article round-chart">
+                  <h1 className="text-center"><strong>Goals by Category - %</strong></h1>
+                  <Pie
+                      data={{
+                          labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal', 'Learning Strategies', 'Self Care', 'Teamwork'],
+                          datasets: [
+                              {
+                                  //  id: 1,
+                                  label: '',
+                                  data: [
+                                      categoryBehaviorPercentage,
+                                      categoryCommunicationPercentage,
+                                      categoryCourseContentPercentage,
+                                      categoryGeneralPercentage,
+                                      categoryInterpersonalPercentage,
+                                      categoryLearningStrategiesPercentage,
+                                      categorySelfCarePercentage,
+                                      categoryTeamworkPercentage
+                                  ],
+                                  backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo']
+                              }
+
+                          ]
+
+                      }}
+                  />
+
+              </article>
+
+              {/*//END GOAL PERCENTAGE*/}
+
+              <article className="stat-article bar-chart">
+                  <h1 className="text-center"><strong>Number of goals by category</strong></h1>
+                  <Bar
+                      // datasetIdKey='id'
+
+                      data={{
+
+                          labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal', 'Learning Strategies', 'Self Care', 'Teamwork'],
+                          datasets: [
+                              {
+                                  axis: 'y',
+                                  id: '2',
+                                  label: 'Raw number of goals by category',
+                                  data: [
+                                      categoryBehavior.length,
+                                      categoryCommunication.length,
+                                      categoryCourseContent.length,
+                                      categoryGeneral.length,
+                                      categoryInterpersonal.length,
+                                      categoryLearningStrategies.length,
+                                      categorySelfCare.length,
+                                      categoryTeamwork.length
+                                  ],
+                                  backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo']
+
+                              },]
+
+                      }}
+                      options={{
+                          indexAxis: 'y'
+
+                      }}
+                  />
+              </article>
+
+              {/* END RAW NUMBERS GOALS */}
+
+
+              {/*END FLOWER PERCENTAGE*/}
+          </section>
+
+
+          <section className="stats-row">
+
+
+              <article className="stat-article round-chart">
+                  <h1 className="text-center"><strong>Flowers by Category - %</strong></h1>
+                  <Pie
+                      data={{
+                          labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal', 'Learning Strategies', 'Self Care', 'Teamwork'],
+                          datasets: [
+                              {
+                                  //  id: 1,
+                                  label: '',
+                                  data: [
+                                      categoryFlowerBehaviorPercentage,
+                                      categoryFlowerCommunicationPercentage,
+                                      categoryFlowerCourseContentPercentage,
+                                      categoryFlowerGeneralPercentage,
+                                      categoryFlowerInterpersonalPercentage,
+                                      categoryFlowerLearningStrategiesPercentage,
+                                      categoryFlowerSelfCarePercentage,
+                                      categoryFlowerTeamworkPercentage
+                                  ],
+                                  backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo']
+                              }
+
+                          ],
+
+                      }}
+                  />
+              </article>
+
+
+              <article className="stat-article bar-chart">
+                  <h1 className="text-center"><strong>Number of flowers by category</strong></h1>
+                  <Bar
+                      // datasetIdKey='id'
+
+                      data={{
+
+                          labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal', 'Learning Strategies', 'Self Care', 'Teamwork'],
+                          datasets: [
+                              {
+                                  axis: 'y',
+                                  id: '2',
+                                  label: 'Raw number of flowers by category',
+                                  data: [
+                                      categoryFlowerBehavior.length,
+                                      categoryFlowerCommunication.length,
+                                      categoryFlowerCourseContent.length,
+                                      categoryFlowerGeneral.length,
+                                      categoryFlowerInterpersonal.length,
+                                      categoryFlowerLearningStrategies.length,
+                                      categoryFlowerSelfCare.length,
+                                      categoryFlowerTeamwork.length
+                                  ],
+                                  backgroundColor: ['#D43753', 'lightskyblue', 'olivedrab', 'goldenrod', 'lightpurple', 'lightgray', '#ff6600', 'indigo']
+
+                              },]
+
+                      }}
+                      options={{
+                          indexAxis: 'y'
+
+                      }}
+                  />
+              </article>
+
+          </section>
+
+
+          <section id="insights" className="title-section">
+              <p className="title-section">Data Insights</p>
+              <a className="small-text-link" href={`/course/${id}`}>Back to graphs</a>
+              <br />
+          </section>
+
+          <article className="insights-row">Your data shows the following relationships between the percentage of goals that you are assigning to a particular category and the percentage of flowers (which represent growth) that belong to those cateogries. <br />
+
+              <br />If there is a significant difference between the two numbers, take a moment to reflect on the discrepancy. For example, are you assigning and/or monitoring some categories more or less than others? Is there a lack of growth in some areas, leading to fewer flowers? Do you need to modify any of your practices accordingly? </article>
+
+          <table className="insights-table">
+              <thead>
+                  <tr className="table-headings">
+                      <th>Category</th>
+                      <th>Goal Percentage </th>
+                      <th>Flowers Percentage</th>
+                      <th>Difference</th>
+                  </tr>
+                  <tr>
+                      <td>Behavior</td>
+                      <td>{categoryBehaviorPercentage}</td>
+                      <td>{categoryFlowerBehaviorPercentage} </td>
+                      <td>{behaviorInsight}</td>
+                  </tr>
+
+                  <tr>
+                      <td>Course Content</td>
+                      <td>{categoryCourseContentPercentage}</td>
+                      <td>{categoryFlowerCourseContentPercentage} </td>
+                      <td>{contentInsight}</td>
+                  </tr>
+                  <tr>
+                      <td>Communication</td>
+                      <td>{categoryCommunicationPercentage}</td>
+                      <td>{categoryFlowerCommunicationPercentage} </td>
+                      <td>{commInsight}</td>
+                  </tr>
+                  <tr>
+                      <td>General</td>
+                      <td>{categoryGeneralPercentage}</td>
+                      <td>{categoryFlowerGeneralPercentage} </td>
+                      <td>{generalInsight}</td>
+                  </tr>
+                  <tr>
+                      <td>Interpersonal</td>
+                      <td>{categoryInterpersonalPercentage}</td>
+                      <td>{categoryFlowerInterpersonalPercentage} </td>
+                      <td>{interpersonalInsight}</td>
+                  </tr>
+                  <tr>
+                      <td>Learning Strategies</td>
+                      <td>{categoryLearningStrategiesPercentage}</td>
+                      <td>{categoryFlowerLearningStrategiesPercentage} </td>
+                      <td>{learningStrategiesInsight}</td>
+                  </tr>
+                  <tr>
+                      <td>Self Care</td>
+                      <td>{categorySelfCarePercentage}</td>
+                      <td>{categoryFlowerSelfCarePercentage} </td>
+                      <td>{selfCareInsight}</td>
+                  </tr>
+                  <tr>
+                      <td>Teamwork</td>
+                      <td>{categoryTeamworkPercentage}</td>
+                      <td>{categoryFlowerTeamworkPercentage} </td>
+                      <td>{teamworkInsight}</td>
+                  </tr>
+              </thead>
+          </table>
+
+          {/*END REPORTS CONTAINER)*/}
+      </div>
+  </>
+)
 }
 
 

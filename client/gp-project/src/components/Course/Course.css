@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%
 }
 
 .garden-button {
@@ -15,6 +16,7 @@
     padding: 1em;
     border-radius: 2em;
     font-weight: 800;
+    width: auto;
 }
 
 .table-headings {
@@ -26,13 +28,13 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-evenly;
-    width: 100vw;
+    width: 98vw;
 }
 
 .column-div {
     width: 30vw;
     height: auto;
-    padding-left: 2em;
+    padding-left: 0;
     /* margin-bottom: 2em; */
     display: flex;
     flex-direction: column;

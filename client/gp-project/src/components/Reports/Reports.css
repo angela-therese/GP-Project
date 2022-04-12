@@ -13,12 +13,35 @@
 
 .title-section {
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: left;
     padding-left: 1em;
     font-size: xx-large;
     font-weight: 600;  
+    width: auto;
+}
+
+.insights-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 3.5em;
+}
+
+.insights-row-course {
+    width: 90%;
+    margin-left: 0
+}
+
+.insights-table {
     width: 100%;
+    margin-left: 3.5em;
+    margin-top: 1em;
+}
+
+.small-text-link {
+    font-size: small;
+    margin-left: 3em;
 }
 
 .stats-row {
@@ -27,20 +50,11 @@
     justify-content: space-evenly;
     width: 100%;
     margin-bottom: 1em;
+
 }
 
-
-.insights-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin-left: 3.5em;
-    
-}
-
-.insights-table {
-    width: 100%;
-    margin-left: 3.5em;
+.table-headings {
+    font-weight: 800;
 }
 
 table {
@@ -53,16 +67,13 @@ table {
     /* border-collapse: separate; */
     border-spacing: 0 10px;
     font-size: small; 
+    margin-bottom: 2em;
 }
 
 tr {
     width: 100%
 }
 
-
-.table-headings {
-    font-weight: 800;
-}
 
 .stat-article {
     background-color: whitesmoke;
@@ -73,11 +84,19 @@ tr {
 }
 
 .round-chart {
-    width: 28%;
+    width: 30%;
    
 }
 
 .bar-chart {
     width: 50%;
    
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1em;
+    
 }
