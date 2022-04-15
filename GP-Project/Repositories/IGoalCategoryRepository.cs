@@ -7,7 +7,6 @@ namespace GrowPath.Repositories
     {
         List<GoalCategory> GetAll();
         List<GoalCategory> GetAllWithGoals(int id);
-
         GoalCategory GetByCourseWithGoals(int id);
 
     }
