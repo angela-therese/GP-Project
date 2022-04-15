@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from "react"
 import { useParams } from "react-router-dom";
 import { GoalContext } from "../../providers/GoalProvider";
 import { FlowerContext } from "../../providers/FlowerProvider";
-import {  Bar, Doughnut, Pie } from "react-chartjs-2";
+import {  Bar, Pie } from "react-chartjs-2";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -129,7 +129,7 @@ return (
       <div className="reports-container">
 
           <section className="title-section">
-              <p className="title-section">Instructor Data</p>
+              <p className="title-section">Goal Data</p>
               <a className="small-text-link" href="#insights">View insights</a>
               <br />
           </section>
@@ -169,7 +169,6 @@ return (
               <article className="stat-article bar-chart">
                   <h1 className="text-center"><strong>Number of goals by category</strong></h1>
                   <Bar
-                      // datasetIdKey='id'
 
                       data={{
 
@@ -218,7 +217,7 @@ return (
                           labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal', 'Learning Strategies', 'Self Care', 'Teamwork'],
                           datasets: [
                               {
-                                  //  id: 1,
+                                  
                                   label: '',
                                   data: [
                                       categoryFlowerBehaviorPercentage,
@@ -243,7 +242,7 @@ return (
               <article className="stat-article bar-chart">
                   <h1 className="text-center"><strong>Number of flowers by category</strong></h1>
                   <Bar
-                      // datasetIdKey='id'
+                     
 
                       data={{
 

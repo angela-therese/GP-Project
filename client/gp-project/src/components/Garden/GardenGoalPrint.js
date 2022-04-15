@@ -25,7 +25,7 @@ export const GardenGoalPrint = () => {
     for(i = 0; i < count; i++){
         flowerArray.push(i)
     }
-    // console.log(flowerArray)
+    
 
     return (
         

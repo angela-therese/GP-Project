@@ -21,7 +21,6 @@ const User = ({ user }) => {
         <div className="full-width"><button className="garden-button"><a className="user-garden-button" href="#garden">View garden</a></button></div>
         
         <div className="main-user-container">
-          {/* <h1 className="header-landing-text">Welcome to Growpath, {user.firstName}!</h1> */}
          
           <div className="user-row">
             <article>

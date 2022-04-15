@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-// import {Form, Button} from 'react-bootstrap'
 import { AuthContext } from "../../providers/AuthProvider";
 import logo from '../../../src/images/logo-circle-text.png';
 import './Auth.css'

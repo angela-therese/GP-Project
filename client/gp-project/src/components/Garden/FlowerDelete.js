@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FlowerContext } from "../../providers/FlowerProvider";
 import { StudentContext } from "../../providers/StudentProvider";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './Flower.css'
 
 
@@ -16,7 +16,7 @@ const {getById} = useContext(StudentContext);
 const {flowerId, studentId} = useParams();
 const [flower, setFlower] = useState({});
 const [student, setStudent] = useState({});
-// const [isLoading, setIsLoading] = useState(true);
+
 
 
 const handleClickDeleteFlower = () => {

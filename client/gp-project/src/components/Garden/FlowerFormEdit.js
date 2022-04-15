@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FlowerContext } from "../../providers/FlowerProvider";
-// import flowerList from "./flowerList";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import './Flower.css'
 import NavBar from "../Nav/Nav";
@@ -23,7 +22,6 @@ const FlowerForm = () => {
   const [isLoading, setIsLoading] = useState(true);
   
   
-  //when field changes, update state. This causes a re-render and updates the view.
   //Controlled component
   const handleControlledInputChange = (event) => {
     const newFlower = { ...flower}
@@ -94,7 +92,6 @@ return (
       </button>
       </form>
     </section>
-    {/* <flowerList /> */}
   </div>
   </>
   )

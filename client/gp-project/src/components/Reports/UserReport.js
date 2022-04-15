@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { GoalContext } from "../../providers/GoalProvider";
 import { FlowerContext } from "../../providers/FlowerProvider";
 import { Bar, Pie } from "react-chartjs-2";
@@ -133,7 +133,7 @@ export const UserReportList = () => {
             <div className="reports-container">
 
                 <section className="title-section">
-                    <p className="title-section">Instructor Data</p>
+                    <p className="title-section">Goal Data</p>
                     <a className="small-text-link" href="#insights">View insights</a>
                     <br />
                 </section>
@@ -173,7 +173,7 @@ export const UserReportList = () => {
                     <article className="stat-article bar-chart">
                         <h1 className="text-center"><strong>Number of goals by category</strong></h1>
                         <Bar
-                            // datasetIdKey='id'
+                            
 
                             data={{
 
@@ -222,7 +222,7 @@ export const UserReportList = () => {
                                 labels: ['Behavior', 'Communication', 'Content', 'General', 'Interpersonal', 'Learning Strategies', 'Self Care', 'Teamwork'],
                                 datasets: [
                                     {
-                                        //  id: 1,
+                                        
                                         label: '',
                                         data: [
                                             categoryFlowerBehaviorPercentage,
@@ -247,7 +247,7 @@ export const UserReportList = () => {
                     <article className="stat-article bar-chart">
                         <h1 className="text-center"><strong>Number of flowers by category</strong></h1>
                         <Bar
-                            // datasetIdKey='id'
+                            
 
                             data={{
 

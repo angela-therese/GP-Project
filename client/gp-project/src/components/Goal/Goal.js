@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { GoalContext } from "../../providers/GoalProvider";
-import { StudentContext } from "../../providers/StudentProvider";
+import { Link, useParams } from "react-router-dom";
 import { FlowerContext } from "../../providers/FlowerProvider";
 import {GardenGoalPrint} from "../Garden/GardenGoalPrint"
 import NavBar from '../Nav/Nav'
@@ -17,10 +15,8 @@ const Goal = ({ goal }) => {
   
     let studentId = goal.studentId
     const {goalId} = useParams();
-    const { deleteGoal } = useContext(GoalContext);
-    const { getById } = useContext(StudentContext);
     const {flowers, getByGoalId} = useContext(FlowerContext);
-    // const navigate = useNavigate()
+    
 
 
     
@@ -73,7 +69,7 @@ const Goal = ({ goal }) => {
 
         </div>
 
-        {/* <div className="left-align"> */}
+       
         
         <h2 className="no-margin">Garden Log</h2>
         <p>(To remove a flower, delete its note.)</p>
@@ -88,13 +84,11 @@ const Goal = ({ goal }) => {
                      &nbsp; &nbsp; 
                      <Link to={`/student/${studentId}/flower/delete/${f.id}`} className="delete-goal-button">Delete</Link>
                      &nbsp; &nbsp; 
-                     
-                     {/* <button className="delete-goal-button">Delete Flower</button> */}
                      </p>
                 </div>  
                 )
             })}
-            {/* </div> */}
+           
 
         </div>
            
@@ -111,4 +105,3 @@ const Goal = ({ goal }) => {
   
 
 
-//   <a href={`/student/${studentId}/goal/${goal.id}/flower/add`}><img alt="watering-can" width="60" src={WateringCan}/></a>

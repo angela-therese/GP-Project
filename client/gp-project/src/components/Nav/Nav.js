@@ -1,7 +1,6 @@
 import React, { useEffect,  useState }  from "react"
 import { useNavigate, Link} from "react-router-dom"
 import "./Nav.css"
-import Home from '../../images/home-icon.png'
 import ProfilePic from '../../images/headshot.jpg'
 import Logo from '../../images/logo-circle-text.png'
 
@@ -53,7 +52,7 @@ export const NavBar = () => {
                 
             </nav>
 
-            {/* </section> */}
+           
 
         </>
 

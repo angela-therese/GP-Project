@@ -1,10 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {AuthContext} from "../../providers/AuthProvider";
-import { useContext } from "react";
-import {GardenGoalPrint} from "../Garden/GardenGoalPrint"
-import NavBar from '../Nav/Nav'
-import './Student.css'
+import NavBar from '../Nav/Nav';
+import './Student.css';
 
 
 const Student = ({ student }) => {
@@ -22,7 +19,7 @@ const Student = ({ student }) => {
         
         
         
-            {/* <section className="section-1-container"> */}
+            
             <p className="subheader">Click on a goal for details</p>
                 <section className="goals-container" >
         {student.goals?.map((g) => {
@@ -36,7 +33,7 @@ const Student = ({ student }) => {
                  </section>
         
        <Link className="add-goal-button" to={`/student/${student.id}/goal/add`}>Add New Goal</Link>
-        {/* </section> */}
+        
        
         </div>
         

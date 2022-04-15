@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FlowerContext } from "../../providers/FlowerProvider";
-// import flowerList from "./flowerList";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { NavBar } from './../Nav/Nav'
 import './Flower.css'
@@ -27,8 +26,7 @@ const FlowerForm = () => {
 
  
   const user = growpathUser;
-  console.log(user)
-  console.log(user.id)
+ 
   
 
 
@@ -103,7 +101,7 @@ return (
         </button>
         </form>
       </section>
-      {/* <flowerList /> */}
+    
     </div>
     </>
    

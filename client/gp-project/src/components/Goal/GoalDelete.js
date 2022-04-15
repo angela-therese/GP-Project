@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { StudentContext } from "../../providers/StudentProvider";
 import { GoalContext } from "../../providers/GoalProvider";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
@@ -11,10 +10,9 @@ export const GoalDelete = () => {
    
     const {goalId, studentId} = useParams();
     const { getGoal, deleteGoal } = useContext(GoalContext);
-    const { getById } = useContext(StudentContext);
     const [goal, setGoal] = useState({});
     const [student, setStudent] = useState({});
-    // const [isLoading, setIsLoading] = useState(true);
+   
 
     const navigate = useNavigate()
     
@@ -24,8 +22,6 @@ export const GoalDelete = () => {
     const handleClickDeleteGoal = () => {
 
         deleteGoal(goalId)
-        // .then(getById(studentId))
-        // .then((setStudent))
         .then(navigate(`/student/${studentId}`))
     }
     

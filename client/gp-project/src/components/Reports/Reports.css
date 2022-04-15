@@ -4,7 +4,6 @@
 .reports-container {
     width: 100%;
     height: auto;
-    /* background-color: white; */
     display: flex;
     flex-direction: column;
    padding-left: 2em;
@@ -64,7 +63,6 @@ table {
     width: 100%;
     border-radius: 2em;
     padding: 1em;
-    /* border-collapse: separate; */
     border-spacing: 0 10px;
     font-size: small; 
     margin-bottom: 2em;

@@ -39,19 +39,3 @@ export const GardenClassPrint = () => {
 export default GardenClassPrint
 
 
-
-//let count = 8
-// let flowerArray = []
-// let i 
-// for(i = 0; i < count; i++){
-//     flowerArray.push(i)
-// }
-// console.log(flowerArray)
-
-// return (
-//     flowerArray.map((f)=>{
-//         return (
-//             <img alt="flower" src={Flower}/>
-//         )
-//     })
-// )

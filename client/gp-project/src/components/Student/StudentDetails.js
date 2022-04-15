@@ -10,21 +10,16 @@ const StudentDetails = () => {
 
 
 const [student, setStudent] = useState({});
-const {goals, getAllGoals} = useContext(GoalContext)
+const {goals} = useContext(GoalContext)
 const { getById } = useContext(StudentContext);
 const { id } = useParams();
 
 
     useEffect(() => {
         getById(id).then(setStudent)
-        // .then(getAllGoals);
     }, [goals]);
-    console.log(goals)
-//don't understand the empty bracket
+    
 
-// if (!student) {
-//     return null;
-// }
 
 return (
 

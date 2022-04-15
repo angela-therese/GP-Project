@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GoalContext } from "../../providers/GoalProvider";
-// import GoalList from "./GoalList";
 import { GoalCategoryContext } from "../../providers/GoalCategoryProvider"
 import { useNavigate, useParams, Link } from "react-router-dom";
 import './Goal.css'
@@ -12,10 +11,10 @@ const currentTime = new Date();
 
 
 const GoalForm = () => { 
-  const { addGoal, updateGoal} = useContext(GoalContext)
+  const { addGoal } = useContext(GoalContext)
   const {getById} = useContext(StudentContext);
   const {categories, getCategories} = useContext(GoalCategoryContext)
-  const { goalId, studentId} = useParams();
+  const { studentId} = useParams();
   const [student, setStudent] = useState();
   const navigate = useNavigate();
 
@@ -54,7 +53,6 @@ const GoalForm = () => {
 
   const handleClickSaveGoal = () => {
     
-    //disable the button - no extra clicks
     setIsLoading(true);
 
 debugger
@@ -70,7 +68,7 @@ debugger
             return navigate(`/student/${studentId}`);
         })
     
-  // }
+
 }
 
 return (
@@ -112,7 +110,6 @@ return (
           Save Goal
         </button>
       </form>
-      {/* <GoalList /> */}
     </div>
   )
 

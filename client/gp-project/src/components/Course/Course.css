@@ -35,7 +35,6 @@
     width: 30vw;
     height: auto;
     padding-left: 0;
-    /* margin-bottom: 2em; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +62,7 @@
  text-align: left;
  border-radius: 4em;
  color: white;
- padding: .5em;
+ padding: 1em;
  margin-top: 1em;
 }
 
@@ -75,7 +74,6 @@ table {
     width: 100%;
     border-radius: 2em;
     padding: 1em;
-    /* border-collapse: separate; */
     border-spacing: 0 10px;
     font-size: small; 
    
@@ -119,30 +117,3 @@ tr:nth-child(even) {
     align-items: center;
 }
 
-
-/* .reviews-container {
-    width: 98%;
-    background-color: white;
-    height: 40vh
-} */
-
-/* .row-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 90vw;
-} */
-/* .section-1-container {
-    width: 50vw;
-    text-align: center;
-}
-
-.section-2-container {
-    width: 20vw;
-    text-align: left;
-} */
-
-
-/* tr :not(:visited) {
-    color: black
-} */

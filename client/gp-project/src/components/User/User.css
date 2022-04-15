@@ -4,9 +4,7 @@ Link {
     cursor: grabbing
 }
 
-/* a{
-    text-decoration: none;
-} */
+
 
 .jump-button {
     width: fit-content;
@@ -52,7 +50,6 @@ Link {
     width: 33vw;
     height: auto;
     padding-left: 2em;
-    /* margin-bottom: 2em; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,7 +67,6 @@ Link {
 
 .report-list-container {
     width: 55vw;
-    /* margin: 0; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,11 +90,8 @@ Link {
     justify-content: center;
     width: auto;
     padding: 2em;
-    background-color: #D43753;
-    /* background-color: white; */
+    background-color: lightblue;
     border-radius: 3em;
-    /* border: #D43753 5px solid; */
-    /* color: white */
     
 }
 
@@ -124,12 +117,11 @@ Link {
     display:flex;
     flex-direction: column;
     align-items: left;
-    /* background-color: white; */
     padding-bottom: 1em;
     margin-top: 2em;
     width: 30vw;
     border-radius: 3em;  
-    /* border: olivedrab 1px dotted */
+    
 }
 
 .print-section {

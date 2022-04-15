@@ -16,10 +16,6 @@ export const CourseProvider = (props) => {
         };
 
 
-        // const getUserWithCourses = (id) => {
-        //   return fetch(`${baseUrl}/api/UserProfile/api/UserProfile/GetByIdWithCourses?id=${id}`).then((res) => res.json());
-        //       };
-
 
 
   return (

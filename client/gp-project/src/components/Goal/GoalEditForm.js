@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GoalContext } from "../../providers/GoalProvider";
-// import GoalList from "./GoalList";
 import { GoalCategoryContext } from "../../providers/GoalCategoryProvider";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import './Goal.css'
-import { StudentContext } from "../../providers/StudentProvider";
 
 
 
@@ -27,8 +25,7 @@ const GoalEditForm = () => {
   const [isLoading, setIsLoading] = useState(true);
   
   
-  //when field changes, update state. This causes a re-render and updates the view.
-  //Controlled component
+  //when field changes, update state. 
   const handleControlledInputChange = (event) => {
     const newGoal = { ...goal }
     newGoal[event.target.id] = event.target.value
@@ -52,14 +49,11 @@ const GoalEditForm = () => {
   })
 }, [])
 
-console.log(categories.length)
 
 
   const handleClickSaveGoal = () => {
     setIsLoading(true);
     if(goalId){
-    //disable the button - no extra clicks
-       
         updateGoal({
             id:goal.id,
             title: goal.title,
@@ -73,10 +67,6 @@ console.log(categories.length)
         .then(() => navigate(`/student/${goal.student?.id}/goal/${goal.id}`))
     }}
  
- //WHY PARSEINT
- 
- 
-   
 
 
 return (
@@ -115,7 +105,6 @@ return (
           Update Goal
         </button>
       </form>
-      {/* <GoalList /> */}
     </div>
   )
 
