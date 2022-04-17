@@ -24,5 +24,4 @@ A video demo of GrowPath is available here: [GrowPath FullStack Capston Video De
 
 ## Tech Stack
 
-GrowPath's back end was created with C#/.NET Core Web API and SQL Server connected to the front end through React with JavaScript. This project was styled through manual CSS and HTML (no component library), though React-ChartJS-2 was utilized for graphing. 
-
+GrowPath was built in C#/.NET and uses an ASP.NET Core Web API and SQL to interface with the database. The front end was built in React and styled with custom CSS, while graphs were derived with React-Chartjs. 
