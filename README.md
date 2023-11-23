@@ -9,7 +9,7 @@ GrowPath is a tool for teachers in traditional or nontraditional educational set
 <img src="https://github.com/angela-therese/GrowPath-Project/blob/master/client/gp-project/src/images/Screenshots/UserPage.png" width="400">
 <br/>
 <br/>
-GrowPath was inspired by my own experiences as a Spanish teacher in a traditional, college-prep high school. While we were encouraged to incorporate "growth mindset" into our classroom practices after a few professional development seminars, ultimately the school culture contined to place enormous pressure on students to achieve traditional measures of success (i.e., test scores and GPAs) with no concrete way to show students that we truly valued their growth, or that we even noticed it. As such, students weren't quite buying it! 
+GrowPath was inspired by my own experiences as a Spanish teacher in a traditional, college-prep high school. While we were encouraged to incorporate "growth mindset" into our classroom practices after a few professional development seminars, ultimately the school culture continued to place enormous pressure on students to achieve traditional measures of success (i.e., test scores and GPAs). I imagined that students would buy into the concept of growth mindset more if there were concerted, visible efforts to acknowledge and reward personal growth and not simply traditional achievements. 
 <img src="https://github.com/angela-therese/GrowPath-Project/blob/master/client/gp-project/src/images/Screenshots/GoalDetails.png" width="400">
 <br/>
 <br/>
