@@ -18,11 +18,6 @@ To that end of demonstrating to students the importance of the learning process 
 <br/>
 <br/>
 
-A video demo of GrowPath is available here: 
-  <a href="https://www.loom.com/share/df46026a29bb42329430221ad59d01d2">
-    <p>NewForce: Full-Stack Capstone (GrowPath) April 2022 - Watch Video</p>
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/df46026a29bb42329430221ad59d01d2-with-play.gif">
-  </a>
 
 ## Tech Stack
 
